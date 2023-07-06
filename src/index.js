@@ -8,9 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs'); // Set EJS as the template engine
-app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs'); // Set EJS as the template engine
+app.set('views', path.join(__dirname, '../views')); // Update the path to '/views'
+
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public'))); // Update the path to '/public'
 
 // Enable CORS for specific origin
 app.use(cors());

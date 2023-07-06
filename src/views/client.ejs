@@ -1,20 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-  <!-- Include your CSS file -->
-  <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <title> KIVTECHS.cloud</title>
+      <title>Admin Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@main/css/iconoir.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    /><link rel="stylesheet" href="./style.css">
+
 </head>
-<body>
-  <h1>Weather Data</h1>
-  
-  <!-- Embed the weather data in your HTML -->
   <script>
     const weather = <%- JSON.stringify(weather) %>;
     console.log(weather);
     // Use the weather data in your client-side JavaScript code
   </script>
+<body>
+    <main class="container">
+      <div class="menu">
+        <div class="avatar">
+     
+          <img
+            class="thumb"
+            src=""
+            width="60"
+          />
+          <span class="name">Kivtechs</span>
+        </div>
+        <nav class="primary">
 
-  <!-- Include your client-side JavaScript file -->
-  <script src="/client.js"></script>
+        </nav>
+        <span class="expander iconoir-arrow-right"></span>
+      </div>
+      <div class="topbar">
+        <h1 class="current">  </h1>
+        <span class="search">
+          <label><span class="iconoir-search"></span></label>
+          <input class="bar" type="text" placeholder="chatbot" />
+        </span>
+        <nav>
+
+                            <a href="https://kivtechs.cloud/?view=chatbot" class="menu-item">chatbot</a>
+          <a href="https://kivtechs.cloud/?view=tts" class="menu-item">Text to speech </a>
+          <a href="https://kivtechs.cloud/?view=image_api" class="menu-item">image api</a>
+              <a href="https://kivtechs.cloud/?view=image_gen" class="menu-item">image Generator</a>
+                <a href="https://kivtechs.cloud/?view=presentation" class="menu-item">presentation</a>
+          <a href="https://kivtechs.cloud/?view=ingram" class="menu-item">INGRAM MICRO</a>
+        <a href="https://kivtechs.cloud/?view=polly" class="menu-item">AWS POLLY</a>
+         <a href="https://kivtechs.cloud/?view=adobe" class="menu-item">ADOBE</a>
+                  <a href="https://kivtechs.cloud/?view=ovh" class="menu-item">OVH CLOUD</a>
+                    <a href="https://kivtechs.cloud/?view=audio" class="menu-item">AUDIO API</a>
+        </nav>
+      </div>
+      <div class="dashboard">
+        <div class="cardcolumn">
+ 
+          </div>
+        </div>
+      </div> 
+      <div class="side">
+        <div class="card weather">
+          <img
+            class="condition"
+            src="https://user-images.githubusercontent.com/30212452/203724734-5f748507-7ae4-49f9-89f8-7fce3112cd95.png"
+          />
+          <div class="content"></div>
+          <div class="meta">
+            <span class="location">
+              <span class="iconoir-pin-alt"></span>
+              
+            </span>
+            <div class="datetime">
+              <span class="iconoir-calendar"></span>
+              <span class="date"></span>
+              <span class="time"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+
+          <header> </header>
+          <div class="content">
+
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="video">
+      <video
+        src="https://user-images.githubusercontent.com/30212452/203724691-9e93bf50-df02-4034-9743-dfe32d18bf58.mp4"
+        muted
+        playsinline
+        autoplay
+        loop
+      ></video>
+    </div>
+  </body>
+<!-- partial -->
+
+  <script src="/script.js"></script>
 </body>
 </html>

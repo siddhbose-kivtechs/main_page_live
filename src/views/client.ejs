@@ -1,1 +1,20 @@
-<%= weather %>
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Include your CSS file -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Weather Data</h1>
+  
+  <!-- Embed the weather data in your HTML -->
+  <script>
+    const weather = <%- JSON.stringify(weather) %>;
+    console.log(weather);
+    // Use the weather data in your client-side JavaScript code
+  </script>
+
+  <!-- Include your client-side JavaScript file -->
+  <script src="/client.js"></script>
+</body>
+</html>

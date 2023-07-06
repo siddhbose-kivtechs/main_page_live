@@ -22,8 +22,10 @@ app.get("/", (req, res) => {
   let latitude = 25;
   let longitude = 35;
 
+  const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
+
   // Render the client-side JavaScript file dynamically with the values embedded
-  res.render('client', { latitude, longitude });
+  res.render('client', { weather });
 });
 
 // POST route

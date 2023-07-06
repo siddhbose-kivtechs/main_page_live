@@ -5,7 +5,8 @@ const ejs = require('ejs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.set('view engine', 'ejs'); // Set EJS as the template engine
+// app.set('view engine', 'ejs'); // Set EJS as the template engine
+app.set('views', path.join(__dirname, 'views'));
 
 // Enable CORS for specific origin
 app.use(cors());
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 
   // Render the client-side JavaScript file dynamically with the values embedded
   res.render('client.ejs', { latitude, longitude });
+  
 });
 
 // POST route

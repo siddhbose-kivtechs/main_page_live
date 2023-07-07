@@ -17,6 +17,8 @@
     "express": "^4.17.3",
     "uuid": "^9.0.0",
     "cors":"*",
-    "ejs":"*"
+    "ejs":"*",
+    "postgres":"*",
+     "@supabase/supabase-js": "^2.26.0"
   }
 }

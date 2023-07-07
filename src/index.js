@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const ejs = require('ejs');
 const path = require("path");
+const { sql } = require("@vercel/postgres");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,6 +17,11 @@ app.use(express.static(path.join(__dirname, '../public'))); // Update the path t
 
 // Enable CORS for specific origin
 app.use(cors());
+
+// test postgress
+const likes = 100;
+
+const { rows } = await sql`SELECT * FROM posts WHERE likes > ${likes};`;
 
 // Parse request body and extend the size to 1mb
 app.use(bodyParser.json({ limit: '1mb' }));

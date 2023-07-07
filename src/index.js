@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 app.get("/", (req, res) => {
   let latitude = req.headers['x-vercel-ip-latitude'];
   let longitude = req.headers['x-vercel-ip-longitude'];
-  let city=req.headers['user-agent']['x-vercel-ip-city'];
+  let city=req.headers['x-vercel-ip-city'];
 
   const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
 

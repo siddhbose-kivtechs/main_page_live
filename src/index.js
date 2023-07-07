@@ -19,9 +19,9 @@ app.use(express.static(path.join(__dirname, '../public'))); // Update the path t
 app.use(cors());
 
 // test postgress
-const likes = 100;
+//const likes = 100;
 
-const { rows } = await sql`SELECT * FROM posts WHERE likes > ${likes};`;
+//const { rows } = await sql`SELECT * FROM posts WHERE likes > ${likes};`;
 
 // Parse request body and extend the size to 1mb
 app.use(bodyParser.json({ limit: '1mb' }));

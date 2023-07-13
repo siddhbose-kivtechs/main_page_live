@@ -34,13 +34,27 @@ app.get("/", (req, res) => {
   let location=req.headers['x-vercel-ip-city']+','+req.headers['x-vercel-ip-country-region']+','+req.headers['x-vercel-ip-country'];
 
   const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
-// Check if 'view' parameter is set to 'chatbot'
-if (req.query.view === 'chatbot') {
-// Redirect to the specified URL
-return res.redirect("https://siddh-kivtechs.github.io/menu_4/");
-}
-  // Render the client-side JavaScript file dynamically with the values embedded
-  res.render('client', { weather,location });
+// // Check if 'view' parameter is set to 'chatbot'
+// if (req.query.view === 'chatbot') {
+// // Redirect to the specified URL
+// return res.redirect("https://siddh-kivtechs.github.io/menu_4/");
+// }
+//   //for ovh
+//   //https://ovh.kivtechs.cloud/
+//   // Render the client-side JavaScript file dynamically with the values embedded
+//   res.render('client', { weather,location });
+// });
+
+   switch (req.query.view) {
+    case 'chatbot':
+      return res.redirect("https://siddh-kivtechs.github.io/menu_4/");
+    case 'ovh':
+      return res.redirect("https://ovh.kivtechs.cloud/");
+    case 'adobe':
+      return res.redirect("https://siddh-kivtechs.github.io/kivtechs/");
+    default:
+      res.render('client', { weather: weatherAPIURL, location });
+  }
 });
 
 // POST route

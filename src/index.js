@@ -53,9 +53,9 @@ app.get("/", (req, res) => {
     case 'adobe':
       return res.redirect("https://siddh-kivtechs.github.io/kivtechs/");
     default:
-      res.send({'status':'not active'});
+       res.render('client', { weather: weatherAPIURL, location });
   }
-  res.render('client', { weather: weatherAPIURL, location });
+
 });
 
 // POST route

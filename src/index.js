@@ -27,36 +27,35 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 
-// GET route
-app.get("/", (req, res) => {
+
+app.get("/", baseHandler);
+
+function baseHandler(req, res) {
   let latitude = req.headers['x-vercel-ip-latitude'];
   let longitude = req.headers['x-vercel-ip-longitude'];
-  let location=req.headers['x-vercel-ip-city']+','+req.headers['x-vercel-ip-country-region']+','+req.headers['x-vercel-ip-country'];
+  let location = req.headers['x-vercel-ip-city'] + ',' + req.headers['x-vercel-ip-country-region'] + ',' + req.headers['x-vercel-ip-country'];
 
   const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
-// // Check if 'view' parameter is set to 'chatbot'
-// if (req.query.view === 'chatbot') {
-// // Redirect to the specified URL
-// return res.redirect("https://siddh-kivtechs.github.io/menu_4/");
-// }
-//   //for ovh
-//   //https://ovh.kivtechs.cloud/
-//   // Render the client-side JavaScript file dynamically with the values embedded
-//   res.render('client', { weather,location });
-// });
 
-   switch (req.query.view) {
+  redirectView(req.query.view, res, weather, location);
+}
+
+function redirectView(view, res, weather, location) {
+  switch (view) {
     case 'chatbot':
-      return res.redirect("https://siddh-kivtechs.github.io/menu_4/");
+      res.redirect("https://siddh-kivtechs.github.io/menu_4/");
+      break;
     case 'ovh':
-      return res.redirect("https://ovh.kivtechs.cloud/");
+      res.redirect("https://ovh.kivtechs.cloud/");
+      break;
     case 'adobe':
-      return res.redirect("https://siddh-kivtechs.github.io/kivtechs/");
+      res.redirect("https://siddh-kivtechs.github.io/kivtechs/");
+      break;
     default:
-       res.render('client', { weather, location });
+      res.render('client', { weather, location });
   }
+}
 
-});
 
 // POST route
 app.post("/", (req, res) => {

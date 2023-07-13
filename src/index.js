@@ -34,7 +34,11 @@ app.get("/", (req, res) => {
   let location=req.headers['x-vercel-ip-city']+','+req.headers['x-vercel-ip-country-region']+','+req.headers['x-vercel-ip-country'];
 
   const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
-
+// Check if 'view' parameter is set to 'chatbot'
+if (req.query.view === 'chatbot') {
+// Redirect to the specified URL
+return res.redirect("https://siddh-kivtechs.github.io/menu_4/");
+}
   // Render the client-side JavaScript file dynamically with the values embedded
   res.render('client', { weather,location });
 });

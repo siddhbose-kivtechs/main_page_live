@@ -51,6 +51,12 @@ function redirectView(view, res, weather, location) {
     case 'adobe':
       res.redirect("https://siddh-kivtechs.github.io/kivtechs/");
       break;
+    case 'tts':
+      res.redirect("https://jstts1.kivtechs.cloud/");
+      break;
+    case 'image_api':
+      res.redirect("https://image.kivtechs.cloud/");
+      break;
     default:
       res.render('client', { weather, location });
   }

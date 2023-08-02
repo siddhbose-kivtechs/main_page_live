@@ -61,7 +61,10 @@ function redirectView(view, res, weather, location) {
       res.render('client', { weather, location });
   }
 }
-
+app.get('/chao', (req, res) => {
+  // Handle GET request to /chao path
+     res.redirect("https://siddh-kivtechs.github.io/menu_4/");
+});
 
 // POST route
 app.post("/", (req, res) => {

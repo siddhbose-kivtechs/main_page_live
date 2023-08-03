@@ -6,9 +6,9 @@ const Restaurants = () => {
                 image: "https://images.unsplash.com/photo-1606131731446-5568d87113aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
                 title: "IVORY"
             }, {
-                desc: "Ivory++",
+                desc: "OLIVIY-A",
                 id: 2,
-                image: "https://images.unsplash.com/photo-1576506295286-5cda18df43e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aWNlJTIwY3JlYW18ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+                image: "https://siddh-kivtechs.github.io/image//ai-generated-7770511.jpg",
                 title: "OLIVE"
             }, {
                 desc: "This 'Za be gettin down",

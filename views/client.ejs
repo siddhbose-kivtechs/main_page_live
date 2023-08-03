@@ -2,136 +2,48 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title> KIVTECHS.cloud</title>
-      <title>Admin Dashboard</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@main/css/iconoir.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    /><link rel="stylesheet" href="/style.css">
+  <title>KIVTECHS.CLOUD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
 
 </head>
-  <script>
-    const weather = <%- JSON.stringify(weather) %>;
-    console.log(weather);
-    // Use the weather data in your client-side JavaScript code
-  </script>
 <body>
-    <main class="container">
-      <div class="menu">
-        <div class="avatar">
-     
-          <img
-            class="thumb"
-            src=""
-            width="60"
-          />
-          <span class="name">Kivtechs</span>
-        </div>
-        <nav class="primary">
-          <a href="#" class="menu-item active">
-            <span class="iconoir-report-columns"></span>
-            <span class="desc"></span>
-          </a>
-          <a href="#" class="menu-item">
-            <span class="iconoir-google-docs"></span>
-            <span class="desc"></span>
-          </a>
-          <a href="#" class="menu-item">
-            <span class="iconoir-table"></span>
-            <span class="desc"></span>
-          </a>
-          <a href="#" class="menu-item">
-            <span class="iconoir-bag"></span>
-            <span class="desc"></span>
-          </a>
-          <a href="#" class="menu-item">
-            <span class="iconoir-user"></span>
-            <span class="desc"></span>
-          </a>
-          <a href="#" class="menu-item">
-            <span class="iconoir-leaderboard"></span>
-            <span class="desc"></span>
-          </a>
-          <a href="#" class="menu-item">
-            <span class="iconoir-settings"></span>
-            <span class="desc"></span>
-          </a>
-        </nav>
-        <span class="expander iconoir-arrow-right"></span>
-      </div>
-      <div class="topbar">
-        <h1 class="current">  </h1>
-        <span class="search">
-          <label><span class="iconoir-search"></span></label>
-          <input class="bar" type="text" placeholder="chatbot" />
-        </span>
-        <nav>
-
-                            <a href="https://kivtechs.cloud/?view=chatbot" class="menu-item">chatbot</a>
-          <a href="https://kivtechs.cloud/?view=tts" class="menu-item">Text to speech </a>
-          <a href="https://kivtechs.cloud/?view=image_api" class="menu-item">image api</a>
-        
-
-         <a href="https://kivtechs.cloud/?view=adobe" class="menu-item">ADOBE</a>
-                  <a href="https://kivtechs.cloud/?view=ovh" class="menu-item">OVH CLOUD</a>
-               
-        </nav>
-      </div>
-      <div class="dashboard">
-        <div class="cardcolumn">
- 
-          </div>
-        </div>
-      </div> 
-      <div class="side">
-        <div class="card weather">
-          <img
-            class="condition"
-            src="https://user-images.githubusercontent.com/30212452/203724734-5f748507-7ae4-49f9-89f8-7fce3112cd95.png"
-          />
-          <div class="content"></div>
-          <div class="meta">
-            <span class="location">
-            <span class="iconoir-pin-alt"></span>
-            <%- location %>
-            <span>
-            <div class="datetime">
-              <span class="iconoir-calendar"></span>
-              <span class="date"></span>
-              <span class="time"></span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-
-          <header> </header>
-          <div class="content">
-
-          </div>
-        </div>
-      </div>
-    </main>
-    <div class="video">
-      <video
-        src="https://user-images.githubusercontent.com/30212452/203724691-9e93bf50-df02-4034-9743-dfe32d18bf58.mp4"
-        muted
-        playsinline
-        autoplay
-        loop
-      ></video>
-    </div>
-  </body>
+<!-- partial:index.partial.html -->
+<div id="root"></div>
 <!-- partial -->
+  <script src='https://unpkg.com/react@17/umd/react.development.js'></script>
+<script src='https://unpkg.com/react-dom@17/umd/react-dom.development.js'></script>
+<script src='https://unpkg.com/browse/@types/react@16.4.14/index.d.ts'></script>
+<script src='https://unpkg.com/browse/@types/react-dom@17.0.2/index.d.ts'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/classnames/2.3.1/index.min.js'></script>
+<script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
+<script>
+  // Declare latitude and longitude in the global scope
+const latitude = <%= latitude %>;
+const longitude = <%= longitude %>;
 
-  <script src="/script.js"></script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const location = <%= location %>;
+    // console.log(latitude, longitude, location);
+  });
+</script>
+<script  src="./script_1.js"></script>
+<script  src="./script_2.js"></script>
+<script  src="./script_3.js"></script>
+<script  src="./script_4.js"></script>
+<script  src="./script_5.js"></script>
+<script  src="./script_6.js"></script>
+<script  src="./script_7.js"></script>
+<script  src="./script_8.js"></script>
+<script  src="./script_9.js"></script>
+<script  src="./script_10.js"></script>
+<script  src="./script_11.js"></script>
+<script  src="./script_12.js"></script>
+<script  src="./script_13.js"></script>
+<script  src="./script_14.js"></script>
+<script  src="./script_15.js"></script>
+<script  src="./script_16.js"></script>
+<script  src="./script_17.js"></script>
+<script  src="./script.js"></script>
 </body>
 </html>

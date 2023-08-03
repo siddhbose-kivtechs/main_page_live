@@ -37,7 +37,7 @@ function baseHandler(req, res) {
 
   const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
 
-  redirectView(req.query.view, res, weather, location);
+  redirectView(req.query.view, res, latitude,longitude, location);
 }
 
 function redirectView(view, res, weather, location) {

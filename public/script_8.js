@@ -4,7 +4,7 @@ const WeatherSnap = () => {
     return (React.createElement("span", { className: "weather" },
         React.createElement("i", { className: "weather-type", className: "fa-duotone fa-sun" }),
         React.createElement("span", { className: "weather-temperature-value" }, temperature),
-        React.createElement("span", { className: "weather-temperature-unit" }, "\u00B0F")));
+        React.createElement("span", { className: "weather-temperature-unit" }, "\u00B0C")));
 };
 const Reminder = () => {
     return (React.createElement("div", { className: "reminder" },

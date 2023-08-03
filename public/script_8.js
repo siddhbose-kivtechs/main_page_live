@@ -24,4 +24,3 @@ const Info = (props) => {
         React.createElement(WeatherSnap, null)));
 };
 
-console.log(latitude,longitude);

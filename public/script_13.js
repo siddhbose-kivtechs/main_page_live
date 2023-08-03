@@ -11,10 +11,10 @@ const Restaurants = () => {
                 image: "https://siddh-kivtechs.github.io/image//ai-generated-7770511.jpg",
                 title: "OLIVE"
             }, {
-                desc: "This 'Za be gettin down",
+                desc: "'Za LLM",
                 id: 3,
-                image: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-                title: "Pizza"
+                image: "https://siddh-kivtechs.github.io/image//artificial-intelligence-7965009.jpg",
+                title: "Our Take on LLM based on NLP with CHATGPT as teacher"
             }, {
                 desc: "VIJU",
                 id: 4,

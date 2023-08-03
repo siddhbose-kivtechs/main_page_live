@@ -9,9 +9,9 @@ const WeatherSnap = () => {
 const Reminder = () => {
     return (React.createElement("div", { className: "reminder" },
         React.createElement("div", { className: "reminder-icon" },
-            React.createElement("i", { className: "fa-regular fa-bell" })),
+            React.createElement("i", { className: "fa-regular fa-home" })),
         React.createElement("span", { className: "reminder-text" },
-            "Extra cool people meeting ",
+           ` Location : ${geo_location} `  ,
             React.createElement("span", { className: "reminder-time" }, "10AM"))));
 };
 const Time = () => {

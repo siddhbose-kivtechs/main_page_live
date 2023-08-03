@@ -18,7 +18,7 @@ const Restaurants = () => {
             }, {
                 desc: "VIJU",
                 id: 4,
-                image: "https://siddh-kivtechs.github.io/image/ai-generated-7963061.jpg&auto=format&fit=crop&w=500&q=60",
+                image: "https://siddh-kivtechs.github.io/image/ai-generated-7963061.jpg",
                 title: "Virtual Assistant"
             }].map((restaurant) => {
             const styles = {

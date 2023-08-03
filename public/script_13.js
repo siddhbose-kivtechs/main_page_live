@@ -16,10 +16,10 @@ const Restaurants = () => {
                 image: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
                 title: "Pizza"
             }, {
-                desc: "BBQ ain't need no rhyme",
+                desc: "VIJU",
                 id: 4,
-                image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YmFyYmVxdWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-                title: "BBQ"
+                image: "https://siddh-kivtechs.github.io/image/ai-generated-7963061.jpg&auto=format&fit=crop&w=500&q=60",
+                title: "Virtual Assistant"
             }].map((restaurant) => {
             const styles = {
                 backgroundImage: `url(${restaurant.image})`

@@ -36,8 +36,8 @@ function baseHandler(req, res) {
   let location = req.headers['x-vercel-ip-city'] + ',' + req.headers['x-vercel-ip-country-region'] + ',' + req.headers['x-vercel-ip-country'];
 
   const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
-let ip=req.ip;
- redirectView(req.query.view, res, latitude,longitude, location,ip);
+let ip_address=req.ip;
+ redirectView(req.query.view, res, latitude,longitude, location,ip_address);
 
 }
 

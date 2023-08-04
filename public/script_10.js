@@ -19,17 +19,22 @@ const QuickNav = () => {
                 url:"https://siddh-kivtechs.github.io/menu_4/"
             }, {
                 id: 2,
-                label: "APP 2",
-                url:"https://siddh-kivtechs.github.io/menu_1/"
+                label: "TEXT to SPEECH",
+                url:"https://jstts1.kivtechs.cloud/"
             }, {
                 id: 3,
-                label: "APP 3",
-                url:"https://siddh-kivtechs.github.io/menu_2/"
+                label: "ADOBE",
+                url:"https://siddh-kivtechs.github.io/kivtechs/"
             }, {
                 id: 4,
-                label: "APP 4" ,
-                url:"https://siddh-kivtechs.github.io/menu_3/"
-            }].map((item) => {
+                label: "OVH" ,
+                url:"https://ovh.kivtechs.cloud/"
+            },
+                {
+                    id:5,
+                    label:"image api",
+                    url:"https://image.kivtechs.cloud/"
+                }].map((item) => {
             return (React.createElement("div", { key: item.id, className: "quick-nav-item clear-button" },
                // React.createElement("span", { className: "quick-nav-item-label" }, item.label)));
                 React.createElement("a", { href: item.url, className: "quick-nav-item-label" }, item.label)));

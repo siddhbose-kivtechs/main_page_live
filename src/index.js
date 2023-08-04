@@ -59,7 +59,7 @@ function redirectView(view, res, latitude,longitude, location,ip_address) {
       res.redirect("https://image.kivtechs.cloud/");
       break;
     default:
-      res.render('client', { latitude,longitude, location });
+      res.render('client', { latitude,longitude, location,ip_address });
   }
 }
 app.get('/chao', (req, res) => {

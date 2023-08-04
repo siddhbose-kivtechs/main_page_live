@@ -41,7 +41,7 @@ let ip_address=req.ip;
 
 }
 
-function redirectView(view, res, latitude,longitude, location,ip) {
+function redirectView(view, res, latitude,longitude, location,ip_address) {
   switch (view) {
     case 'chatbot':
       res.redirect("https://siddh-kivtechs.github.io/menu_4/");

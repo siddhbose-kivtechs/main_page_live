@@ -12,7 +12,8 @@ const Reminder = () => {
             React.createElement("i", { className: "fa-regular fa-home" })),
         React.createElement("span", { className: "reminder-text" },
            ` Location : ${geo_location} `  ,
-            React.createElement("span", { className: "reminder-time" }, ""))));
+            React.createElement("span", { className: "reminder-time" }, 
+                ` IP  : ${ip_address} `                 ))));
 };
 const Time = () => {
     const date = useCurrentDateEffect();

@@ -36,12 +36,12 @@ function baseHandler(req, res) {
   let location = req.headers['x-vercel-ip-city'] + ',' + req.headers['x-vercel-ip-country-region'] + ',' + req.headers['x-vercel-ip-country'];
 
   const weather = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&current_weather=true`;
-
- redirectView(req.query.view, res, latitude,longitude, location);
+let ip=req.ip;
+ redirectView(req.query.view, res, latitude,longitude, location,ip);
 
 }
 
-function redirectView(view, res, latitude,longitude, location) {
+function redirectView(view, res, latitude,longitude, location,ip) {
   switch (view) {
     case 'chatbot':
       res.redirect("https://siddh-kivtechs.github.io/menu_4/");

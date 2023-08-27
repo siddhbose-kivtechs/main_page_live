@@ -337,6 +337,51 @@ body input, body h1, body h3, body a, body span {
   margin-top: 15px;
   padding-top: 5px;
 }
+#app #ginel-section .menu-section-content {
+  display: flex;
+  gap: 1em;
+}
+#app #ginel-section .menu-section-content .ginel-card {
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  height: 14vw;
+  max-height: 240px;
+  position: relative;
+  transition: transform 250ms;
+  width: 25%;
+}
+#app #ginel-section .menu-section-content .ginel-card:hover {
+  transform: translateY(-5px);
+}
+#app #ginel-section .menu-section-content .ginel-card:hover .ginel-card-content .ginel-card-content-items {
+  margin-bottom: 30px;
+}
+#app #ginel-section .menu-section-content .ginel-card .ginel-card-content {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+#app #ginel-section .menu-section-content .ginel-card .ginel-card-content .ginel-card-content-items {
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  position: absolute;
+  right: 0px;
+  text-align: right;
+  transition: margin 250ms;
+}
+#app #ginel-section .menu-section-content .ginel-card .ginel-card-content .ginel-card-content-items .ginel-card-title {
+  color: whitesmoke;
+  font-size: 1.5em;
+}
+#app #ginel-section .menu-section-content .ginel-card .ginel-card-content .ginel-card-content-items .ginel-card-desc {
+  color: #42a5f5;
+  font-size: 0.9em;
+}
+
 #app #restaurants-section .menu-section-content {
   display: flex;
   gap: 1em;

@@ -1,16 +1,17 @@
-# node_api_app
-
-based on [ZERO API](https://github.com/siddht1/zero_api)
-
-# built on
-
-nodejs,express,cors
+# node_js_app
 
 
-# built
+based on [ZERO API](https://github.com/siddht1/zero_api)  to build our  [SITE](https://kivtechs.cloud/)
+
+# built with technology
+
+nodejs,express,cors,font-awsome,vercel,google-apis,vercel-apis,etc
+
+
+# built/Hosted by 
 
 vercel
 
 # purpose
 
-understanding nodejs  post and get handling 
+TO build our [KIVTECHS.cloud](https://kivtechs.cloud/)

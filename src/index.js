@@ -6,6 +6,7 @@ const path = require("path");
 const { v4: uuidv4 } = require('uuid');
 const { createClient } = require('@supabase/supabase-js');
 const crypto = require('crypto');
+const argon2 = require('argon2');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -81,42 +82,35 @@ function redirectView(view, res, headers, ip_address) {
 app.get('/chao', (req, res) => {
   res.redirect("https://siddh-kivtechs.github.io/menu_4/");
 });
-
 app.post("/", async (req, res) => {
   try {
     console.log("POST request received");
 
-    // Get the login data from the request body
     const { email, password } = req.body;
 
-    // Create an object with the login data
     const loginData = {
       email,
       password
     };
-    
-  // Hash the password using SHA-256
-  const passwordHash = crypto.createHash('sha256').update(loginData.password).digest('hex');
-      console.log('Password hash:', passwordHash);
-    
 
-  // Update the login data with the hashed password
-  loginData.password = passwordHash;
-     console.log('Updated login data:', loginData);
-    // Insert the login data into the Supabase table
+    const passwordHash = await argon2.hash(loginData.password);
+    console.log('Password hash:', passwordHash);
+
+    loginData.password = passwordHash;
+    console.log('Updated login data:', loginData);
+
     const { data, error } = await supabase.from('login').insert([loginData]);
 
     if (error) {
       console.error('Error inserting login data:', error);
-      res.status(500).send({code:500, error: 'Error inserting login data' });
+      res.status(500).send({ code: 500, error: 'Error inserting login data' });
     } else {
       console.log('Login data inserted successfully:', data);
       res.send(data);
     }
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
-    res.status(500).send({code:500, error: 'Internal Server ERROR' });
+    res.status(500).send({ code: 500, error: 'Internal Server ERROR' });
   }
 });
 
@@ -125,7 +119,7 @@ app.get("/logs", async (req, res) => {
 
   if (error) {
     console.error('Error retrieving logs:', error);
-    res.status(500).send({code:500, error: 'Error getting log data' });
+    res.status(500).send({ code: 500, error: 'Error getting log data' });
   } else {
     console.log('Logs retrieved successfully:', data);
     res.send(data);
@@ -135,3 +129,4 @@ app.get("/logs", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`API is listening on port ${PORT}`);
 });
+

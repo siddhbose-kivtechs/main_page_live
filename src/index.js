@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const ejs = require('ejs');
 const path = require("path");
-const { get, set } = require('@vercel/edge-config');
+// const { get, set } = require('@vercel/edge-config');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -32,11 +32,11 @@ async function baseHandler(req, res) {
   let ip_address = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
   // Store IP, user-agent, latitude, longitude, and place in the Edge Config database
-  await set('ip', ip_address);
-  await set('user-agent', req.headers['user-agent']);
-  await set('latitude', latitude);
-  await set('longitude', longitude);
-  await set('place', location);
+  // await set('ip', ip_address);
+  // await set('user-agent', req.headers['user-agent']);
+  // await set('latitude', latitude);
+  // await set('longitude', longitude);
+  // await set('place', location);
 
   redirectView(req.query.view, res, latitude, longitude, location, ip_address);
 }

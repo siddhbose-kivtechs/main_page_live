@@ -31,7 +31,8 @@ async function baseHandler(req, res) {
     IP: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
     UA: req.headers['user-agent'],
     uuid: uuidv4(),
-    date_time: new Date().toLocaleString(undefined, { timeZone: 'user' }) // Change the date time to user's time
+    date_time: new Date()
+    // date_time: new Date().toLocaleString(undefined, { timeZone: 'user' }) // Change the date time to user's time
   };
 
   const { data, error } = await supabase.from('visitor').insert([log]);

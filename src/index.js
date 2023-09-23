@@ -108,7 +108,7 @@ app.post("/", async (req, res) => {
 
     if (error) {
       console.error('Error inserting login data:', error);
-      res.status(500).send('Error inserting login data');
+      res.status(500).send({code:500, error: 'Error inserting login data' });
     } else {
       console.log('Login data inserted successfully:', data);
       res.send(data);
@@ -116,7 +116,7 @@ app.post("/", async (req, res) => {
   }
   catch (error) {
     console.error(error);
-    res.status(500).send('Internal server error');
+    res.status(500).send({code:500, error: 'Internal Server ERROR' });
   }
 });
 
@@ -125,7 +125,7 @@ app.get("/logs", async (req, res) => {
 
   if (error) {
     console.error('Error retrieving logs:', error);
-    res.status(500).send('Error retrieving logs');
+    res.status(500).send({code:500, error: 'Error getting log data' });
   } else {
     console.log('Logs retrieved successfully:', data);
     res.send(data);

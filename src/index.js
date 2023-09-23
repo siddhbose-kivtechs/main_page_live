@@ -58,6 +58,9 @@ function redirectView(view, res, latitude,longitude, location,ip_address) {
     case 'image_api':
       res.redirect("https://image.kivtechs.cloud/");
       break;
+    case 'login':
+      res.direct('https://siddh-kivtechs.github.io/login_sample/');
+      break;
     default:
       res.render('client', { latitude,longitude, location,ip_address });
   }

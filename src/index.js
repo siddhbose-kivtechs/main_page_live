@@ -81,11 +81,33 @@ app.get('/chao', (req, res) => {
   res.redirect("https://siddh-kivtechs.github.io/menu_4/");
 });
 
-app.post("/", (req, res) => {
-  console.log("POST request received");
-  let data = {};
-  data['POST'] = req.body;
-  res.send(data);
+app.post("/", async (req, res) => {
+  try {
+    console.log("POST request received");
+
+    // Get the login data from the request body
+    const { email, password } = req.body;
+
+    // Create an object with the login data
+    const loginData = {
+      email,
+      password
+    };
+
+    // Insert the login data into the Supabase table
+    const { data, error } = await supabase.from('login').insert([loginData]);
+
+    if (error) {
+      console.error('Error inserting login data:', error);
+      res.status(500).send('Error inserting login data');
+    } else {
+      console.log('Login data inserted successfully:', data);
+      res.send(data);
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal server error');
+  }
 });
 
 app.get("/logs", async (req, res) => {

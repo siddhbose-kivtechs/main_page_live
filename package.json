@@ -19,6 +19,7 @@
     "cors":"*",
     "ejs":"*",
     "@vercel/postgres": "^0.4.0",
-     "@supabase/supabase-js": "^2.26.0"
+     "@supabase/supabase-js": "^2.26.0",
+    "@vercel/edge-config": "^0.4.1"
   }
 }

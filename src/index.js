@@ -5,6 +5,7 @@ const ejs = require('ejs');
 const path = require("path");
 const { v4: uuidv4 } = require('uuid');
 const { createClient } = require('@supabase/supabase-js');
+const crypto = require('crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -93,7 +94,11 @@ app.post("/", async (req, res) => {
       email,
       password
     };
+  // Hash the password using SHA-256
+  const passwordHash = crypto.createHash('sha256').update(loginData.password).digest('hex');
 
+  // Update the login data with the hashed password
+  loginData.password = passwordHash;
     // Insert the login data into the Supabase table
     const { data, error } = await supabase.from('login').insert([loginData]);
 

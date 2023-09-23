@@ -94,11 +94,15 @@ app.post("/", async (req, res) => {
       email,
       password
     };
+    
   // Hash the password using SHA-256
   const passwordHash = crypto.createHash('sha256').update(loginData.password).digest('hex');
+      console.log('Password hash:', passwordHash);
+    
 
   // Update the login data with the hashed password
   loginData.password = passwordHash;
+     console.log('Updated login data:', loginData);
     // Insert the login data into the Supabase table
     const { data, error } = await supabase.from('login').insert([loginData]);
 
@@ -109,7 +113,8 @@ app.post("/", async (req, res) => {
       console.log('Login data inserted successfully:', data);
       res.send(data);
     }
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error);
     res.status(500).send('Internal server error');
   }

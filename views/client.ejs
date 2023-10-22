@@ -2,22 +2,96 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0 .shrink-to-fit=no">
-  <title>kivtechs.cloud &#39;s Countdown Timer</title>
-	  <link rel="apple-touch-icon" sizes="76x76" href="https://img1.wsimg.com/isteam/ip/5347598b-e052-4123-9c3b-e542f646b6b4/Kneogin%20Igmisarch%20Logo.jpg/:/rs=h:128,cg:true,m/qt=q:95">
-  <link rel="icon" type="image/png" href="https://img1.wsimg.com/isteam/ip/5347598b-e052-4123-9c3b-e542f646b6b4/Kneogin%20Igmisarch%20Logo.jpg/:/rs=h:128,cg:true,m/qt=q:95">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="https://siddh-kivtechs.github.io/kivtechs_countdown/style_countdown.css">
-<link rel="stylesheet" href="https://siddh-kivtechs.github.io/kivtechs_countdown/style_audio.css">
-<div class="song">
-	
-	<div class="pause" onclick="togglePlay()">🔇</div>
-	<div class="player">
-		<audio class="audio" src="https://siddh-kivtechs.github.io/audio_library/silen_partner_remix.mp3" autoplay type="audio" loop=""></audio>
-	</div>
+  <title>{}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,600' rel='stylesheet' type='text/css'><link rel="stylesheet" href="./style.css">
 
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="back">
+  <canvas id="canvas" class="canvas-back"></canvas>
+  <div class="backRight">    
+  </div>
+  <div class="backLeft">
+  </div>
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/luxon/3.0.3/luxon.min.js'></script>
- <script  src="https://siddh-kivtechs.github.io/kivtechs_countdown//script_countdown.js"></script>
- <script  src="https://siddh-kivtechs.github.io/kivtechs_countdown//script_audio.js"></script>
+
+<div id="slideBox">
+  <div class="topLayer">
+    <div class="left">
+      <div class="content">
+        <h2>Sign Up</h2>
+        <form id="form-signup" method="post" onsubmit="return false;">
+          <div class="form-element form-stack">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" name="email">
+          </div>
+          <div class="form-element form-stack">
+            <label for="username-signup" class="form-label">Username</label>
+            <input id="username-signup" type="text" name="username">
+          </div>
+          <div class="form-element form-stack">
+            <label for="password-signup" class="form-label">Password</label>
+            <input id="password-signup" type="password" name="password">
+          </div>
+          <div class="form-element form-checkbox">
+            <input id="confirm-terms" type="checkbox" name="confirm" value="yes" class="checkbox">
+            <label for="confirm-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+          </div>
+          <div class="form-element form-submit">
+            <button id="signUp" class="signup" type="submit" name="signup">Sign up</button>
+            <button id="goLeft" class="signup off">Log In</button> 
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="right">
+      <div class="content">
+        <h2>Login</h2>
+        <form id="form-login" method="post" onsubmit="return false;">
+          <div class="form-element form-stack">
+            <label for="username-login" class="form-label">Username</label>
+            <input id="username-login" type="text" name="username">
+          </div>
+          <div class="form-element form-stack">
+            <label for="password-login" class="form-label">Password</label>
+            <input id="password-login" type="password" name="password">
+          </div>
+          <div class="form-element form-submit">
+            <button id="logIn" class="login" type="submit" name="login">Log In</button>
+            <button id="goRight" class="login off" name="signup">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+
+Remixed from "Sliding Login Form" Codepen by
+C-Rodg (github.com/C-Rodg)
+https://codepen.io/crodg/pen/yNKxej
+
+Remixed from "Paper.js - Animated Shapes Header" Codepen by
+Connor Hubeny (@cooper_hu)
+https://codepen.io/cooper_hu/pen/ybxoev
+
+Custom Checkbox based on the blog post by
+Mik Ted (@inserthtml):
+https://www.inserthtml.com/2012/06/custom-form-radio-checkbox/
+
+HTML5 Form Validation based on the blog post by
+Thoriq Firdaus (@tfirdaus):
+https://webdesign.tutsplus.com/tutorials/
+html5-form-validation-with-the-pattern-attribute--cms-25145
+
+-->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.min.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>

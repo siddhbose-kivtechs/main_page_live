@@ -17,6 +17,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
+const dashEjsPath = path.join(__dirname, "../views/dash.ejs");
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
@@ -24,6 +25,18 @@ app.use(bodyParser.json({ limit: '1mb' }));
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 
 app.get("/", baseHandler);
+// Add path to for /dashboard/admin,/dashboard/kaushik and /dashboard/sohini
+// Add path to for /dashboard/admin,/dashboard/kaushik and /dashboard/sohini
+// and open dash.ejs
+app.get("/dashboard/admin", async (req, res) => {
+  res.render(dashEjsPath, { name: 'Admin' ,account:'Admin Account',img:''});
+});
+app.get("/dashboard/kaushik", async (req, res) => {
+  res.render(dashEjsPath, { name: 'Kaushik',account:'Kaushik Neogi Account',img:'' });
+});
+app.get("/dashboard/sohini", async (req, res) => {
+  res.render(dashEjsPath, { name: 'Sohini',account:'Sohini Neogi Account',img:'' });
+});
 
 async function baseHandler(req, res) {
   const log = {

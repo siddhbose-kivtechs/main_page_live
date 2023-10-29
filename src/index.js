@@ -29,13 +29,13 @@ app.get("/", baseHandler);
 // Add path to for /dashboard/admin,/dashboard/kaushik and /dashboard/sohini
 // and open dash.ejs
 app.get("/dashboard/admin", async (req, res) => {
-  res.render(dashEjsPath, { name: 'Admin' ,account:'Admin Account',img:''});
+  res.render(dashEjsPath, { name: 'Admin' ,account:'Admin Account',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces/admin.png'});
 });
 app.get("/dashboard/kaushik", async (req, res) => {
-  res.render(dashEjsPath, { name: 'Kaushik',account:'Kaushik Neogi Account',img:'' });
+  res.render(dashEjsPath, { name: 'Kaushik',account:'Kaushik Neogi Account',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces/kaushik_neogi.jpeg' });
 });
 app.get("/dashboard/sohini", async (req, res) => {
-  res.render(dashEjsPath, { name: 'Sohini',account:'Sohini Neogi Account',img:'' });
+  res.render(dashEjsPath, { name: 'Sohini',account:'Sohini Neogi Account',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces/sohini_neogi.jpeg' });
 });
 
 async function baseHandler(req, res) {

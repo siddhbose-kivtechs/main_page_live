@@ -18,6 +18,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 const dashEjsPath = path.join(__dirname, "../views/dash.ejs");
+const catalogueEjsPath=path.join(__dirname, "../views/catalogue.ejs");
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
@@ -36,6 +37,9 @@ app.get("/dashboard/kaushik", async (req, res) => {
 });
 app.get("/dashboard/sohini", async (req, res) => {
   res.render(dashEjsPath, { name: 'Sohini',account:'Sohini Neogi Account',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces/sohini_neogi.jpeg' });
+});
+app.get("/dashboard/catalogue", async (req, res) => {
+  res.render(catalogueEjsPath, {});
 });
 
 async function baseHandler(req, res) {

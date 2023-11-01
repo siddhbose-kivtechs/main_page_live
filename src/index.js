@@ -38,7 +38,7 @@ app.get("/dashboard/kaushik", async (req, res) => {
 app.get("/dashboard/sohini", async (req, res) => {
   res.render(dashEjsPath, { name: 'Sohini',account:'Sohini Neogi Account',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces/sohini_neogi.jpeg' });
 });
-app.get("/dashboard/catalogue/*", async (req, res) => {
+app.get("/dashboard/catalog/*", async (req, res) => {
   res.render(catalogueEjsPath, {name:name,account:user,img:'https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png'});
 });
 app.get("/dashboard/user", async (req, res) => {

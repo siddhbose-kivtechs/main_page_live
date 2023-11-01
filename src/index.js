@@ -18,7 +18,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 const dashEjsPath = path.join(__dirname, "../views/dash.ejs");
-const catalogueEjsPath=path.join(__dirname, "../views/catalogue.ejs");
+const catalogueEjsPath=path.join(__dirname, "../views/catlog.ejs");
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());

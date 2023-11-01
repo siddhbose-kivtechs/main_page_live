@@ -214,7 +214,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="https://kivtechs.cloud/dashboard/">
                             <span class="menu-title">Kivtechs.cloud |
                                 <%= name %> PANEL</span>
                             <i class="mdi mdi-home menu-icon"></i>
@@ -229,8 +229,7 @@
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="https://catalona.kivtechs.cloud/">Catlona 3A</a></li>
-                                <li class="nav-item"> <a class="nav-link" href=" https://project-catalona-zeta.vercel.app/">Catlona 3B</a></li>
-                               
+                                <li class="nav-item"> <a class="nav-link" href="https://project-catalona-zeta.vercel.app/">Catlona 3B</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="https://chatbot-ct3.vercel.app/">Catlona 3C</a></li>
                             </ul>
                         </div>
@@ -254,7 +253,7 @@
                                 <li class="nav-item"> <a class="nav-link" href=""> DALLE </a></li>
                                 <li class="nav-item"> <a class="nav-link" href=""> 3.5 turbo instruct </a></li>
                                 <li class="nav-item"> <a class="nav-link" href=""> Playground </a></li>
-                                 <li class="nav-item"> <a class="nav-link" href=""> Whisper </a></li>
+                                <li class="nav-item"> <a class="nav-link" href=""> Whisper </a></li>
                             </ul>
                         </div>
                     </li>
@@ -286,224 +285,46 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">ADMIN</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">DASHBOARD</li>
+                                <li class="breadcrumb-item active" aria-current="page">CATALOGUE</li>
                             </ol>
                         </nav>
-                    </div>
-                    <div class="col-lg-12 stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Deployment</h4>
-                                <p class="card-description">[INFO] <code>{info}</code>
-                                </p>
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th> # </th>
-                                            <th> DEPLOYMENT </th>
-                                            <th> Product </th>
-                                            <th> Token </th>
-                                            <th> Models </th>
-                                            <th> Region </th>
-                                            <th> Endpoint </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="table-info">
-                                            <td> 1 </td>
-                                            <td> genos </td>
-                                            <td> {product_genos} </td>
-                                            <td> {token_genos_used} </td>
-                                            <td> {model_genos_deployed} </td>
-                                            <td> East US </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="table-warning">
-                                            <td> 2 </td>
-                                            <td> ginel-gpt </td>
-                                            <td> {product_ginel} </td>
-                                            <td> {token_ginel_used} </td>
-                                            <td> {model_ginel_deployed} </td>
-                                            <td> East US</td>
-                                            <td> </td>
-                                        </tr>
-                                        <tr class="table-danger">
-                                            <td> 3 </td>
-                                            <td> hilltop </td>
-                                            <td> {product_hilltop} </td>
-                                            <td> {token_hilltop_used} </td>
-                                            <td> {model_hilltop_deployed} </td>
-                                            <td> North Central US</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="table-success">
-                                            <td> 4 </td>
-                                            <td> tacos </td>
-                                            <td> {product_tacos} </td>
-                                            <td> {token_tacos_used} </td>
-                                            <td> {model_tacos_deployed} </td>
-                                            <td> East US</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="table-primary">
-                                            <td> 5 </td>
-                                            <td> tamale </td>
-                                            <td> {product_tamale} </td>
-                                            <td> {token_tamale_used} </td>
-                                            <td> {model_tamale_deployed} </td>
-                                            <td> canadaeast</td>
-                                            <td> </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title"> USERS</h4>
-                                <p class="card-description"> RESOURCE GROUP <code>{entire_info}</code>
-                                </p>
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th> User </th>
-                                            <th> User Name </th>
-                                            <th> Resource Utilized </th>
-                                            <th> Amount(USD) </th>
-                                            <th> Amount(INR) </th>
-                                            <th> Plan </th>
-                                            <th> Organization</th>
-                                            <th> Access to </th>
-                                            <th> UUID</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="py-1">
-                                                <img src="https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png" alt="image" />
-                                            </td>
-                                            <td> [Person #1] </td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td> $ 77.99 </td>
-                                            <td> </td>
-                                            <td> {PLAN_TRIAL_30_days} </td>
-                                            <td> {ORG_ULID} </td>
-                                            <td> GINEL-GPT </td>
-                                            <td> {USER_ULID}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-1">
-                                                <img src="https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-2.png" alt="image" />
-                                            </td>
-                                            <td> [Person #2] </td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td> $245.30 </td>
-                                            <td> </td> 
-                                            <td> {PLAN_TRIAL_30_days} </td>
-                                            <td> {ORG_ULID} </td>
-                                            <td> GINEL-GPT </td>
-                                            <td> {USER_ULID}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-1">
-                                                <img src="https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-3.png" alt="image" />
-                                            </td>
-                                            <td> [Person #3] </td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td> $138.00 </td>
-                                            <td></td>
-                                            <td> {PLAN_TRIAL_30_days} </td>
-                                            <td> {ORG_ULID} </td>
-                                            <td> GINEL-GPT </td>
-                                            <td> {USER_ULID}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-1">
-                                                <img src="https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-4.png" alt="image" />
-                                            </td>
-                                            <td> [Person #4] </td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td> $ 77.99 </td>
-                                            <td> </td> 
-                                            <td> {PLAN_TRIAL_30_days} </td>
-                                            <td> {ORG_ULID} </td>
-                                            <td> GINEL-GPT </td>
-                                            <td> {USER_ULID}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-1">
-                                                <img src="https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png" alt="image" />
-                                            </td>
-                                            <td> [Person #11]</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td> $ 160.25 </td>
-                                            <td> </td>
-                                            <td> {PLAN_TRIAL_30_days} </td>
-                                            <td> {ORG_ULID} </td>
-                                            <td> GENOS</td>
-                                            <td> {USER_ULID}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-1">
-                                                <img src="https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-2.png" alt="image" />
-                                            </td>
-                                            <td> [Person #16]</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td> $ 123.21 </td>
-                                            <td> </td>
-                                            <td> {PLAN_TRIAL_30_days} </td>
-                                            <td> {ORG_ULID} </td>
-                                            <td> GENOS </td>
-                                            <td> {USER_ULID}</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-1">
-                                                <img src="https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-3.png" alt="image" />
-                                            </td>
-                                            <td> [Person #87] </td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td> $ 150.00 </td>
-                                            <td> </td>
-                                            <td> {PLAN_TRIAL_30_days} </td>
-                                            <td> {ORG_ULID} </td>
-                                            <td> TAMALE </td>
-                                            <td> {USER_ULID}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    </div>   
+   <div class="row">
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3"> CHATBOT AI<i class="<svg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 640 512'><path d='M86.344,197.834a51.767,51.767,0,0,0-41.57,20.058V156.018a8.19,8.19,0,0,0-8.19-8.19H8.19A8.19,8.19,0,0,0,0,156.018V333.551a8.189,8.189,0,0,0,8.19,8.189H36.584a8.189,8.189,0,0,0,8.19-8.189v-8.088c11.628,13.373,25.874,19.769,41.573,19.769,34.6,0,61.922-26.164,61.922-73.843C148.266,225.452,121.229,197.834,86.344,197.834ZM71.516,305.691c-9.593,0-21.221-4.942-26.745-12.5V250.164c5.528-7.558,17.152-12.791,26.745-12.791,17.734,0,31.107,13.082,31.107,34.013C102.623,292.609,89.25,305.691,71.516,305.691Zm156.372-59.032a17.4,17.4,0,1,0,17.4,17.4A17.4,17.4,0,0,0,227.888,246.659ZM273.956,156.7V112.039a13.308,13.308,0,1,0-10.237,0V156.7a107.49,107.49,0,1,0,10.237,0Zm85.993,107.367c0,30.531-40.792,55.281-91.112,55.281s-91.111-24.75-91.111-55.281,40.792-55.281,91.111-55.281S359.949,233.532,359.949,264.062Zm-50.163,17.4a17.4,17.4,0,1,0-17.4-17.4h0A17.4,17.4,0,0,0,309.786,281.466ZM580.7,250.455c-14.828-2.617-22.387-3.78-22.387-9.885,0-5.523,7.268-9.884,17.735-9.884a65.56,65.56,0,0,1,34.484,10.1,8.171,8.171,0,0,0,11.288-2.468c.07-.11.138-.221.2-.333l8.611-14.886a8.2,8.2,0,0,0-2.867-11.123,99.863,99.863,0,0,0-52.014-14.138c-38.956,0-60.179,21.514-60.179,46.225,0,36.342,33.725,41.864,57.563,45.642,13.373,2.326,24.13,4.361,24.13,11.048,0,6.4-5.523,10.757-18.9,10.757-13.552,0-30.994-6.222-42.623-13.579a8.206,8.206,0,0,0-11.335,2.491c-.035.054-.069.108-.1.164l-10.2,16.891a8.222,8.222,0,0,0,2.491,11.066c15.224,10.3,37.663,16.692,59.441,16.692,40.409,0,63.957-19.769,63.957-46.515C640,260.63,604.537,254.816,580.7,250.455Zm-95.928,60.787a8.211,8.211,0,0,0-9.521-5.938,23.168,23.168,0,0,1-4.155.387c-7.849,0-12.5-6.106-12.5-14.245V240.28h20.349a8.143,8.143,0,0,0,8.141-8.143V209.466a8.143,8.143,0,0,0-8.141-8.143H458.594V171.091a8.143,8.143,0,0,0-8.143-8.143H422.257a8.143,8.143,0,0,0-8.143,8.143h0v30.232H399a8.143,8.143,0,0,0-8.143,8.143h0v22.671A8.143,8.143,0,0,0,399,240.28h15.115v63.667c0,27.037,15.408,41.282,43.9,41.282,12.183,0,21.383-2.2,27.6-5.446a8.161,8.161,0,0,0,4.145-9.278Z'/></svg>"></i>
+                    </h4>
+                    <h2 class="mb-5"> {amt_1}</h2>
+                    <h6 class="card-text"> {Test account:10,000 tokens}</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-info card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3"> IMAGE MAKER AI <i class="mdi mdi-file-image float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">{amt_img}</h2>
+                    <h6 class="card-text">{info_img}</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-success card-img-holder text-white">
+                  <div class="card-body">
+                    <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3"> WHISPER AI <i class=" mdi mdi-audiobook  mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">{amt_whis}</h2>
+                    <h6 class="card-text">{info_whis}</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  </div>
                 </div>
             </div>
             <!-- partial -->
@@ -543,3 +364,5 @@
 </body>
 
 </html>
+
+            

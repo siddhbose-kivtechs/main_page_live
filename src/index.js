@@ -7,6 +7,17 @@ const { v4: uuidv4 } = require('uuid');
 const { createClient } = require('@supabase/supabase-js');
 const argon2 = require('argon2');
 const crypto = require('crypto');
+const { auth } = require('express-openid-connect');
+const { requiresAuth } = require('express-openid-connect');
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET_KEY,
+  baseURL: 'https://kivtechs.cloud',
+  clientID: 'jwCp0UAPRgK5pt2jFcGidmczq21V5s5G',
+  issuerBaseURL: 'https://dev-6vgfyg6zz8tzst3g.us.auth0.com'
+};
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -46,6 +57,7 @@ app.get("/dashboard/user", async (req, res) => {
 });
 
 async function baseHandler(req, res) {
+   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
   const log = {
     lat: req.headers['x-vercel-ip-latitude'],
     lon: req.headers['x-vercel-ip-longitude'],
@@ -145,6 +157,20 @@ app.get("/logs", async (req, res) => {
     console.log('Logs retrieved successfully:', data);
     res.json(data); // Send the logs data as JSON
   }
+});
+
+app.all("/login", (req, res) => {  
+    res.redirect("https://kivtechs.cloud/login");
+
+}
+app.all("/logout", (req, res) => {  
+    res.redirect("https://kivtechs.cloud/logout");
+
+
+}
+
+app.all('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
 });
 
 app.listen(PORT, () => {

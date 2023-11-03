@@ -9,6 +9,7 @@ const argon2 = require('argon2');
 const crypto = require('crypto');
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
+const { attemptSilentLogin } = require('express-openid-connect');
 
 const config = {
   authRequired: false,
@@ -36,7 +37,7 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 
-app.get("/", baseHandler);
+app.get("/",attemptSilentLogin(), ,baseHandler);
 // Add path to for /dashboard/admin,/dashboard/kaushik and /dashboard/sohini
 // Add path to for /dashboard/admin,/dashboard/kaushik and /dashboard/sohini
 // and open dash.ejs

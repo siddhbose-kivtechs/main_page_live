@@ -162,12 +162,12 @@ app.get("/logs", async (req, res) => {
 app.all("/login", (req, res) => {  
     res.redirect("https://kivtechs.cloud/login");
 
-}
+});
 app.all("/logout", (req, res) => {  
     res.redirect("https://kivtechs.cloud/logout");
 
 
-}
+});
 
 app.all('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));

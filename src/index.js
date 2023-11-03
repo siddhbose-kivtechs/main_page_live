@@ -57,7 +57,7 @@ app.get("/dashboard/user", async (req, res) => {
 });
 
 async function baseHandler(req, res) {
-   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+   // res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
   const log = {
     lat: req.headers['x-vercel-ip-latitude'],
     lon: req.headers['x-vercel-ip-longitude'],

@@ -163,12 +163,12 @@ app.get("/logs", async (req, res) => {
 
 app.all("/login", (req, res) => {  
     // res.redirect("https://kivtechs.cloud/login");
-  res.redirect(https://auth.kivtechs.cloud/login);
+  res.redirect('https://auth.kivtechs.cloud/login');
 
 });
 app.all("/logout", (req, res) => {  
     // res.redirect("https://kivtechs.cloud/logout");
-   res.redirect(https://auth.kivtechs.cloud/logout);
+   res.redirect('https://auth.kivtechs.cloud/logout');
 
 
 });

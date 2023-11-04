@@ -54,7 +54,9 @@ app.get("/dashboard/catalog/*", async (req, res) => {
   res.render(catalogueEjsPath, {name:name,account:user,img:'https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png'});
 });
 app.get("/dashboard/user", async (req, res) => {
-  res.render(dashEjsPath, { name: 'User' ,account:'User',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png'});
+  // res.render(dashEjsPath, { name: 'User' ,account:'User',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png'});
+    // redirect to user Dashboard 
+      res.redirect('https://user.kivtechs.cloud/');
 });
 
 async function baseHandler(req, res) {

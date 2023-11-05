@@ -230,14 +230,10 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="https://catalona.kivtechs.cloud/">Catlona 3A</a></li>
                                 <li class="nav-item"> <a class="nav-link" href=" https://project-catalona-zeta.vercel.app/">Catlona 3B</a></li>
-                               
                                 <li class="nav-item"> <a class="nav-link" href="https://chatbot-ct3.vercel.app/">Catlona 3C</a></li>
-                                
-                         <li class="nav-item"> <a class="nav-link" href="https://panelproject.kivtechs.cloud/"> Panel Project </a></li>
-                         <li class="nav-item"> <a class="nav-link" href="https://chatgpt-vercel-image.vercel.app/">Chatbot + DALLE </a></li>
-                           <li class="nav-item"> <a class="nav-link" href="https://cat-lon-d.vercel.app"> CATLON DEDICATED </a></li>
-
-                                
+                                <li class="nav-item"> <a class="nav-link" href="https://panelproject.kivtechs.cloud/"> Panel Project </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="https://chatgpt-vercel-image.vercel.app/">Chatbot + DALLE </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="https://cat-lon-d.vercel.app"> CATLON DEDICATED </a></li>
                             </ul>
                         </div>
                     </li>
@@ -260,7 +256,7 @@
                                 <li class="nav-item"> <a class="nav-link" href=""> DALLE </a></li>
                                 <li class="nav-item"> <a class="nav-link" href=""> 3.5 turbo instruct </a></li>
                                 <li class="nav-item"> <a class="nav-link" href=""> Playground </a></li>
-                                 <li class="nav-item"> <a class="nav-link" href=""> Whisper </a></li>
+                                <li class="nav-item"> <a class="nav-link" href=""> Whisper </a></li>
                             </ul>
                         </div>
                     </li>
@@ -269,16 +265,16 @@
                             <div class="border-bottom">
                                 <h6 class="font-weight-normal mb-3"></h6>
                             </div>
-                            <button class="btn btn-block btn-lg btn-gradient-primary mt-4"> Try  </button>
+                            <button class="btn btn-block btn-lg btn-gradient-primary mt-4"> Try </button>
                             <div class="mt-4">
                                 <div class="border-bottom">
                                     <p class="text-secondary">Status</p>
                                 </div>
                                 <ul class="gradient-bullet-list mt-4">
-                                    <li> 3.5</li>
-                                    <li> 4</li>
-                                    <li>  Dalle</li>
-                                    <li> Whisper </li>
+                                    <li> Whisper</li>
+                                    <li> DALLE</li>
+                                    <li> GPT-4</li>
+                                    <li>  GPT-3-GROUP</li>
                                 </ul>
                             </div>
                         </span>
@@ -301,15 +297,32 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Deployment</h4>
-                                <p class="card-description">[INFO] <code>{info}</code>
+                                <p class="card-description-a">
+                                    LIVE <code>SERVER:CONNECTED</code>
                                 </p>
+                                <style>
+                                    @keyframes blink {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .card-description-a code {
+    color: green;
+    animation: blink 1s infinite;
+  }
+</style>
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
                                             <th> # </th>
                                             <th> DEPLOYMENT </th>
                                             <th> Product </th>
-                                            <th> Token </th>
+                                            <th> Token LIMIT</th>
                                             <th> Models </th>
                                             <th> Region </th>
                                             <th> Endpoint </th>
@@ -319,45 +332,45 @@
                                         <tr class="table-info">
                                             <td> 1 </td>
                                             <td> genos </td>
-                                            <td> {product_genos} </td>
-                                            <td> {token_genos_used} </td>
-                                            <td> {model_genos_deployed} </td>
+                                            <td> [CHATBOT,CHATBOT+IMAGE GENERATOR] </td>
+                                            <td> 120000 </td>
+                                            <td> [35-turbo,35-turbo-0601,35-turbo-16K,35,turbo-instruct,DALLE] </td>
                                             <td> East US </td>
                                             <td></td>
                                         </tr>
                                         <tr class="table-warning">
                                             <td> 2 </td>
                                             <td> ginel-gpt </td>
-                                            <td> {product_ginel} </td>
-                                            <td> {token_ginel_used} </td>
-                                            <td> {model_ginel_deployed} </td>
+                                            <td> [CHATBOT,CHATBOT+IMAGE GENERATOR]  </td>
+                                            <td> 120000 </td>
+                                            <td> [35-turbo,35-turbo-0601,35-turbo-16K,35,turbo-instruct,DALLE] </td>
                                             <td> East US</td>
                                             <td> </td>
                                         </tr>
                                         <tr class="table-danger">
                                             <td> 3 </td>
                                             <td> hilltop </td>
-                                            <td> {product_hilltop} </td>
-                                            <td> {token_hilltop_used} </td>
-                                            <td> {model_hilltop_deployed} </td>
+                                            <td> AI/TEXT/SPEECH</td>
+                                            <td>  </td>
+                                            <td> WHISPER</td>
                                             <td> North Central US</td>
                                             <td></td>
                                         </tr>
                                         <tr class="table-success">
                                             <td> 4 </td>
-                                            <td> tacos </td>
-                                            <td> {product_tacos} </td>
-                                            <td> {token_tacos_used} </td>
-                                            <td> {model_tacos_deployed} </td>
+                                            <td> tamale </td>
+                                            <td> [CHATBOT] </td>
+                                            <td> 52000 </td>
+                                            <td> [GPT-4,GPT-4-32K] </td>
                                             <td> East US</td>
                                             <td></td>
                                         </tr>
                                         <tr class="table-primary">
                                             <td> 5 </td>
-                                            <td> tamale </td>
-                                            <td> {product_tamale} </td>
+                                            <td> tacos</td>
+                                            <td> [CHATBOT] </td>
                                             <td> {token_tamale_used} </td>
-                                            <td> {model_tamale_deployed} </td>
+                                            <td> [35-turbo,35-turbo-0601,35-turbo-16K,35,turbo-instruct,DALLE] </td>
                                             <td> canadaeast</td>
                                             <td> </td>
                                         </tr>
@@ -370,7 +383,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title"> USERS</h4>
-                                <p class="card-description"> RESOURCE GROUP <code>{entire_info}</code>
+                                <p class="card-description"> RESOURCE GROUP <code>INFO</code>
                                 </p>
                                 <table class="table table-striped">
                                     <thead>
@@ -415,7 +428,7 @@
                                                 </div>
                                             </td>
                                             <td> $245.30 </td>
-                                            <td> ₹ 20415.77</td> 
+                                            <td> ₹ 20415.77</td>
                                             <td> {PLAN_TRIAL_30_days} </td>
                                             <td> {ORG_ULID} </td>
                                             <td> GINEL-GPT </td>
@@ -449,7 +462,7 @@
                                                 </div>
                                             </td>
                                             <td> $ 77.99 </td>
-                                            <td> ₹ 6490.93</td> 
+                                            <td> ₹ 6490.93</td>
                                             <td> {PLAN_TRIAL_30_days} </td>
                                             <td> {ORG_ULID} </td>
                                             <td> GINEL-GPT </td>
@@ -511,6 +524,138 @@
                             </div>
                         </div>
                     </div>
+                        <div class="row">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">STATUS</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th> CLIENT </th>
+                            <th> SERVER </th>
+                            <th> Status </th>
+                            <th> Last Update </th>
+                            <th> Tracking </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <img src="assets/images/faces/face1.jpg" class="me-2" alt="image"> CATLON-A
+                            </td>
+                            <td> RELAY SERVER 1 </td>
+                            <td>
+                              <label class="badge badge-gradient-success">CONNECTED</label>
+                            </td>
+                            <td> </td>
+                            <td> WD-12345 </td>
+                          </tr>
+                                 <tr>
+                            <td>
+                              <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> GINEL
+                            </td>
+                            <td> GINEL </td>
+                            <td>
+                              <label class="badge badge-gradient-warning">CONNECTING</label>
+                            </td>
+                            <td>  </td>
+                            <td> WD-12346 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> CATLON-B
+                            </td>
+                            <td> RELAY SERVER 2 </td>
+                            <td>
+                              <label class="badge badge-gradient-success">CONNECTED</label>
+                            </td>
+                            <td> </td>
+                            <td> WD-12399 </td>
+                          </tr>
+                          <tr>
+                                <tr>
+                            <td>
+                              <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> GENOS
+                            </td>
+                            <td> GENOS </td>
+                            <td>
+                              <label class="badge badge-gradient-warning">CONNECTING</label>
+                            </td>
+                            <td>  </td>
+                            <td> WD-12399 </td>
+                          </tr>
+                                 <tr>
+                            <td>
+                              <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> CATLON-C
+                            </td>
+                            <td> RELAY SERVER 3 </td>
+                            <td>
+                              <label class="badge badge-gradient-success">CONNECTED</label>
+                            </td>
+                            <td> </td>
+                            <td> WD-12379 </td>
+                          </tr>
+                          <tr>
+                                <tr>
+                            <td>
+                              <img src="assets/images/faces/face2.jpg" class="me-2" alt="image"> TAMALE
+                            </td>
+                            <td> TAMALE </td>
+                            <td>
+                              <label class="badge badge-gradient-warning">CONNECTING</label>
+                            </td>
+                            <td>  </td>
+                            <td> WD-12348 </td>
+                          </tr>
+                                  <td>
+                              <img src="assets/images/faces/face3.jpg" class="me-2" alt="image"> DALLE
+                            </td>
+                            <td> </td>
+                            <td>
+                              <label class="badge badge-gradient-info">ON HOLD</label>
+                            </td>
+                            <td> </td>
+                            <td> WD-12347 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src="assets/images/faces/face4.jpg" class="me-2" alt="image"> RELAY SERVER 1
+                            </td>
+                            <td>GINEL </td>
+                            <td>
+                              <label class="badge badge-gradient-danger"> CONNECTION FAILED </label>
+                            </td>
+                            <td> </td>
+                            <td> WD-12348 </td>
+                          </tr>
+                                <td>
+                              <img src="assets/images/faces/face4.jpg" class="me-2" alt="image"> RELAY SERVER 2
+                            </td>
+                            <td>GENOS </td>
+                            <td>
+                              <label class="badge badge-gradient-danger"> CONNECTION FAILED </label>
+                            </td>
+                            <td> </td>
+                            <td> WD-12349 </td>
+                          </tr>
+                                <td>
+                              <img src="assets/images/faces/face4.jpg" class="me-2" alt="image"> RELAY SERVER 3
+                            </td>
+                            <td>TACOS </td>
+                            <td>
+                              <label class="badge badge-gradient-danger"> CONNECTION FAILED </label>
+                            </td>
+                            <td> </td>
+                            <td> WD-12351 </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+        
                 </div>
             </div>
             <!-- partial -->

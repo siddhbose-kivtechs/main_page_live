@@ -56,7 +56,7 @@ app.get("/dashboard/catalog/*", async (req, res) => {
 app.get("/dashboard/user", async (req, res) => {
   // res.render(dashEjsPath, { name: 'User' ,account:'User',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png'});
     // redirect to user Dashboard 
-      res.redirect('https://user.kivtechs.cloud/');
+      res.redirect('https://auth.kivtechs.cloud/register');
 });
 
 async function baseHandler(req, res) {

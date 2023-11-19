@@ -14,10 +14,10 @@ const { attemptSilentLogin } = require('express-openid-connect');
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: process.env.SECRET_KEY,
-  baseURL: 'https://kivtechs.cloud',
-  clientID: 'jwCp0UAPRgK5pt2jFcGidmczq21V5s5G',
-  issuerBaseURL: 'https://dev-6vgfyg6zz8tzst3g.us.auth0.com'
+  secret: process.env.AUTHO_secret,
+  baseURL: process.env.AUTHO_baseURL,
+  clientID: process.env.AUTHO_CLIENT_ID,
+  issuerBaseURL: process.env.AUTHO_BASEURI_issuer
 };
 
 const app = express();
@@ -29,18 +29,45 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
-const dashEjsPath = path.join(__dirname, "../views/dash.ejs");
-const catalogueEjsPath=path.join(__dirname, "../views/catalog.ejs");
+const admindashEjsPath = path.join(__dirname, "../views/admindash.ejs");
+const admincatalogueEjsPath=path.join(__dirname, "../views/admincatalog.ejs");
+const dashEjsPath=path.join(__dirname, "../views/admindash.ejs");
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 app.use(bodyParser.json({ limit: '1mb' }));
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }));
 
-app.get("/", baseHandler);
-// Add path to for /dashboard/admin,/dashboard/kaushik and /dashboard/sohini
-// Add path to for /dashboard/admin,/dashboard/kaushik and /dashboard/sohini
-// and open dash.ejs
+// app.get("/", userhandler);
+app.get('/', (req, res) => {
+  if (req.oidc.isAuthenticated()) {
+    const user = req.oidc.user;
+    console.log(user);
+    res.render(dashEjsPath, { user }); // Render the dashboard for logged-in users
+  } else {
+    res.redirect('/login'); // Redirect non-logged-in users to the login page
+  }
+});
+
+app.get('/profile', requiresAuth(), (req, res) => {
+  console.log(req.oidc);
+  res.send(JSON.stringify(req.oidc.user));
+});
+
+// Protected route that requires authentication
+app.get('/protected', (req, res) => {
+   console.log(req.oidc);
+  if (req.oidc.isAuthenticated()) {
+    // User is authenticated, access protected resource
+    res.send('Access to protected resource granted');
+     console.log(req.oidc);
+  } else {
+    // User is not authenticated, redirect to login
+    res.redirect('/login');
+     console.log(req.oidc);
+  }
+});
+
 app.get("/dashboard/admin", async (req, res) => {
   res.render(dashEjsPath, { name: 'Admin' ,account:'Admin Account',img:'https://siddht1.github.io/dashboard_p1/assets/images/faces/admin.png'});
 });
@@ -60,9 +87,7 @@ app.get("/dashboard/user", async (req, res) => {
 });
 
 async function baseHandler(req, res) {
-     // res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-     //  res.locals.user = req.oidc.user;
-     //  next();
+
   const log = {
     lat: req.headers['x-vercel-ip-latitude'],
     lon: req.headers['x-vercel-ip-longitude'],

@@ -70,11 +70,21 @@ app.get('/admin',(req, res) => {
    res.render(adminloginEjsPath);
 });
 app.all('/admin/dash',(req, res) => {
+    let user;
+
   const dummyUser = {
   picture: "https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png",
   name: "Test User",
   email: "test.user@kivtechs.cloud"
 };
+  
+  // Try to retrieve the user from the request object
+  if (req.user) {
+    user = req.user;
+  } else {
+    // Use dummyUser as a fallback
+    user = dummyUser;
+  }
 const picture = user.picture || dummyUser.picture;
 const name = user.name || dummyUser.name;
 const email = user.email || dummyUser.email;

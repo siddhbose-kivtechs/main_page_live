@@ -27,7 +27,8 @@ const config = {
 };
 
 const app = express();
-app.use(morgan('combined', { stream: fs.createWriteStream('access.log') })); // Log requests to a file instead of the console
+app.use(morgan('combined'));
+// app.use(morgan('combined', { stream: fs.createWriteStream('access.log') })); // Log requests to a file instead of the console
 app.use(helmet());
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL

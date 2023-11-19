@@ -56,6 +56,10 @@ app.get('/protected', requiresAuth(), (req, res) => {
   console.log(req.oidc);
 });
 
+app.get('/admin',(req, res) => {
+   res.render(dashEjsPath, { user });
+});
+
 // Not protected route
 app.get('/', (req, res) => {
   if (req.oidc.isAuthenticated()) {

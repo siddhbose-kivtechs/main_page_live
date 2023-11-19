@@ -30,14 +30,14 @@ const app = express();
 app.use(morgan('combined'));
 // app.use(morgan('combined', { stream: fs.createWriteStream('access.log') })); // Log requests to a file instead of the console
 // app.use(helmet());
-// app.use(helmet({
-//   contentSecurityPolicy: {
-//     directives: {
-//       'img-src': ['self', 'data:', 'https://siddh-kivtechs.github.io','https://lh3.googleusercontent.com/','https://siddht1.github.io'],
-//       'script-src': ['self', 'https://siddh-kivtechs.github.io','https://siddht1.github.io'],
-//     },
-//   },
-// }));
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      'img-src': ['self', 'data:', 'https://siddh-kivtechs.github.io','https://lh3.googleusercontent.com/','https://siddht1.github.io','https://siddht1.github.io/'],
+      'script-src': ['self', 'https://siddh-kivtechs.github.io','https://siddht1.github.io','https://siddht1.github.io'],
+    },
+  },
+}));
 
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL

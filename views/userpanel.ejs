@@ -1,344 +1,708 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KIVTECHS.cloud|USER DASHBOARD </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KIvtechs.cloud|USER DASHBOARD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="">
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+    <style>
+        #weatherWidget .currentDesc {
+        color: #ffffff!important;
+    }
+        .traffic-chart {
+            min-height: 335px;
+        }
+        #flotPie1  {
+            height: 150px;
+        }
+        #flotPie1 td {
+            padding:3px;
+        }
+        #flotPie1 table {
+            top: 20px!important;
+            right: -10px!important;
+        }
+        .chart-container {
+            display: table;
+            min-width: 270px ;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #flotLine5  {
+             height: 105px;
+        }
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/lugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="https://siddht1.github.io/dashboard_p4/plugins/summernote/summernote-bs4.min.css">
+        #flotBarChart {
+            height: 150px;
+        }
+        #cellPaiChart{
+            height: 160px;
+        }
+
+    </style>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="60" width="60">
-  </div>
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>User Panel </a>
+                    </li>
+                    <li class="menu-title">AI </li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>AI chatbot</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-puzzle-piece"></i><a href="https://katlon.kivtechs.cloud/">  Katlon</a></li>
+                             <li><i class="fa fa-puzzle-piece"></i><a href="https://catalona.kivtechs.cloud/"> Catlon</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-rocket"></i>AI #2</a>
+                        <ul class="sub-menu children dropdown-menu">
+                       
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>AI #3</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">Catalogue</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i></a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="#"></a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="#"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>System Message </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Usage</a>
+                        <ul class="sub-menu children dropdown-menu">
+                         
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Past History</a>
+                        <ul class="sub-menu children dropdown-menu">
+                           
+                        </ul>
+                    </li>
+                    <li class="menu-title"> CTA </li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap"></i>Support</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-question-circle"></i><a href="#"></a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="#"></a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="mailto:support@kivtechs.cloud">Customer Care</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./">
+                        <img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="40" width="40"> </a>
+                    <a class="navbar-brand hidden" href="./"><img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="40" width="40" ></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
             </div>
-          </form>
-        </div>
-      </li>
-
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">1</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Kivtechs
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm"> Welcome User </p>
-                <!-- <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> </p> -->
-              </div>
+            <div class="top-right">
+                <div class="header-menu">
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                        <div class="dropdown for-notification">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="count bg-primary">0</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="notification">
+                            </div>
+                        </div>
+                        <div class="dropdown for-message">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-envelope"></i>
+                                <span class="count bg-primary">4</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="message">
+                                <p class="red">You have 4 Messages</p>
+                                <a class="dropdown-item media" href="#">
+                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
+                                    <div class="message media-body">
+                                        <span class="name float-left">Kivtechs.cloud</span>
+                                        <span class="time float-right"></span>
+                                        <p>Welcome to KIvtechs.cloud</p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item media" href="#">
+                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
+                                    <div class="message media-body">
+                                        <span class="name float-left">Kivtechs.cloud</span>
+                                        <span class="time float-right"></span>
+                                        <p> Welcome to the World of AI & Technology</p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item media" href="#">
+                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
+                                    <div class="message media-body">
+                                        <span class="name float-left">kivtechs.cloud</span>
+                                        <span class="time float-right"></span>
+                                        <p> You have been provided Access to our AI chatbot Katlon & Catlona</p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item media" href="#">
+                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
+                                    <div class="message media-body">
+                                        <span class="name float-left">kivtechs.cloud</span>
+                                        <span class="time float-right"></span>
+                                        <p>You have 10,000 tokens</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="<%= user.picture %>" alt="User Avatar">
+                        </a>
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">0</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                            <a class="nav-link" href="https://kivtechs.cloud/logout"><i class="fa fa-power -off"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-      
-          <div class="dropdown-divider"></div>
-       
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </header>
+        <!-- /#header -->
+        <!-- Content -->
+        <div class="content">
+            <!-- Animated -->
+            <div class="animated fadeIn">
+                <!-- Widgets  -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-1">
+                                        <i class="pe-7s-cash"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text fa fa-rupee"><span class="count">0</span></div>
+                                            <div class="stat-heading">Usage</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-2">
+                                        <i class="ti-layers-alt"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">10000</span></div>
+                                            <div class="stat-heading">Token Available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-3">
+                                        <i class="pe-7s-browser"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="text-left">GPT-3</span></div>
+                                            <div class="stat-heading">AI MODEL Access</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-4">
+                                        <i class="pe-7s-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="stat-text"><%= user.name %></span></div>
+                                            <div class="stat-heading">Account </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widgets -->
+                <!--  Traffic  -->
+                <!--  /Traffic -->
+                <div class="clearfix"></div>
+                <!-- Orders -->
+                <!-- /.orders -->
+                <!-- To Do and Live Chat -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title box-title"></h4>
+                                <div class="card-content">
+                                    <div class="todo-list">
+                                        <div class="tdl-holder">
+                                            <div class="tdl-content">
+                                                <ul>
+                                               
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div> <!-- /.todo-list -->
+                                </div>
+                            </div> <!-- /.card-body -->
+                        </div><!-- /.card -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title box-title"></h4>
+                                <div class="card-content">
+                                    <div class="messenger-box">
+                                        <ul>
+                                            <li>
+                                        
+                                            </li>
+                                            <li>
+                                  
+                                            </li>
+                                        </ul>
+                                        <div class="send-mgs">
+                                            <div class="yourmsg">
+                                                <input class="form-control" type="text">
+                                            </div>
+                                            <button class="btn msg-send-btn">
+                                                <i class="pe-7s-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </div><!-- /.messenger-box -->
+                                </div>
+                            </div> <!-- /.card-body -->
+                        </div><!-- /.card -->
+                    </div>
+                </div>
+                <!-- /To Do and Live Chat -->
+                <!-- Calender Chart Weather  -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- <h4 class="box-title">Chandler</h4> -->
+                                <div class="calender-cont widget-calender">
+                                    <div id="calendar"></div>
+                                </div>
+                            </div>
+                        </div><!-- /.card -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card ov-h">
+                            <div class="card-body bg-flat-color-2">
+                                <div id="flotBarChart" class="float-chart ml-4 mr-4"></div>
+                            </div>
+                            <div id="cellPaiChart" class="float-chart"></div>
+                        </div><!-- /.card -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card weather-box">
+                            <h4 class="weather-title box-title"></h4>
+                            <div class="card-body">
+                                <div class="weather-widget">
+                                    <div id="weather-one" class="weather-one"></div>
+                                </div>
+                            </div>
+                        </div><!-- /.card -->
+                    </div>
+                </div>
+                <!-- /Calender Chart Weather -->
+                <!-- Modal - Calendar - Add New Event -->
+                <div class="modal fade none-border" id="event-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"><strong>Add New Event</strong></h4>
+                            </div>
+                            <div class="modal-body"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#event-modal -->
+                <!-- Modal - Calendar - Add Category -->
+                <div class="modal fade none-border" id="add-category">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"><strong>Add a category </strong></h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="control-label">Category Name</label>
+                                            <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Choose Category Color</label>
+                                            <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                                <option value="success">Success</option>
+                                                <option value="danger">Danger</option>
+                                                <option value="info">Info</option>
+                                                <option value="pink">Pink</option>
+                                                <option value="primary">Primary</option>
+                                                <option value="warning">Warning</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#add-category -->
+            </div>
+            <!-- .animated -->
         </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">1</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">1 Notifications</span>
-
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-      <img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">KIVTECHS</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<%= user.picture %>" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block"><%= user.name %></a>
-        </div>
-      </div>
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard</p>
-                </a>
-              </li>
-      
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; <a href="https://kneoginigmisarch.co.in/"> KNEOGINI KIVTECHS.CLOUD </a>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Terms & Conditions <a href="https://kneoginigmisarch.co.in/terms-of-use">KIVTECHS.cloud</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /.site-footer -->
     </div>
-    <!-- /.sidebar -->
-  </aside>
+    <!-- /#right-panel -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!--  Chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
+    <!--Chartist Chart-->
+    <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
+    <script src="assets/js/init/weather-init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
+    <script src="assets/js/init/fullcalendar-init.js"></script>
+    <!--Local Stuff-->
+    <script>
+    jQuery(document).ready(function($) {
+        "use strict";
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+        // Pie chart flotPie1
+        var piedata = [
+            { label: "Desktop visits", data: [
+                    [1, 32]
+                ], color: '#5c6bc0' },
+            { label: "Tab visits", data: [
+                    [1, 33]
+                ], color: '#ef5350' },
+            { label: "Mobile visits", data: [
+                    [1, 35]
+                ], color: '#66bb6a' }
+        ];
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>Katlon </h3>
+        $.plot('#flotPie1', piedata, {
+            series: {
+                pie: {
+                    show: true,
+                    radius: 1,
+                    innerRadius: 0.65,
+                    label: {
+                        show: true,
+                        radius: 2 / 3,
+                        threshold: 1
+                    },
+                    stroke: {
+                        width: 0
+                    }
+                }
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            }
+        });
+        // Pie chart flotPie1  End
+        // cellPaiChart
+        var cellPaiChart = [
+            { label: "Direct Sell", data: [
+                    [1, 65]
+                ], color: '#5b83de' },
+            { label: "Channel Sell", data: [
+                    [1, 35]
+                ], color: '#00bfa5' }
+        ];
+        $.plot('#cellPaiChart', cellPaiChart, {
+            series: {
+                pie: {
+                    show: true,
+                    stroke: {
+                        width: 0
+                    }
+                }
+            },
+            legend: {
+                show: false
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            }
 
-                <p> AI chatbot </p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="https://katlon.kivtechs.cloud/" class="small-box-footer">Visit Ai chatbot Katlon <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3> Catlon</h3>
+        });
+        // cellPaiChart End
+        // Line Chart  #flotLine5
+        var newCust = [
+            [0, 3],
+            [1, 5],
+            [2, 4],
+            [3, 7],
+            [4, 9],
+            [5, 3],
+            [6, 6],
+            [7, 4],
+            [8, 10]
+        ];
 
-                <p>AI chatbot</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="https://catalona.kivtechs.cloud/" class="small-box-footer">Visit Ai chatbot Catlon<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>GPT 4</h3>
+        var plot = $.plot($('#flotLine5'), [{
+            data: newCust,
+            label: 'New Data Flow',
+            color: '#fff'
+        }], {
+            series: {
+                lines: {
+                    show: true,
+                    lineColor: '#fff',
+                    lineWidth: 2
+                },
+                points: {
+                    show: true,
+                    fill: true,
+                    fillColor: "#ffffff",
+                    symbol: "circle",
+                    radius: 3
+                },
+                shadowSize: 0
+            },
+            points: {
+                show: true,
+            },
+            legend: {
+                show: false
+            },
+            grid: {
+                show: false
+            }
+        });
+        // Line Chart  #flotLine5 End
+        // Traffic Chart using chartist
+        if ($('#traffic-chart').length) {
+            var chart = new Chartist.Line('#traffic-chart', {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                series: [
+                    [0, 18000, 35000, 25000, 22000, 0],
+                    [0, 33000, 15000, 20000, 15000, 300],
+                    [0, 15000, 28000, 15000, 30000, 5000]
+                ]
+            }, {
+                low: 0,
+                showArea: true,
+                showLine: false,
+                showPoint: false,
+                fullWidth: true,
+                axisX: {
+                    showGrid: true
+                }
+            });
 
-                <p>Ai chatbot with GPT 4</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">Visit Ai chatbot with GPT 4 <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3> DALLE+</h3>
+            chart.on('draw', function(data) {
+                if (data.type === 'line' || data.type === 'area') {
+                    data.element.animate({
+                        d: {
+                            begin: 2000 * data.index,
+                            dur: 2000,
+                            from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                            to: data.path.clone().stringify(),
+                            easing: Chartist.Svg.Easing.easeOutQuint
+                        }
+                    });
+                }
+            });
+        }
+        // Traffic Chart using chartist End
+        //Traffic chart chart-js
+        if ($('#TrafficChart').length) {
+            var ctx = document.getElementById("TrafficChart");
+            ctx.height = 150;
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+                    datasets: [{
+                            label: "Visit",
+                            borderColor: "rgba(4, 73, 203,.09)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(4, 73, 203,.5)",
+                            data: [0, 2900, 5000, 3300, 6000, 3250, 0]
+                        },
+                        {
+                            label: "Bounce",
+                            borderColor: "rgba(245, 23, 66, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(245, 23, 66,.5)",
+                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
+                            data: [0, 4200, 4500, 1600, 4200, 1500, 4000]
+                        },
+                        {
+                            label: "Targeted",
+                            borderColor: "rgba(40, 169, 46, 0.9)",
+                            borderWidth: "1",
+                            backgroundColor: "rgba(40, 169, 46, .5)",
+                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
+                            data: [1000, 5200, 3600, 2600, 4200, 5300, 0]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    }
 
-                <p>AI IMAGE generator</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">Visit Ai Image generator <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-   
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; KNEOGINI <a href="https://kneoginigmisarch.co.in/"></a> KIVTECHS.CLOUD</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b> Version</b> 1.0.0
-    </div>
-  </footer>
-</div>
-  </footer>
-
-  <!-- Control Sidebar -->
-<!--   <aside class="control-sidebar control-sidebar-dark">
-  Control sidebar content goes here -->
-   <!--  </aside> -->
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<!-- <script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script> -->
-<!-- Bootstrap 4 -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="https://siddht1.github.io/dashboard_p4/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/moment/moment.min.js"></script>
-<script src="https://siddht1.github.io/dashboard_p4/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="https://siddht1.github.io/dashboard_p4/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-
-<script src="https://siddht1.github.io/dashboard_p4/dist/js/adminlte.js"></script>
-
-<script src="https://siddht1.github.io/dashboard_p4/dist/js/demo.js"></script>
-
-<script src="https://siddht1.github.io/dashboard_p4/dist/js/pages/dashboard.js"></script>
-<script  src="https://siddh-kivtechs.github.io/menu_kivtechs_js/scripts/script_20.js"></script>
+                }
+            });
+        }
+        //Traffic chart chart-js  End
+        // Bar Chart #flotBarChart
+        $.plot("#flotBarChart", [{
+            data: [
+                [0, 18],
+                [2, 8],
+                [4, 5],
+                [6, 13],
+                [8, 5],
+                [10, 7],
+                [12, 4],
+                [14, 6],
+                [16, 15],
+                [18, 9],
+                [20, 17],
+                [22, 7],
+                [24, 4],
+                [26, 9],
+                [28, 11]
+            ],
+            bars: {
+                show: true,
+                lineWidth: 0,
+                fillColor: '#ffffff8a'
+            }
+        }], {
+            grid: {
+                show: false
+            }
+        });
+        // Bar Chart #flotBarChart End
+    });
+    </script>
 </body>
+
 </html>

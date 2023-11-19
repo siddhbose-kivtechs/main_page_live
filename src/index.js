@@ -69,7 +69,15 @@ app.get('/protected', requiresAuth(), (req, res) => {
 app.get('/admin',(req, res) => {
    res.render(adminloginEjsPath);
 });
-app.get('/admin/dash',(req, res) => {
+app.all('/admin/dash',(req, res) => {
+  const dummyUser = {
+  picture: "https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png",
+  name: "Test User",
+  email: "test.user@kivtechs.cloud"
+};
+const picture = user.picture || dummyUser.picture;
+const name = user.name || dummyUser.name;
+const email = user.email || dummyUser.email;
    res.render(adminpanelEjsPath, { user });
 });
 

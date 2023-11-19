@@ -3,6 +3,7 @@ const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const { createClient } = require('@supabase/supabase-js');
 
 require('dotenv').config();
 const ejs = require('ejs');

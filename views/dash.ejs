@@ -69,7 +69,7 @@
                             </div>
                             <div class="nav-profile-text">
                                 <p class="mb-1 text-black">
-                                    <%= name %>
+                                    <%= user.name %>
                                 </p>
                             </div>
                         </a>
@@ -206,9 +206,9 @@
                             </div>
                             <div class="nav-profile-text d-flex flex-column">
                                 <span class="font-weight-bold mb-2">
-                                    <%= name %></span>
+                                    <%= user.name %></span>
                                 <span class="text-secondary text-small">
-                                    <%= account %></span>
+                                    <%= user.email %></span>
                             </div>
                             <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
                         </a>
@@ -216,7 +216,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
                             <span class="menu-title">Kivtechs.cloud |
-                                <%= name %> PANEL</span>
+                                <%= user.name %> PANEL</span>
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>

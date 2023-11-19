@@ -38,7 +38,7 @@ app.set('views', path.join(__dirname, '../views'));
 const dashEjsPath = path.join(__dirname, '../views/dash.ejs');
 
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(cors({ origin: ['http://localhost:3000', 'https://your-domain.com'] })); // Allow specific origins for CORS
+app.use(cors({ origin: ['http://localhost:3000', 'https://kivtechs.cloud'] })); // Allow specific origins for CORS
 app.use(express.json({ limit: '1mb' })); // Parse JSON data
 app.use(express.urlencoded({ limit: '1mb', extended: true })); // Parse form data
 

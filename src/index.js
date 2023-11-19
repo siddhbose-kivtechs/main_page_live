@@ -45,7 +45,8 @@ app.use(auth(config));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
-const adminEjsPath = path.join(__dirname, '../views/adminlogin.ejs');
+const adminloginEjsPath = path.join(__dirname, '../views/adminlogin.ejs');
+const adminpanelEjsPath = path.join(__dirname, '../views/adminpanel.ejs');
 const userEjsPath = path.join(__dirname, '../views/userpanel.ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors({ origin: ['http://localhost:3000', 'https://kivtechs.cloud'] })); // Allow specific origins for CORS
@@ -66,7 +67,10 @@ app.get('/protected', requiresAuth(), (req, res) => {
 });
 //  admin panel login and dashboard
 app.get('/admin',(req, res) => {
-   res.render(adminEjsPath, { user });
+   res.render(adminloginEjsPath);
+});
+app.get('/admin/dash',(req, res) => {
+   res.render(adminpanelEjsPath, { user });
 });
 
 // Not protected route

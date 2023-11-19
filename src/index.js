@@ -33,8 +33,8 @@ app.use(morgan('combined'));
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
-      'img-src': ['self', 'data:', 'https://siddh-kivtechs.github.io','https://lh3.googleusercontent.com/'],
-      'script-src': ['self', 'https://siddh-kivtechs.github.io'],
+      'img-src': ['self', 'data:', 'https://siddh-kivtechs.github.io','https://lh3.googleusercontent.com/','https://siddht1.github.io'],
+      'script-src': ['self', 'https://siddh-kivtechs.github.io','https://siddht1.github.io'],
     },
   },
 }));

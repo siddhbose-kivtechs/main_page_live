@@ -518,7 +518,14 @@
                                     <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                                     <div class="stat-content dib">
                                         <div class="stat-text"><%= user.nickname %></div>
-                                        <div class="stat-text"><%= user.sub %></div>
+                                        <div class="stat-text"><%
+  const parts = user.sub.split("|");
+%>
+
+<% for (const part of parts) { %>
+  <p><%= part %></p>
+<% } %>
+</div>
                                     </div>
                                 </div>
                             </div>

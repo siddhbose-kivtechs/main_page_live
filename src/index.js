@@ -101,6 +101,14 @@ app.get('/', (req, res) => {
     res.redirect('/login'); // Redirect non-logged-in users to the login page
   }
 });
+//  if none then send 404
+app.use((req, res, next) => {
+  res.render('404', {
+    title: '404 Not Found',
+    message: 'The requested page could not be found.',
+  });
+});
+
 
 // Start the server
 app.listen(PORT, () => {

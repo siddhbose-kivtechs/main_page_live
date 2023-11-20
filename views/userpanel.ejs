@@ -418,7 +418,13 @@
                                     <div class="stat-content">
                                         <div class="text-left dib">
                                             <div class="stat-heading"></div>
-                                            <div class="stat-text"><%= user %></div>
+                                            <div class="stat-text"><%
+
+
+<% for (const part of user) { %>
+  <p><%= part %></p>
+<% } %>
+</div>
                                         </div>
                                     </div>
                                 </div>

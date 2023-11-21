@@ -502,14 +502,9 @@
                                             <%= user.nickname %>
                                         </div>
                                         <div class="stat-text">
-                                            <%
-  const parts = user.sub.split("|");
-%>
+                                            <% const parts = user.sub.split("|"); %>
                                             <% for (const part of parts) { %>
-                                            <p>
-                                                <%= part %>
-                                            </p>
-                                            <% } %>
+                                            <%= part %> <% } %>
                                         </div>
                                     </div>
                                 </div>
@@ -525,7 +520,7 @@
                                         <div class="stat-text">
                                             <%= user.email_verified %>
                                         </div>
-                                        <div class="stat-digit">
+                                        <div class="stat-text">
                                             <%= user.email %>
                                         </div>
                                     </div>

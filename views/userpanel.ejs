@@ -13,7 +13,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/svg" href="https://siddh-kivtechs.github.io/logo/logo.svg">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
@@ -78,20 +77,18 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>AI chatbot</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="https://katlon.kivtechs.cloud/">  Katlon</a></li>
-                             <li><i class="fa fa-puzzle-piece"></i><a href="https://catalona.kivtechs.cloud/"> Catlon</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="https://katlon.kivtechs.cloud/"> Katlon</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="https://catalona.kivtechs.cloud/"> Catlon</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-rocket"></i>AI Tools</a>
                         <ul class="sub-menu children dropdown-menu">
-                       
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>AI AGENT</a>
                         <ul class="sub-menu children dropdown-menu">
-                       
                         </ul>
                     </li>
                     <li class="menu-title">Catalogue</li><!-- /.menu-title -->
@@ -108,13 +105,11 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Usage</a>
                         <ul class="sub-menu children dropdown-menu">
-                         
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Past History</a>
                         <ul class="sub-menu children dropdown-menu">
-                           
                         </ul>
                     </li>
                     <li class="menu-title"> Call To Action </li><!-- /.menu-title -->
@@ -139,7 +134,7 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="./">
                         <img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="40" width="40"> </a>
-                    <a class="navbar-brand hidden" href=""><img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="40" width="40" ></a>
+                    <a class="navbar-brand hidden" href=""><img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="40" width="40"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -219,7 +214,6 @@
         </header>
         <!-- /#header -->
         <!-- Breadcrumbs-->
-
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
                 <div class="row m-0">
@@ -235,7 +229,8 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="#">Dashboard</a></li>
-                                    <li class="active"><%= user.name %> PANEL</li>
+                                    <li class="active">
+                                        <%= user.name %> PANEL</li>
                                 </ol>
                             </div>
                         </div>
@@ -258,7 +253,7 @@
                                         <i class="pe-7s-cash"></i>
                                     </div>
                                     <div class="stat-content">
-                                             <div class="text-left dib">
+                                        <div class="text-left dib">
                                             <div class="stat-text fa fa-rupee"><span class="count">0</span></div>
                                             <div class="stat-heading">Usage</div>
                                         </div>
@@ -276,7 +271,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                               <div class="stat-text"><span class="count">10000</span></div>
+                                            <div class="stat-text"><span class="count">10000</span></div>
                                             <div class="stat-heading">Token Available</div>
                                         </div>
                                     </div>
@@ -293,7 +288,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                           <div class="stat-text"><span class="text-left">GPT-3.5 Family</span></div>
+                                            <div class="stat-text"><span class="text-left">GPT-3.5 Family</span></div>
                                             <div class="stat-heading">AI MODEL Access</div>
                                         </div>
                                     </div>
@@ -310,7 +305,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                                <div class="stat-text"><span class="stat-text"><%= user.name %></span></div>
+                                            <div class="stat-text"><span class="stat-text">
+                                                    <%= user.name %></span></div>
                                             <div class="stat-heading">Account </div>
                                         </div>
                                     </div>
@@ -319,11 +315,9 @@
                         </div>
                     </div>
                 </div>
-
-
                 <!--  NP modification -->
                 <!-- /Widgets -->
-             <div class="row">
+                <div class="row">
                     <div class="col-sm-6 col-lg-3">
                         <div class="card text-white bg-flat-color-1">
                             <div class="card-body">
@@ -334,17 +328,13 @@
                                     </h3>
                                     <p class="text-light mt-1 m-0"></p>
                                 </div><!-- /.card-left -->
-
                                 <div class="card-right float-right text-right">
                                     <i class="icon fade-5 icon-lg fa fa-tasks"></i>
                                 </div><!-- /.card-right -->
-
                             </div>
-
                         </div>
                     </div>
                     <!--/.col-->
-
                     <div class="col-sm-6 col-lg-3">
                         <div class="card text-white bg-flat-color-6">
                             <div class="card-body">
@@ -355,17 +345,13 @@
                                     </h3>
                                     <p class="text-light mt-1 m-0"></p>
                                 </div><!-- /.card-left -->
-
                                 <div class="card-right float-right text-right">
                                     <div id="flotBar1" class="flotBar1"></div>
                                 </div><!-- /.card-right -->
-
                             </div>
-
                         </div>
                     </div>
                     <!--/.col-->
-
                     <div class="col-sm-6 col-lg-3">
                         <div class="card text-white bg-flat-color-3">
                             <div class="card-body">
@@ -375,17 +361,13 @@
                                     </h3>
                                     <p class="text-light mt-1 m-0"></p>
                                 </div><!-- /.card-left -->
-
                                 <div class="card-right float-right text-right">
                                     <i class="icon fade-5 icon-lg fa fa-briefcase"></i>
                                 </div><!-- /.card-right -->
-
                             </div>
-
                         </div>
                     </div>
                     <!--/.col-->
-
                     <div class="col-sm-6 col-lg-3">
                         <div class="card text-white bg-flat-color-2">
                             <div class="card-body">
@@ -395,18 +377,13 @@
                                     </h3>
                                     <p class="text-light mt-1 m-0"></p>
                                 </div><!-- /.card-left -->
-
                                 <div class="card-right float-right text-right">
                                     <div id="flotLine1" class="flotLine1"></div>
                                 </div><!-- /.card-right -->
-
                             </div>
-
                         </div>
                     </div>
                     <!--/.col-->
-
-
 
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
@@ -418,14 +395,16 @@
                                     <div class="stat-content">
                                         <div class="text-left dib">
                                             <div class="stat-heading"></div>
-                                            <div class="stat-text"></div> 
+                                            <div class="stat-text">
+                                            
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <a href="https://catalona.kivtechs.cloud/">
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
@@ -436,7 +415,8 @@
                                     <div class="stat-content">
                                         <div class="text-left dib">
                                             <div class="stat-heading"></div>
-                                            <div class="stat-text"></div>
+                                            <div class="stat-text"> 
+                                             CATALONA</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -461,7 +441,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
@@ -479,74 +458,81 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="fa fa-info"></i></div>
                                     <div class="stat-content dib">
-                                        <div class="stat-text"><%= user.name %></div>
-                                        <div class="stat-digit"><%= user.nickname %></div>
+                                        <div class="stat-text">
+                                            <%= user.name %>
+                                        </div>
+                                        <div class="stat-digit">
+                                            <%= user.nickname %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                                     <div class="stat-content dib">
-                                        <div class="stat-text"><%= user.given_name %></div>
-                                        <div class="stat-digit"><%= user.family_name %></div>
+                                        <div class="stat-text">
+                                            <%= user.given_name %>
+                                        </div>
+                                        <div class="stat-digit">
+                                            <%= user.family_name %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                                     <div class="stat-content dib">
-                                        <div class="stat-text"><%= user.nickname %></div>
-                                        <div class="stat-text"><%
+                                        <div class="stat-text">
+                                            <%= user.nickname %>
+                                        </div>
+                                        <div class="stat-text">
+                                            <%
   const parts = user.sub.split("|");
 %>
-
-<% for (const part of parts) { %>
-  <p><%= part %></p>
-<% } %>
-</div>
+                                            <% for (const part of parts) { %>
+                                            <p>
+                                                <%= part %>
+                                            </p>
+                                            <% } %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-link text-danger border-danger"></i></div>
                                     <div class="stat-content dib">
-                                        <div class="stat-text"><%= user.email_verified %></div>
-                                        <div class="stat-digit"><%= user.email %></div>
+                                        <div class="stat-text">
+                                            <%= user.email_verified %>
+                                        </div>
+                                        <div class="stat-digit">
+                                            <%= user.email %>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                     <div class="col-sm-12 mb-4">
                         <div class="card-group">
                             <div class="card col-md-6 no-padding ">
@@ -554,11 +540,9 @@
                                     <div class="h1 text-muted text-right mb-4">
                                         <i class="fa fa-users"></i>
                                     </div>
-
                                     <div class="h4 mb-0">
                                         <span class="count">87500</span>
                                     </div>
-
                                     <small class="text-muted text-uppercase font-weight-bold">Visits</small>
                                     <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
                                 </div>
@@ -626,32 +610,25 @@
                 </div><!-- .row -->
             </div>
             <!-- .animated -->
-        </div>
-
-
-
-
-            <!-- .animated -->
-        </div>
-        <!-- /.content -->
-        <div class="clearfix"></div>
-        <!-- Footer -->
-      <footer class="site-footer">
-            <div class="footer-inner bg-white">
-                <div class="row">
-                    <div class="col-sm-6">
-                        Copyright &copy; <a href="https://kneoginigmisarch.co.in/"> Kneogin Igmisarch Private Limited</a>
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        Terms & Conditions <a href="https://kneoginigmisarch.co.in/terms-of-use">KIVTECHS.cloud</a>
-                    </div>
+    </div>
+    <!-- /.content -->
+    <div class="clearfix"></div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner bg-white">
+            <div class="row">
+                <div class="col-sm-6">
+                    Copyright &copy; <a href="https://kneoginigmisarch.co.in/"> Kneogin Igmisarch Private Limited</a>
+                </div>
+                <div class="col-sm-6 text-right">
+                    Terms & Conditions <a href="https://kneoginigmisarch.co.in/terms-of-use">KIVTECHS.cloud</a>
                 </div>
             </div>
-        </footer>
-        <!-- /.site-footer -->
+        </div>
+    </footer>
+    <!-- /.site-footer -->
     </div>
     <!-- /#right-panel -->
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
@@ -665,5 +642,6 @@
     <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
     <!-- local -->
     <script src="https://siddht1.github.io/userpanelasset/assets/js/widgets.js"></script>
-<script  src="https://siddh-kivtechs.github.io/menu_kivtechs_js/scripts/script_20.js"></script>
+    <script src="https://siddh-kivtechs.github.io/menu_kivtechs_js/scripts/script_20.js"></script>
+
 </html>

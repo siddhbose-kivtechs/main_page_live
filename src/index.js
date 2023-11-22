@@ -48,6 +48,8 @@ app.set('views', path.join(__dirname, '../views'));
 const adminloginEjsPath = path.join(__dirname, '../views/adminlogin.ejs');
 const adminpanelEjsPath = path.join(__dirname, '../views/adminpanel.ejs');
 const userEjsPath = path.join(__dirname, '../views/userpanel.ejs');
+const termsEjsPath = path.join(__dirname, '../views/terms.ejs');
+const policyEjsPath = path.join(__dirname, '../views/policy.ejs');
 const errorEjsPath = path.join(__dirname, '../views/404.ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors({ origin: ['http://localhost:3000', 'https://kivtechs.cloud'] })); // Allow specific origins for CORS
@@ -69,6 +71,12 @@ app.get('/protected', requiresAuth(), (req, res) => {
 //  admin panel login and dashboard
 app.get('/admin',(req, res) => {
    res.render(adminloginEjsPath);
+});
+app.get('/terms',(req, res) => {
+   res.render(termsEjsPath,, { user });
+});
+app.get('/policy',(req, res) => {
+   res.render(policyEjsPath,, { user });
 });
 app.all('/admin/dash',(req, res) => {
     let user;

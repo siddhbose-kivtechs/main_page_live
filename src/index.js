@@ -73,10 +73,12 @@ app.get('/admin',(req, res) => {
    res.render(adminloginEjsPath);
 });
 app.get('/terms',(req, res) => {
-   res.render(termsEjsPath, { user });
+   // res.render(termsEjsPath, { user });
+  res.render(termsEjsPath);
 });
 app.get('/policy',(req, res) => {
    res.render(policyEjsPath, { user });
+     res.render(policyEjsPath);
 });
 app.all('/admin/dash',(req, res) => {
     let user;

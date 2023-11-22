@@ -55,7 +55,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors({ origin: ['http://localhost:3000', 'https://kivtechs.cloud'] })); // Allow specific origins for CORS
 app.use(express.json({ limit: '1mb' })); // Parse JSON data
 app.use(express.urlencoded({ limit: '1mb', extended: true })); // Parse form data
-
+  const dummyUser = {
+  picture: "https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png",
+  name: "Test User",
+  email: "test.user@kivtechs.cloud"
+};
 // Protected route that requires authentication
 app.get('/profile', requiresAuth(), (req, res) => {
   console.log(req.oidc);
@@ -73,21 +77,32 @@ app.get('/admin',(req, res) => {
    res.render(adminloginEjsPath);
 });
 app.get('/terms',(req, res) => {
-   // res.render(termsEjsPath, { user });
-  res.render(termsEjsPath);
+    if (req.oidc.isAuthenticated()) {
+    const user = req.oidc.user;
+    }
+  else
+    {
+         user = dummyUser;
+    }
+  
+  res.render(termsEjsPath, { user });
+
 });
 app.get('/policy',(req, res) => {
+      if (req.oidc.isAuthenticated()) {
+    const user = req.oidc.user;
+    }
+  else
+    {
+         user = dummyUser;
+    }
    res.render(policyEjsPath, { user });
-     res.render(policyEjsPath);
+   
 });
 app.all('/admin/dash',(req, res) => {
     let user;
 
-  const dummyUser = {
-  picture: "https://siddht1.github.io/dashboard_p1/assets/images/faces-clipart/pic-1.png",
-  name: "Test User",
-  email: "test.user@kivtechs.cloud"
-};
+
   
   // Try to retrieve the user from the request object
   if (req.user) {

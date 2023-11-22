@@ -82,7 +82,7 @@ app.get('/terms',(req, res) => {
     }
   else
     {
-         user = dummyUser;
+      const   user = dummyUser;
     }
   
   res.render(termsEjsPath, { user });
@@ -94,7 +94,7 @@ app.get('/policy',(req, res) => {
     }
   else
     {
-         user = dummyUser;
+       const  user = dummyUser;
     }
    res.render(policyEjsPath, { user });
    

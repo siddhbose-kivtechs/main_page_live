@@ -76,7 +76,7 @@ app.get('/protected', requiresAuth(), (req, res) => {
 app.get('/admin',(req, res) => {
    res.render(adminloginEjsPath);
 });
-app.get('/terms', (req, res) => {  
+app.get(['/terms','condition'], (req, res) => {  
   let user;  
   
   if (req.oidc.isAuthenticated()) {  
@@ -88,17 +88,18 @@ app.get('/terms', (req, res) => {
   res.render(termsEjsPath, { user });  
 });  
   
-app.get('/policy', (req, res) => {  
-  let user;  
-  
-  if (req.oidc.isAuthenticated()) {  
-    user = req.oidc.user;  
-  } else {  
-    user = dummyUser;  
-  }  
-  
-  res.render(policyEjsPath, { user });  
-});  
+app.get(['/privacy', '/policy'], (req, res) => {
+  let user;
+
+  if (req.oidc.isAuthenticated()) {
+    user = req.oidc.user;
+  } else {
+    user = dummyUser;
+  }
+
+  res.render(policyEjsPath, { user });
+});
+
 
 app.all('/admin/dash',(req, res) => {
     let user;

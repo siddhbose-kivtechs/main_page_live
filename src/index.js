@@ -49,7 +49,7 @@ const adminloginEjsPath = path.join(__dirname, '../views/adminlogin.ejs');
 const adminpanelEjsPath = path.join(__dirname, '../views/adminpanel.ejs');
 const userEjsPath = path.join(__dirname, '../views/userpanel.ejs');
 const termsEjsPath = path.join(__dirname, '../views/terms.ejs');
-const policyEjsPath = path.join(__dirname, '../views/policy.ejs');
+const policyEjsPath = path.join(__dirname, '../views/privacy.ejs');
 const errorEjsPath = path.join(__dirname, '../views/404.ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors({ origin: ['http://localhost:3000', 'https://kivtechs.cloud'] })); // Allow specific origins for CORS

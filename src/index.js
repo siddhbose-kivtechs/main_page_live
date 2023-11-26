@@ -129,6 +129,17 @@ app.get('/', (req, res) => {
     res.redirect('/login'); // Redirect non-logged-in users to the login page
   }
 });
+app.get('/login/callback', (req, res) => {
+  if (req.oidc.isAuthenticated()) {
+    const user = req.oidc.user;
+    console.log(user);
+    res.render(userEjsPath, { user }); // Render the dashboard for logged-in users
+  }
+   else {
+    res.redirect('/login'); // Redirect non-logged-in users to the login page
+  }
+});
+  
 //  if none then send 404
 app.use((req, res, next) => {
   res.render(errorEjsPath, {

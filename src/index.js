@@ -28,14 +28,7 @@ const config = {
 
 const app = express();
 // Middleware to set the user value globally  
-app.use((req, res, next) => {  
-  if (req.oidc.isAuthenticated()) {  
-    res.locals.user = req.oidc.user;  
-  } else {  
-    res.locals.user = dummyUser;  
-  }  
-  next();  
-}); 
+
 // app.use(morgan('combined'));
 // app.use(morgan('combined', { stream: fs.createWriteStream('access.log') })); // Log requests to a file instead of the console
 // app.use(helmet());
@@ -74,7 +67,14 @@ app.get('/profile', requiresAuth(), (req, res) => {
   console.log(req.oidc);
   res.send(JSON.stringify(req.oidc.user));
 });
-
+app.use((req, res, next) => {  
+  if (req.oidc.isAuthenticated()) {  
+    res.locals.user = req.oidc.user;  
+  } else {  
+    res.locals.user = dummyUser;  
+  }  
+  next();  
+}); 
 // Protected route that requires authentication
 app.get('/protected', requiresAuth(), (req, res) => {
   console.log(req.oidc);

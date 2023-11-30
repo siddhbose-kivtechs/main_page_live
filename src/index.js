@@ -168,8 +168,16 @@ app.get('/login/callback', (req, res) => {
  
   
 // user panel/dashboard  
-app.get('/dash', oidc.ensureAuthenticated(), (req, res) => {  
-  res.render(userEjsPath, { user: req.oidc.user });  
+app.get('/dash', (req, res) => {  
+  if (req.oidc.isAuthenticated()) {
+    const user = req.oidc.user;
+    console.log(user);
+    res.render(userEjsPath, { user }); // Render the dashboard for logged-in users
+  }
+     else {
+    res.redirect('/login'); // Redirect non-logged-in users to the login page
+  }
+  
 }); 
   
 //  if none then send 404

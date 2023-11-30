@@ -53,6 +53,7 @@ const userEjsPath = path.join(__dirname, '../views/userpanel.ejs');
 const termsEjsPath = path.join(__dirname, '../views/terms.ejs');
 const policyEjsPath = path.join(__dirname, '../views/privacy.ejs');
 const powerpackEjsPath = path.join(__dirname, '../views/powerpack.ejs');
+const landingEjsPath = path.join(__dirname, '../views/landingpage.ejs');
 const errorEjsPath = path.join(__dirname, '../views/404.ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors({ origin: ['http://localhost:3000', 'https://kivtechs.cloud'] })); // Allow specific origins for CORS
@@ -139,16 +140,20 @@ const email = user.email || dummyUser.email;
    res.render(adminpanelEjsPath, { user });
 });
 
-// Not protected route
-app.get('/', (req, res) => {
-  if (req.oidc.isAuthenticated()) {
-    const user = req.oidc.user;
-    console.log(user);
-    res.render(userEjsPath, { user } ); // Render the dashboard for logged-in users
-  } else {
-    res.redirect('/login'); // Redirect non-logged-in users to the login page
-  }
-});
+// // Not protected route
+// app.get('/', (req, res) => {
+//   if (req.oidc.isAuthenticated()) {
+//     const user = req.oidc.user;
+//     console.log(user);
+//     res.render(userEjsPath, { user } ); // Render the dashboard for logged-in users
+//   } else {
+//     res.redirect('/login'); // Redirect non-logged-in users to the login page
+//   }
+// });
+ app.get('/', (req, res) => {
+ res.render(landingEjsPath);
+   });
+
 app.get('/login/callback', (req, res) => {
   if (req.oidc.isAuthenticated()) {
     const user = req.oidc.user;

@@ -164,14 +164,22 @@ app.get('/login/callback', (req, res) => {
 });  
 
    
-app.all('/callback', requiresAuth(), (req, res) => {
-  const user = req.oidc.user;
-  res.render(userEjsPath, { user });
+app.all('/callback',  (req, res) => {
+  if (req.oidc.isAuthenticated()) {  
+    res.redirect('/dash');  
+  } else {  
+    res.redirect('/login');  
+  }  
 });
  
-app.all('/dash', requiresAuth(), (req, res) => {
-  const user = req.oidc.user;
-  res.render(userEjsPath, { user });
+app.all('/dash', (req, res) => {
+  if (req.oidc.isAuthenticated()) {  
+     user = req.oidc.user;  
+
+    res.render(userEjsPath, { user });
+  } else {  
+    res.redirect('/login');  
+  }  
 });
 
   

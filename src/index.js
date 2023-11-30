@@ -150,6 +150,7 @@ const email = user.email || dummyUser.email;
 //     res.redirect('/login'); // Redirect non-logged-in users to the login page
 //   }
 // });
+//  landing page aka base route
  app.get('/', (req, res) => {
  res.render(landingEjsPath);
    });
@@ -163,16 +164,18 @@ app.get('/login/callback', (req, res) => {
   }  
 });  
 
-   
+    //  handle callback 
 app.all('/callback',  (req, res) => {
+     console.log('called callback');
   if (req.oidc.isAuthenticated()) {  
     res.redirect('/dash');  
   } else {  
     res.redirect('/login');  
   }  
 });
- 
+ //  handle dashboard
 app.all('/dash', (req, res) => {
+     console.log('called Dashbaord');
   if (req.oidc.isAuthenticated()) {  
      user = req.oidc.user;  
 

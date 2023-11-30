@@ -154,16 +154,7 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
-// app.get('/login/callback', (req, res) => {
-//   if (req.oidc.isAuthenticated()) {
-//     const user = req.oidc.user;
-//     console.log(user);
-//     res.render(userEjsPath, { user }); // Render the dashboard for logged-in users
-//   }
-//    else {
-//     res.redirect('/login'); // Redirect non-logged-in users to the login page
-//   }
-// });
+
 app.get('/login/callback', (req, res) => {  
   if (req.oidc.isAuthenticated()) {  
     res.redirect('/dash');  
@@ -172,21 +163,13 @@ app.get('/login/callback', (req, res) => {
   }  
 });  
 
+   
+app.all('/callback', requiresAuth(), (req, res) => {
+  const user = req.oidc.user;
+  res.render(userEjsPath, { user });
+});
  
-  
-// user panel/dashboard  
-// app.get('/dash', (req, res) => {  
-//   if (req.oidc.isAuthenticated()) {
-//     const user = req.oidc.user;
-//     console.log(user);
-//     res.render(userEjsPath, { user }); // Render the dashboard for logged-in users
-//   }
-//      else {
-//     res.redirect('/login'); // Redirect non-logged-in users to the login page
-//   }
-  
-// }); 
-app.get('/dash', requiresAuth(), (req, res) => {
+app.all('/dash', requiresAuth(), (req, res) => {
   const user = req.oidc.user;
   res.render(userEjsPath, { user });
 });

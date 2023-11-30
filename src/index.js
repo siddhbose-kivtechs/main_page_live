@@ -164,6 +164,13 @@ app.get('/login/callback', (req, res) => {
     res.redirect('/login'); // Redirect non-logged-in users to the login page
   }
 });
+
+ 
+  
+// user panel/dashboard  
+app.get('/dash', oidc.ensureAuthenticated(), (req, res) => {  
+  res.render(userEjsPath, { user: req.oidc.user });  
+}); 
   
 //  if none then send 404
 app.use((req, res, next) => {

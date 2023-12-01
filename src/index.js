@@ -131,14 +131,15 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
-app.all(['/login', '/signin','/signin/callback','/login/callback'], (req, res) => {
+app.all([ '/signin','/signin/callback'], (req, res) => {
 
   if (req.oidc.isAuthenticated()) {
     user = req.oidc.user;
       res.render(userpanelEjsPath, { user });
     
-  } else {
-   res.redirect('/login');
+  } 
+  else {
+   res.redirect('/signin');
   }
 
 

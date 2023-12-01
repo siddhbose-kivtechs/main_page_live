@@ -142,7 +142,7 @@ app.all(['/login', '/signin','/signin/callback'], (req, res) => {
    res.redirect('/login');
   }
 
-  res.render(powerpackEjsPath, { user });
+
 });
 
 

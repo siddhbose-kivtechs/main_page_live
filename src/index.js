@@ -1,8 +1,7 @@
 const express = require('express');
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
-// const helmet = require('helmet');
-// const morgan = require('morgan');
+
 const { createClient } = require('@supabase/supabase-js');
 
 require('dotenv').config();
@@ -27,19 +26,6 @@ const config = {
 };
 
 const app = express();
-// Middleware to set the user value globally  
-
-// app.use(morgan('combined'));
-// app.use(morgan('combined', { stream: fs.createWriteStream('access.log') })); // Log requests to a file instead of the console
-// app.use(helmet());
-// app.use(helmet({
-//   contentSecurityPolicy: {
-//     directives: {
-//       'img-src': ['self', 'data:', 'https://siddh-kivtechs.github.io','https://lh3.googleusercontent.com/','https://siddht1.github.io','https://siddht1.github.io/'],
-//       'script-src': ['self', 'https://siddh-kivtechs.github.io','https://siddht1.github.io','https://siddht1.github.io'],
-//     },
-//   },
-// }));
 
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
@@ -140,60 +126,12 @@ const email = user.email || dummyUser.email;
    res.render(adminpanelEjsPath, { user });
 });
 
-// // Not protected route
-// app.get('/', (req, res) => {
-//   if (req.oidc.isAuthenticated()) {
-//     const user = req.oidc.user;
-//     console.log(user);
-//     res.render(userEjsPath, { user } ); // Render the dashboard for logged-in users
-//   } else {
-//     res.redirect('/login'); // Redirect non-logged-in users to the login page
-//   }
-// });
 //  landing page aka base route
  app.get('/', (req, res) => {
  res.render(landingEjsPath);
    });
 
 
-app.get('/login/callback', (req, res) => {  
-  if (req.oidc.isAuthenticated()) {  
-    res.redirect('/dash');  
-  } else {  
-    res.redirect('/login');  
-  }  
-});  
-
-    //  handle callback 
-app.all('/callback',  (req, res) => {
-     console.log('called callback');
-  if (req.oidc.isAuthenticated()) {  
-    res.redirect('/dash');  
-  } else {  
-    res.redirect('/login');  
-  }  
-});
- //  handle dashboard
-app.all('/dash', (req, res) => {
-     console.log('called Dashbaord');
-  if (req.oidc.isAuthenticated()) {  
-     user = req.oidc.user;  
-
-    res.render(userEjsPath, { user });
-  } else {  
-    res.redirect('/login');  
-  }  
-});
-app.all('/signin', (req, res) => {
-     console.log('called signin');
-  if (req.oidc.isAuthenticated()) {  
-     user = req.oidc.user;  
-
-    res.render(userEjsPath, { user });
-  } else {  
-    res.redirect('/login');  
-  }  
-});
 app.all('/signin/callback', (req, res) => {
      console.log('called signin callback');
   if (req.oidc.isAuthenticated()) {  
@@ -201,10 +139,7 @@ app.all('/signin/callback', (req, res) => {
 
     res.render(userEjsPath, { user });
   }  
-  else
-  {
-    res.redirect('/signin');
-  }
+
 });
 app.all('/signin/logout', (req, res) => {
      console.log('called logout');

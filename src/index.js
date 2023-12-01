@@ -178,7 +178,7 @@ app.all('/dash', (req, res) => {
     }
       else
     {
-      res.redirect('/signin');
+      res.redirect('/login');
     }
 
 });

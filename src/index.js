@@ -154,6 +154,18 @@ app.all('/signin/logout', (req, res) => {
      console.log('called logout');
   res.redirect('/');
 });
+app.all('/dash', (req, res) => {
+     console.log('called dash');
+    if (req.oidc.isAuthenticated()) {  
+     user = req.oidc.user;  
+
+    res.render(userEjsPath, { user });
+      else
+    {
+      res.redirect('/signin');
+    }
+
+});
 
 //  if none then send 404
 app.use((req, res, next) => {

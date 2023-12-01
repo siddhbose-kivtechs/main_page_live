@@ -143,7 +143,7 @@ app.all('/signin/callback', (req, res) => {
 
 });
 
-app.all('/login', (req, res) => {
+app.all('/signin', (req, res) => {
      console.log('called signin callback');
   if (req.oidc.isAuthenticated()) {  
      user = req.oidc.user;  

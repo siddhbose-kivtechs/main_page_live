@@ -142,7 +142,7 @@ app.all('/signin/callback', (req, res) => {
   else
     
   {
-    res.redirect('/login');
+    res.redirect('/signin');
   }
 
 });

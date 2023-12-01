@@ -200,8 +200,6 @@ app.all('/signin/callback', (req, res) => {
      user = req.oidc.user;  
 
     res.render(userEjsPath, { user });
-  } else {  
-    res.redirect('/login');  
   }  
 });
   

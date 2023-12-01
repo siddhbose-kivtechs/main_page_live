@@ -139,6 +139,11 @@ app.all('/signin/callback', (req, res) => {
 
     res.render(userEjsPath, { user });
   }  
+    else
+    
+  {
+    res.redirect('/login');
+  }
 
 
 });
@@ -163,6 +168,7 @@ app.all('/signin/logout', (req, res) => {
      console.log('called logout');
   res.redirect('/');
 });
+
 app.all('/dash', (req, res) => {
      console.log('called dash');
     if (req.oidc.isAuthenticated()) {  

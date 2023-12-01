@@ -135,7 +135,7 @@ app.all([ '/signin','/signin/callback','/login/callback'], (req, res) => {
 
   if (req.oidc.isAuthenticated()) {
     user = req.oidc.user;
-      res.render(userpanelEjsPath, { user });
+      res.render(userEjsPath, { user });
     
   } 
   else {

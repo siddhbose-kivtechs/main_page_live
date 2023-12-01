@@ -131,7 +131,7 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
-app.all(['/login', '/signin','/signin/callback'], (req, res) => {
+app.all(['/login', '/signin','/signin/callback','/login/callback'], (req, res) => {
   let user;
 
   if (req.oidc.isAuthenticated()) {

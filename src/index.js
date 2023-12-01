@@ -195,12 +195,16 @@ app.all('/signin', (req, res) => {
   }  
 });
 app.all('/signin/callback', (req, res) => {
-     console.log('called signin');
+     console.log('called signin callback');
   if (req.oidc.isAuthenticated()) {  
      user = req.oidc.user;  
 
     res.render(userEjsPath, { user });
   }  
+  else
+  {
+    res.redirect('/signin');
+  }
 });
   
 //  if none then send 404

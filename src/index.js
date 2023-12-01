@@ -131,7 +131,7 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
-app.all([ '/signin','/signin/callback','/login/callback'], (req, res) => {
+app.all([ '/login','/login/callback','/login/callback'], (req, res) => {
 
   if (req.oidc.isAuthenticated()) {
     user = req.oidc.user;
@@ -140,7 +140,7 @@ app.all([ '/signin','/signin/callback','/login/callback'], (req, res) => {
   } 
   else {
    console.log(' Missing config');
-    // res.redirect('/login');
+    res.redirect('/login');
   }
 
 

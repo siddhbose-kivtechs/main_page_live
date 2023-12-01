@@ -139,7 +139,7 @@ app.all([ '/signin','/signin/callback'], (req, res) => {
     
   } 
   else {
-   res.redirect('/signin');
+   console.log(' Missing config');
   }
 
 

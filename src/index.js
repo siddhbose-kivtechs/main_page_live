@@ -206,7 +206,11 @@ app.all('/signin/callback', (req, res) => {
     res.redirect('/signin');
   }
 });
-  
+app.all('/signin/logout', (req, res) => {
+     console.log('called logout');
+  res.redirect('/');
+});
+
 //  if none then send 404
 app.use((req, res, next) => {
   res.render(errorEjsPath, {

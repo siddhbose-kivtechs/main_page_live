@@ -131,7 +131,19 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
+app.get(['/login', '/signin'], (req, res) => {
+  let user;
 
+  if (req.oidc.isAuthenticated()) {
+    user = req.oidc.user;
+      res.render(userpanelEjsPath, { user });
+    
+  } else {
+   res.redirect('/login');
+  }
+
+  res.render(powerpackEjsPath, { user });
+});
 
 
 //  if none then send 404

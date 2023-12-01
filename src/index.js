@@ -147,6 +147,22 @@ app.all([ '/login'], (req, res) => {
 });
 
 
+app.all([ '/login/callback'], (req, res) => {
+
+  if (req.oidc.isAuthenticated()) {
+    user = req.oidc.user;
+      res.render(userEjsPath, { user });
+    
+  } 
+  else {
+   console.log(' Missing config');
+    res.redirect('/');
+  }
+
+
+});
+
+
 //  if none then send 404
 app.use((req, res, next) => {
   res.render(errorEjsPath, {

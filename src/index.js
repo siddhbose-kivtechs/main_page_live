@@ -160,6 +160,7 @@ app.all('/dash', (req, res) => {
      user = req.oidc.user;  
 
     res.render(userEjsPath, { user });
+    }
       else
     {
       res.redirect('/signin');

@@ -132,56 +132,7 @@ const email = user.email || dummyUser.email;
    });
 
 
-app.all('/signin/callback', (req, res) => {
-     console.log('called signin callback');
-  if (req.oidc.isAuthenticated()) {  
-     user = req.oidc.user;  
 
-    res.render(userEjsPath, { user });
-  }  
-    else
-    
-  {
-    res.redirect('/login');
-  }
-
-
-});
-
-app.all('/signin', (req, res) => {
-     console.log('called signin callback');
-  if (req.oidc.isAuthenticated()) {  
-     user = req.oidc.user;  
-
-    res.render(userEjsPath, { user });
-  }  
-  else
-    
-  {
-    res.redirect('/login');
-  }
-
-});
-
-
-app.all('/signin/logout', (req, res) => {
-     console.log('called logout');
-  res.redirect('/');
-});
-
-app.all('/dash', (req, res) => {
-     console.log('called dash');
-    if (req.oidc.isAuthenticated()) {  
-     user = req.oidc.user;  
-
-    res.render(userEjsPath, { user });
-    }
-      else
-    {
-      res.redirect('/login');
-    }
-
-});
 
 //  if none then send 404
 app.use((req, res, next) => {

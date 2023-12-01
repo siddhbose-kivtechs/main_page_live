@@ -132,7 +132,6 @@ const email = user.email || dummyUser.email;
    });
 
 app.all(['/login', '/signin','/signin/callback','/login/callback'], (req, res) => {
-  let user;
 
   if (req.oidc.isAuthenticated()) {
     user = req.oidc.user;

@@ -141,6 +141,15 @@ app.all('/signin/callback', (req, res) => {
   }  
 
 });
+app.all('/signin', (req, res) => {
+     console.log('called signin');
+  if (req.oidc.isAuthenticated()) {  
+     user = req.oidc.user;  
+
+    res.render(userEjsPath, { user });
+  }  
+
+});
 app.all('/signin/logout', (req, res) => {
      console.log('called logout');
   res.redirect('/');

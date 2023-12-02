@@ -130,20 +130,14 @@ const email = user.email || dummyUser.email;
  app.get('/', (req, res) => {
  res.render(landingEjsPath);
    });
-app.use(['/authorize'], (req, res) => {  
+app.use(['/authorize'], (req, res,next) => {  
   if (req.oidc.isAuthenticated()) {  
     res.redirect('/dash');  
   } else {  
     res.redirect('/login');  
   }  
 });  
-app.use(['/login/callback'], (req, res) => {
-  if (req.oidc.isAuthenticated()) {
-    res.redirect('/dash');
-  } else {
-    res.redirect('/login');
-  }
-});
+
 app.all('/login/callback', async (req, res, next) => {  
   try {  
     await req.oidc.callback();  
@@ -152,7 +146,7 @@ app.all('/login/callback', async (req, res, next) => {
     next(err);  
   }  
 }); 
-app.get('/dash', requiresAuth(), (req, res) => {  
+app.get('/dash', requiresAuth(), (req, res,next) => {  
   const user = req.oidc.user || dummyUser; // Use dummyUser as a fallback if user is not available  
   
   res.render(userEjsPath, { user });  

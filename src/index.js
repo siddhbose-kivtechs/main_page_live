@@ -130,53 +130,26 @@ const email = user.email || dummyUser.email;
  app.get('/', (req, res) => {
  res.render(landingEjsPath);
    });
-
-app.use([ '/login'], (req, res) => {
-
+app.use(['/authorize'], (req, res) => {  
+  if (req.oidc.isAuthenticated()) {  
+    res.redirect('/dash');  
+  } else {  
+    res.redirect('/login');  
+  }  
+});  
+app.use(['/login/callback'], (req, res) => {
   if (req.oidc.isAuthenticated()) {
-    user = req.oidc.user;
-      res.render(userEjsPath, { user });
-    
-  } 
-
-
-
-});
-
-
-
-app.use([ '/login/callback'], (req, res) => {
-
-  if (req.oidc.isAuthenticated()) {
-    user = req.oidc.user;
-      res.render(userEjsPath, { user });
-    
-  } 
-else
-
-  {
+    res.redirect('/dash');
+  } else {
     res.redirect('/login');
   }
-
-
 });
-app.use([ '/authorize'], (req, res) => {
-  console.log(' in authorize');
 
-  if (req.oidc.isAuthenticated()) {
-    user = req.oidc.user;
-      res.render(userEjsPath, { user });
-    
-  } 
-else
-
-  {
-    console.log('taking to login');
-    res.redirect('/login');
-  }
-
-
-});
+app.get('/dash', requiresAuth(), (req, res) => {  
+  const user = req.oidc.user || dummyUser; // Use dummyUser as a fallback if user is not available  
+  
+  res.render(userEjsPath, { user });  
+}); 
 
 
 //  if none then send 404

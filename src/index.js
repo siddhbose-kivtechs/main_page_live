@@ -160,6 +160,21 @@ else
 
 
 });
+app.use([ '/authorize'], (req, res) => {
+
+  if (req.oidc.isAuthenticated()) {
+    user = req.oidc.user;
+      res.render(userEjsPath, { user });
+    
+  } 
+else
+
+  {
+    res.redirect('/login');
+  }
+
+
+});
 
 
 //  if none then send 404

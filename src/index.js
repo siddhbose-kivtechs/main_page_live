@@ -130,13 +130,15 @@ const email = user.email || dummyUser.email;
  app.get('/', (req, res) => {
  res.render(landingEjsPath);
    });
+
 app.use('/authorize', (req, res, next) => {  
   if (req.oidc.isAuthenticated()) {  
     res.redirect('/dash');  
-  } else {  
-    res.oidc.login({  
-      returnTo: '/authorize/callback',  
-    });  
+   } else {  
+  //   res.oidc.login({  
+  //     returnTo: '/authorize/callback',  
+  //   });  
+    console.log('missing user');
   }  
 }); 
 

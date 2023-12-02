@@ -144,7 +144,14 @@ app.use(['/login/callback'], (req, res) => {
     res.redirect('/login');
   }
 });
-
+app.all('/login/callback', async (req, res, next) => {  
+  try {  
+    await req.oidc.callback();  
+    res.redirect('/dash');  
+  } catch (err) {  
+    next(err);  
+  }  
+}); 
 app.get('/dash', requiresAuth(), (req, res) => {  
   const user = req.oidc.user || dummyUser; // Use dummyUser as a fallback if user is not available  
   

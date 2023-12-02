@@ -145,18 +145,17 @@ app.get('/authorize/callback', async (req, res, next) => {
   try {
     const user = await req.oidc.getUser();
     if (user) {
-      // The user is authenticated, redirect them to the dash route
       res.redirect('/dash');
     } else {
-      // The user is not authenticated, redirect them to the login page
       res.redirect('/authorize');
     }
   } catch (err) {
-    // Handle any error that occurred during the callback
     console.log(err);
     next(err);
   }
 });
+
+
 app.post('/authorize/callback',(req,res) => {
 console.log(req.body);
 });

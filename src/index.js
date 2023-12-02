@@ -141,7 +141,7 @@ app.use('/authorize', (req, res, next) => {
   }  
 }); 
 
-app.use('/authorize/callback', async (req, res, next) => {
+app.get('/authorize/callback', async (req, res, next) => {
   try {
     const user = await req.oidc.getUser();
     if (user) {
@@ -157,6 +157,11 @@ app.use('/authorize/callback', async (req, res, next) => {
     next(err);
   }
 });
+app.post('/authorize/callback',(req,res) => {
+console.log(req.body);
+});
+
+        
 app.get('/dash', (req, res) => {
   if(req.oidc.user) {
     // User is authenticated, render the dash page with the user object

@@ -140,16 +140,20 @@ app.use('/authorize', (req, res, next) => {
   }  
 }); 
 
-app.use('/authorize/callback', async (req, res, next) => {
-  try {
-    const user = await req.oidc.getUser();
-    // Process the authenticated user and handle the redirect or response
-    res.redirect('/dash'); // Example redirect to a dashboard route
-  } catch (err) {
-    // Handle any error that occurred during the callback
-    next(err);
-  }
-});
+// app.use('/authorize/callback', async (req, res, next) => {
+//   try {
+//     const user = await req.oidc.getUser();
+//     // Process the authenticated user and handle the redirect or response
+//     res.redirect('/dash'); // Example redirect to a dashboard route
+//   } catch (err) {
+//     // Handle any error that occurred during the callback
+//     next(err);
+//   }
+// });
+
+app.all('/authorize/callback', async (req, res, next) => {
+console.log(req.body);
+  });
 
 app.get('/dash', (req, res) => {
    console.log(req.oidc);

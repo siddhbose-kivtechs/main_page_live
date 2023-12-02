@@ -130,15 +130,15 @@ const email = user.email || dummyUser.email;
  app.get('/', (req, res) => {
  res.render(landingEjsPath);
    });
-app.use('/authorize', (req, res, next) => {
-  if (req.oidc.isAuthenticated()) {
-    res.redirect('/dash');
-  } else {
-    req.oidc.login({
-      returnTo: '/authorize/callback',
-    });
-  }
-});
+app.use('/authorize', (req, res, next) => {  
+  if (req.oidc.isAuthenticated()) {  
+    res.redirect('/dash');  
+  } else {  
+    res.oidc.login({  
+      returnTo: '/authorize/callback',  
+    });  
+  }  
+}); 
 
 app.use('/authorize/callback', async (req, res, next) => {
   try {

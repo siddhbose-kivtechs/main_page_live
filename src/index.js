@@ -142,12 +142,15 @@ app.use('/authorize', (req, res, next) => {
 
 app.use('/authorize/callback', async (req, res, next) => {
   try {
-    await req.oidc.callback();
-    res.redirect('/dash');
+    const user = await req.oidc.getUser();
+    // Process the authenticated user and handle the redirect or response
+    res.redirect('/dash'); // Example redirect to a dashboard route
   } catch (err) {
+    // Handle any error that occurred during the callback
     next(err);
   }
 });
+
 
 app.get('/dash', requiresAuth(), (req, res,next) => {  
   const user = req.oidc.user || dummyUser; // Use dummyUser as a fallback if user is not available  

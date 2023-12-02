@@ -17,7 +17,7 @@ const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const config = {
-  authRequired: false,
+  authRequired: true,
   auth0Logout: true,
   secret: process.env.AUTHO_secret,
   baseURL: process.env.AUTHO_baseURL,
@@ -131,47 +131,75 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
-app.use('/authorize', (req, res, next) => {  
-  if (req.oidc.isAuthenticated()) {  
-    res.redirect('/dash');  
-   } else {  
-    res.oidc.login({  
-      returnTo: '/authorize/callback',  
-    });  
-  }  
-}); 
+// app.use('/authorize', (req, res, next) => {  
+//   if (req.oidc.isAuthenticated()) {  
+//     res.redirect('/dash');  
+//    } else {  
+//     res.oidc.login({  
+//       returnTo: '/authorize/callback',  
+//     });  
+//   }  
+// }); 
 
-app.get('/authorize/callback', async (req, res, next) => {
-  try {
-    const user = await req.oidc.getUser();
-    if (user) {
-      res.redirect('/dash');
-    } else {
-      res.redirect('/authorize');
-    }
-  } catch (err) {
-    console.log(err);
-    next(err);
-  }
-});
+// app.get('/authorize/callback', async (req, res, next) => {
+//   try {
+//     const user = await req.oidc.getUser();
+//     if (user) {
+//       res.redirect('/dash');
+//     } else {
+//       res.redirect('/authorize');
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     next(err);
+//   }
+// });
 
 
-app.post('/authorize/callback',(req,res) => {
-console.log(req.body);
-});
+// app.post('/authorize/callback',(req,res) => {
+// console.log(req.body);
+// });
 
         
-app.get('/dash', (req, res) => {
-  if(req.oidc.user) {
-    // User is authenticated, render the dash page with the user object
-    res.render(userEjsPath, { user: req.oidc.user });
-  } else {
-    // User is not authenticated, redirect them to the login page
-    res.redirect('/authorize');
-  }
-});
+// app.get('/dash', (req, res) => {
+//   if(req.oidc.user) {
+//     // User is authenticated, render the dash page with the user object
+//     res.render(userEjsPath, { user: req.oidc.user });
+//   } else {
+//     // User is not authenticated, redirect them to the login page
+//     res.redirect('/authorize');
+//   }
+// });
 
+app.get('/dash', (req, res) => {  
+  if(req.oidc.isAuthenticated()) {  
+    res.render(userEjsPath, { user: req.oidc.user });  
+  } else {  
+    res.redirect('/authorize');  
+  }  
+});  
 
+app.use('/authorize', (req, res) => {    
+  if (req.oidc.isAuthenticated()) {    
+    res.redirect('/dash');    
+  } else {    
+    res.oidc.login({ returnTo: '/authorize/callback' });    
+  }    
+});   
+  
+app.post('/authorize/callback', async (req, res, next) => {  
+  try {  
+    const user = await req.oidc.getUser();  
+    if (user) {  
+      res.redirect('/dash');  
+    } else {  
+      res.redirect('/authorize');  
+    }  
+  } catch (err) {  
+    console.log(err);  
+    next(err);  
+  }  
+}); 
 
 //  if none then send 404
 app.use((req, res, next) => {

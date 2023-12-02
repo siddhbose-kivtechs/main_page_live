@@ -135,33 +135,38 @@ app.use('/authorize', (req, res, next) => {
   if (req.oidc.isAuthenticated()) {  
     res.redirect('/dash');  
    } else {  
-  //   res.oidc.login({  
-  //     returnTo: '/authorize/callback',  
-  //   });  
-    console.log('missing user');
+    res.oidc.login({  
+      returnTo: '/authorize/callback',  
+    });  
   }  
 }); 
 
-// app.use('/authorize/callback', async (req, res, next) => {
-//   try {
-//     const user = await req.oidc.getUser();
-//     // Process the authenticated user and handle the redirect or response
-//     res.redirect('/dash'); // Example redirect to a dashboard route
-//   } catch (err) {
-//     // Handle any error that occurred during the callback
-//     next(err);
-//   }
-// });
-
-app.all('/authorize/callback', async (req, res, next) => {
-console.log(req.body);
-  });
-
-app.get('/dash', (req, res) => {
-   console.log(req.oidc);
-  // res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
- res.render(userEjsPath, { user: req.oidc.user }); 
+app.use('/authorize/callback', async (req, res, next) => {
+  try {
+    const user = await req.oidc.getUser();
+    if (user) {
+      // The user is authenticated, redirect them to the dash route
+      res.redirect('/dash');
+    } else {
+      // The user is not authenticated, redirect them to the login page
+      res.redirect('/authorize');
+    }
+  } catch (err) {
+    // Handle any error that occurred during the callback
+    console.log(err);
+    next(err);
+  }
 });
+app.get('/dash', (req, res) => {
+  if(req.oidc.user) {
+    // User is authenticated, render the dash page with the user object
+    res.render(userEjsPath, { user: req.oidc.user });
+  } else {
+    // User is not authenticated, redirect them to the login page
+    res.redirect('/authorize');
+  }
+});
+
 
 
 //  if none then send 404

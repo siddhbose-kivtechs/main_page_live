@@ -161,6 +161,7 @@ else
 
 });
 app.use([ '/authorize'], (req, res) => {
+  console.log(' in authorize');
 
   if (req.oidc.isAuthenticated()) {
     user = req.oidc.user;
@@ -170,6 +171,7 @@ app.use([ '/authorize'], (req, res) => {
 else
 
   {
+    console.log('taking to login');
     res.redirect('/login');
   }
 

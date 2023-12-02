@@ -131,15 +131,17 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
-// app.use('/authorize', (req, res, next) => {  
-//   if (req.oidc.isAuthenticated()) {  
-//     res.redirect('/dash');  
-//    } else {  
-//     res.oidc.login({  
-//       returnTo: '/authorize/callback',  
-//     });  
-//   }  
-// }); 
+app.use('/authorize', (req, res, next) => {  
+  if (req.oidc.isAuthenticated()) {  
+    console.log(' Sending to DASH');
+    res.redirect('/dash');  
+   } else {  
+    console.log(' Not login sending to authorize/callback');
+    res.oidc.login({  
+      returnTo: '/authorize/callback',  
+    });  
+  }  
+}); 
 
 // app.get('/authorize/callback', async (req, res, next) => {
 //   try {
@@ -171,13 +173,13 @@ const email = user.email || dummyUser.email;
 //   }
 // });
 
-app.use('/authorize', (req, res) => {  
-  if (req.oidc.isAuthenticated()) {  
-    res.redirect('/dash');  
-  } else {  
-    res.redirect('/login');
-  }  
-}); 
+// app.use('/authorize', (req, res) => {  
+//   if (req.oidc.isAuthenticated()) {  
+//     res.redirect('/dash');  
+//   } else {  
+//     res.redirect('/login');
+//   }  
+// }); 
 
 app.get('/dash', (req, res) => {
   if(req.oidc.isAuthenticated()) {

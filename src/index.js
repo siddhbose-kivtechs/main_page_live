@@ -151,12 +151,11 @@ app.use('/authorize/callback', async (req, res, next) => {
   }
 });
 
-
-app.get('/dash', requiresAuth(), (req, res,next) => {  
-  const user = req.oidc.user || dummyUser; // Use dummyUser as a fallback if user is not available  
-  
-  res.render(userEjsPath, { user });  
-}); 
+app.get('/dash', (req, res) => {
+   console.log(req.oidc);
+  // res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+ res.render(userEjsPath, { user: req.oidc.user }); 
+});
 
 
 //  if none then send 404

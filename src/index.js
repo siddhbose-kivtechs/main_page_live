@@ -129,15 +129,17 @@ const email = user.email || dummyUser.email;
 
 app.use('/authorize', (req, res, next) => {  
   if (req.oidc.isAuthenticated()) {  
-    console.log(' Sending to DASH');
+    console.log('User information:', req.oidc.user);
+    console.log('Sending to DASH');
     res.redirect('/dash');  
    } else {  
-    console.log(' Not login sending to authorize/callback');
+    console.log('Not login sending to authorize/callback');
     res.oidc.login({  
       returnTo: '/authorize/callback',  
     });  
   }  
-}); 
+});
+
 
 // app.get('/authorize/callback', async (req, res, next) => {
 //   try {

@@ -134,9 +134,10 @@ app.use('/authorize', (req, res, next) => {
     res.redirect('/dash');  
    } else {  
     console.log('Not login sending to authorize/callback');
-    res.oidc.login({  
-      returnTo: '/authorize/callback',  
-    });  
+    //  temprarily disabled to stop loop 
+    // res.oidc.login({  
+    //   returnTo: '/authorize/callback',  
+    // });  
   }  
 });
 

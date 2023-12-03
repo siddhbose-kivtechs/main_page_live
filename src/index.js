@@ -195,7 +195,8 @@ app.use('/authorize', (req, res, next) => {
 //     res.redirect('/login');
 //   }  
 // }); 
-app.get('/authorize/callback', (req, res, next) => {
+//  handle all the methods to  /authorize/callback
+app.all('/authorize/callback', (req, res, next) => {
   const { oidc } = req;
   if (!oidc) {
     console.log('Auth0 OIDC object not found');
@@ -218,12 +219,7 @@ app.get('/dash', (req, res) => {
     res.redirect('/authorize');
   }
 });
-//  if get fails handle all 
-app.all('/authorize/callback',(req,res) =>{
-  console.log(' Called callback');
-  console.log(req.body,req.query);
-  res.send(req.body,req.query);
-});
+
 
 //  if none then send 404
 app.use((req, res, next) => {

@@ -127,19 +127,35 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
+// app.use('/authorize', (req, res, next) => {  
+//   if (req.oidc.isAuthenticated()) {  
+//     console.log('User information:', req.oidc.user);
+//     console.log('Sending to DASH');
+//     res.redirect('/dash');  
+//    } else {  
+//     console.log('Not login sending to authorize/callback');
+//     //  temprarily disabled to stop loop 
+//     // res.oidc.login({  
+//     //   returnTo: '/authorize/callback',  
+//     // });  
+//   }  
+// });
+
 app.use('/authorize', (req, res, next) => {  
   if (req.oidc.isAuthenticated()) {  
     console.log('User information:', req.oidc.user);
     console.log('Sending to DASH');
     res.redirect('/dash');  
-   } else {  
+  } else if (req.originalUrl === '/authorize/callback') {
+    next();
+  } else {  
     console.log('Not login sending to authorize/callback');
-    //  temprarily disabled to stop loop 
-    // res.oidc.login({  
-    //   returnTo: '/authorize/callback',  
-    // });  
+    res.oidc.login({  
+      returnTo: '/authorize/callback',  
+    });  
   }  
 });
+
 
 
 // app.get('/authorize/callback', async (req, res, next) => {

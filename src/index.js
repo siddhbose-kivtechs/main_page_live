@@ -195,6 +195,21 @@ app.use('/authorize', (req, res, next) => {
 //     res.redirect('/login');
 //   }  
 // }); 
+app.get('/authorize/callback', (req, res, next) => {
+  const { oidc } = req;
+  if (!oidc) {
+    console.log('Auth0 OIDC object not found');
+    return res.redirect('/login');
+  }
+  const { user } = oidc;
+  if (!user) {
+    console.log('Auth0 user object not found');
+    return res.redirect('/login');
+  }
+  console.log('User information:', user);
+  res.redirect('/dash');
+});
+
 
 app.get('/dash', (req, res) => {
   if(req.oidc.isAuthenticated()) {
@@ -203,11 +218,11 @@ app.get('/dash', (req, res) => {
     res.redirect('/authorize');
   }
 });
-app.all('/authorize/callback',(req,res) =>{
-  console.log(' Called callback');
-  console.log(req.body,req.query);
-  res.send(req.body,req.query);
-});
+// app.all('/authorize/callback',(req,res) =>{
+//   console.log(' Called callback');
+//   console.log(req.body,req.query);
+//   res.send(req.body,req.query);
+// });
 
 //  if none then send 404
 app.use((req, res, next) => {

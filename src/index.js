@@ -196,7 +196,21 @@ app.use('/authorize', (req, res, next) => {
 //   }  
 // }); 
 //  handle all the methods to  /authorize/callback
-app.all('/authorize/callback', (req, res, next) => {
+// app.all('/authorize/callback', (req, res, next) => {
+//   const { oidc } = req;
+//   if (!oidc) {
+//     console.log('Auth0 OIDC object not found');
+//     return res.redirect('/login');
+//   }
+//   const { user } = oidc;
+//   if (!user) {
+//     console.log('Auth0 user object not found');
+//     return res.redirect('/login');
+//   }
+//   console.log('User information:', user);
+//   res.redirect('/dash');
+// });
+app.get('/authorize/callback', (req, res, next) => {
   const { oidc } = req;
   if (!oidc) {
     console.log('Auth0 OIDC object not found');
@@ -210,6 +224,7 @@ app.all('/authorize/callback', (req, res, next) => {
   console.log('User information:', user);
   res.redirect('/dash');
 });
+
 
 
 app.get('/dash', (req, res) => {

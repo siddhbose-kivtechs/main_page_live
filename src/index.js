@@ -1,10 +1,10 @@
 const express = require('express');
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
-
 const { createClient } = require('@supabase/supabase-js');
 
 require('dotenv').config();
+
 const ejs = require('ejs');
 const path = require('path');
 const cors = require('cors');
@@ -26,7 +26,6 @@ const config = {
 };
 
 const app = express();
-
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
@@ -110,9 +109,6 @@ app.get(['/powerpack', '/powerpack'], (req, res) => {
 
 app.all('/admin/dash',(req, res) => {
     let user;
-
-
-  
   // Try to retrieve the user from the request object
   if (req.user) {
     user = req.user;

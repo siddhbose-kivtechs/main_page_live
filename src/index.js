@@ -218,11 +218,12 @@ app.get('/dash', (req, res) => {
     res.redirect('/authorize');
   }
 });
-// app.all('/authorize/callback',(req,res) =>{
-//   console.log(' Called callback');
-//   console.log(req.body,req.query);
-//   res.send(req.body,req.query);
-// });
+//  if get fails handle all 
+app.all('/authorize/callback',(req,res) =>{
+  console.log(' Called callback');
+  console.log(req.body,req.query);
+  res.send(req.body,req.query);
+});
 
 //  if none then send 404
 app.use((req, res, next) => {

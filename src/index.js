@@ -210,16 +210,16 @@ app.use('/authorize', (req, res, next) => {
 //   console.log('User information:', user);
 //   res.redirect('/dash');
 // });
-app.get('/authorize/callback', (req, res, next) => {
+app.all('/authorize/callback', (req, res, next) => {
   const { oidc } = req;
   if (!oidc) {
     console.log('Auth0 OIDC object not found');
-    return res.redirect('/login');
+    return res.redirect('/authorize');
   }
   const { user } = oidc;
   if (!user) {
     console.log('Auth0 user object not found');
-    return res.redirect('/login');
+    return res.redirect('/authorize');
   }
   console.log('User information:', user);
   res.redirect('/dash');

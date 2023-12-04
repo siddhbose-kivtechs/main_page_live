@@ -140,20 +140,20 @@ const email = user.email || dummyUser.email;
 //   }  
 // });
 
-// app.use('/authorize', (req, res, next) => {  
-//   if (req.oidc.isAuthenticated()) {  
-//     console.log('User information:', req.oidc.user);
-//     console.log('Sending to DASH');
-//     res.redirect('/dash');  
-//   } else if (req.originalUrl === '/authorize/callback') {
-//     next();
-//   } else {  
-//     console.log('Not login sending to authorize/callback');
-//     res.oidc.login({  
-//       returnTo: '/authorize/callback',  
-//     });  
-//   }  
-// });
+app.use('/authorize', (req, res, next) => {  
+  if (req.oidc.isAuthenticated()) {  
+    console.log('User information:', req.oidc.user);
+    console.log('Sending to DASH');
+    res.redirect('/dash');  
+  } else if (req.originalUrl === '/authorize/callback') {
+    next();
+  } else {  
+    console.log('Not login sending to authorize/callback');
+    res.oidc.login({  
+      returnTo: '/authorize/callback',  
+    });  
+  }  
+});
 
 
 
@@ -233,27 +233,27 @@ app.get('/dash', (req, res) => {
     res.redirect('/authorize');
   }
 });
-app.get('/authorize', (req, res, next) => {  
-  if (req.oidc.isAuthenticated()) {  
-    console.log('User information:', req.oidc.user);
-    console.log('Sending to DASH');
-    res.redirect('/dash');  
-  } else {  
-    console.log('Not login sending to authorize/callback');
-    req.oidc.login({  
-      returnTo: '/authorize/callback',  
-    });  
-  }  
-});
-app.get('/authorize/callback', (req, res) => {
-  if (req.oidc.isAuthenticated()) {
-    console.log('User information:', req.oidc.user);
-    res.redirect('/dash');
-  } else {
-    console.log('Auth0 user object not found');
-    res.redirect('/authorize');
-  }
-});
+// app.get('/authorize', (req, res, next) => {  
+//   if (req.oidc.isAuthenticated()) {  
+//     console.log('User information:', req.oidc.user);
+//     console.log('Sending to DASH');
+//     res.redirect('/dash');  
+//   } else {  
+//     console.log('Not login sending to authorize/callback');
+//     req.oidc.login({  
+//       returnTo: '/authorize/callback',  
+//     });  
+//   }  
+// });
+// app.get('/authorize/callback', (req, res) => {
+//   if (req.oidc.isAuthenticated()) {
+//     console.log('User information:', req.oidc.user);
+//     res.redirect('/dash');
+//   } else {
+//     console.log('Auth0 user object not found');
+//     res.redirect('/authorize');
+//   }
+// });
 
 
 

@@ -2,7 +2,7 @@ const express = require('express');
 const { auth, requiresAuth } = require('express-openid-connect');
 const { createClient } = require('@supabase/supabase-js');
 const bodyParser = require('body-parser');
-const  { ulid } from 'ulid';
+const { ulid } = require('ulid')
 require('dotenv').config();
 
 const ejs = require('ejs');

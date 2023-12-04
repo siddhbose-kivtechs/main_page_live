@@ -2,6 +2,7 @@ const express = require('express');
 const { auth, requiresAuth } = require('express-openid-connect');
 const { createClient } = require('@supabase/supabase-js');
 const bodyParser = require('body-parser');
+const  { ulid } from 'ulid';
 require('dotenv').config();
 
 const ejs = require('ejs');
@@ -14,7 +15,7 @@ const COMPANYNAME = 'Kivtechs';
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
+const ulidgen=ulid();
 const config = {
   authRequired: false,
   auth0Logout: true,
@@ -228,9 +229,38 @@ app.use('/authorize', (req, res, next) => {
 
 app.get('/dash', (req, res) => {
   if(req.oidc.isAuthenticated()) {
+    
     res.render(userEjsPath, { user: req.oidc.user });
     console.log( { user: req.oidc.user });
-  } else {
+
+    //  send to supabase
+
+        let dbdata={
+        created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
+          ulid:ulidgen,
+          status:200,
+        url: req.originalUrl,
+        ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+          userdetails: req.oidc.user
+          
+    };
+        // Insert the log entry into Supabase
+      const { data: logEntry, error } = await supabase
+        .from("oktausers")
+        .insert([dbdata]);
+
+    if (error) {
+        console.error("Error inserting log:", error);
+        // Handle the error  
+    } 
+    else {
+        // Access the inserted data  
+        console.log("Log entry inserted:", logEntry);
+    }
+
+    
+  } 
+  else {
     res.redirect('/authorize');
   }
 });

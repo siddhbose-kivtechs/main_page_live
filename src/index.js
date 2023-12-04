@@ -229,6 +229,7 @@ app.use('/authorize', (req, res, next) => {
 app.get('/dash', (req, res) => {
   if(req.oidc.isAuthenticated()) {
     res.render(userEjsPath, { user: req.oidc.user });
+    console.log( { user: req.oidc.user });
   } else {
     res.redirect('/authorize');
   }

@@ -225,72 +225,46 @@ app.use('/authorize', (req, res, next) => {
 //   res.redirect('/dash');
 // });
 
-
-
-app.get('/dash', (req, res) => {
-  if(req.oidc.isAuthenticated()) {
-    
+app.get('/dash', async (req, res) => {
+  if (req.oidc.isAuthenticated()) {
     res.render(userEjsPath, { user: req.oidc.user });
 
-    //  send to supabase
-
-        let dbdata={
-        created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
-          ulid:ulidgen,
-          status:200,
-        url: req.originalUrl,
-        ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-          userdetails: req.oidc.user
-          
+    // Send to Supabase
+    let dbdata = {
+      created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
+      ulid: ulidgen,
+      status: 200,
+      url: req.originalUrl,
+      ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+      userdetails: req.oidc.user
     };
     console.log(dbdata);
-        // Insert the user data into Supabase
-// try {  
 
-//   const { data, error } = await supabase  
-//     .from("oktausers")  
-//     .insert([dbdata]);  
-  
-//   if (error) {  
-//     console.error("Error inserting log:", error);  
-//     // Handle the error    
-//   } else {  
-//     // Access the inserted data    
-//     console.log("Log entry inserted:", data);  
-//   }  
-// } catch (error) {  
-//   console.error("Error inserting log:", error);  
-//   // Handle the error  
-// }  
-    // supabase data insert complete
+    try {
+      // Insert the user data into Supabase
+      const { data, error } = await supabase
+        .from("oktausers")
+        .insert([dbdata]);
 
-    
-  } 
-  else {
+      if (error) {
+        console.error("Error inserting log:", error);
+        // Handle the error
+      } else {
+        // Access the inserted data
+        console.log("Log entry inserted:", data);
+      }
+    } catch (error) {
+      console.error("Error inserting log:", error);
+      // Handle the error
+    }
+
+    // Supabase data insert complete
+  } else {
     res.redirect('/authorize');
   }
 });
-// app.get('/authorize', (req, res, next) => {  
-//   if (req.oidc.isAuthenticated()) {  
-//     console.log('User information:', req.oidc.user);
-//     console.log('Sending to DASH');
-//     res.redirect('/dash');  
-//   } else {  
-//     console.log('Not login sending to authorize/callback');
-//     req.oidc.login({  
-//       returnTo: '/authorize/callback',  
-//     });  
-//   }  
-// });
-// app.get('/authorize/callback', (req, res) => {
-//   if (req.oidc.isAuthenticated()) {
-//     console.log('User information:', req.oidc.user);
-//     res.redirect('/dash');
-//   } else {
-//     console.log('Auth0 user object not found');
-//     res.redirect('/authorize');
-//   }
-// });
+
+
 
 app.all('/feedback', (req, res) => {
   res.send(req.body);

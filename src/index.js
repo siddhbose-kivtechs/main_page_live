@@ -126,7 +126,19 @@ const email = user.email || dummyUser.email;
  res.render(landingEjsPath);
    });
 
-
+// app.use('/authorize', (req, res, next) => {  
+//   if (req.oidc.isAuthenticated()) {  
+//     console.log('User information:', req.oidc.user);
+//     console.log('Sending to DASH');
+//     res.redirect('/dash');  
+//    } else {  
+//     console.log('Not login sending to authorize/callback');
+//     //  temprarily disabled to stop loop 
+//     // res.oidc.login({  
+//     //   returnTo: '/authorize/callback',  
+//     // });  
+//   }  
+// });
 
 app.use('/authorize', (req, res, next) => {  
   if (req.oidc.isAuthenticated()) {  
@@ -145,6 +157,75 @@ app.use('/authorize', (req, res, next) => {
 
 
 
+// app.get('/authorize/callback', async (req, res, next) => {
+//   try {
+//     const user = await req.oidc.getUser();
+//     if (user) {
+//       res.redirect('/dash');
+//     } else {
+//       res.redirect('/authorize');
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     next(err);
+//   }
+// });
+
+
+// app.post('/authorize/callback',(req,res) => {
+// console.log(req.body);
+// });
+
+        
+// app.get('/dash', (req, res) => {
+//   if(req.oidc.user) {
+//     // User is authenticated, render the dash page with the user object
+//     res.render(userEjsPath, { user: req.oidc.user });
+//   } else {
+//     // User is not authenticated, redirect them to the login page
+//     res.redirect('/authorize');
+//   }
+// });
+
+// app.use('/authorize', (req, res) => {  
+//   if (req.oidc.isAuthenticated()) {  
+//     res.redirect('/dash');  
+//   } else {  
+//     res.redirect('/login');
+//   }  
+// }); 
+//  handle all the methods to  /authorize/callback
+// app.all('/authorize/callback', (req, res, next) => {
+//   const { oidc } = req;
+//   if (!oidc) {
+//     console.log('Auth0 OIDC object not found');
+//     return res.redirect('/login');
+//   }
+//   const { user } = oidc;
+//   if (!user) {
+//     console.log('Auth0 user object not found');
+//     return res.redirect('/login');
+//   }
+//   console.log('User information:', user);
+//   res.redirect('/dash');
+// });
+// app.all('/authorize/callback', (req, res, next) => {
+//   const { oidc } = req;
+//   if (!oidc) {
+//     console.log('Auth0 OIDC object not found');
+//     return res.redirect('/authorize');
+//   }
+//   const { user } = oidc;
+//   if (!user) {
+//     console.log('Auth0 user object not found');
+//     return res.redirect('/authorize');
+//   }
+//   console.log('User information:', user);
+//   res.redirect('/dash');
+// });
+
+
+
 app.get('/dash', (req, res) => {
   if(req.oidc.isAuthenticated()) {
     res.render(userEjsPath, { user: req.oidc.user });
@@ -152,12 +233,32 @@ app.get('/dash', (req, res) => {
     res.redirect('/authorize');
   }
 });
-
+// app.get('/authorize', (req, res, next) => {  
+//   if (req.oidc.isAuthenticated()) {  
+//     console.log('User information:', req.oidc.user);
+//     console.log('Sending to DASH');
+//     res.redirect('/dash');  
+//   } else {  
+//     console.log('Not login sending to authorize/callback');
+//     req.oidc.login({  
+//       returnTo: '/authorize/callback',  
+//     });  
+//   }  
+// });
+// app.get('/authorize/callback', (req, res) => {
+//   if (req.oidc.isAuthenticated()) {
+//     console.log('User information:', req.oidc.user);
+//     res.redirect('/dash');
+//   } else {
+//     console.log('Auth0 user object not found');
+//     res.redirect('/authorize');
+//   }
+// });
 
 app.all('/feedback', (req, res) => {
-res.send(req.body);
-  console.log(req.body);
+  res.send(req.body);
 });
+
 
 
 //  if none then send 404

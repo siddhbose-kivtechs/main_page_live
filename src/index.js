@@ -245,23 +245,23 @@ app.get('/dash', (req, res) => {
     };
     console.log(dbdata);
         // Insert the user data into Supabase
-try {  
-  // Insert the user data into Supabase  
-  const { data, error } = await supabase  
-    .from("oktausers")  
-    .insert([dbdata]);  
+// try {  
+
+//   const { data, error } = await supabase  
+//     .from("oktausers")  
+//     .insert([dbdata]);  
   
-  if (error) {  
-    console.error("Error inserting log:", error);  
-    // Handle the error    
-  } else {  
-    // Access the inserted data    
-    console.log("Log entry inserted:", data);  
-  }  
-} catch (error) {  
-  console.error("Error inserting log:", error);  
-  // Handle the error  
-}  
+//   if (error) {  
+//     console.error("Error inserting log:", error);  
+//     // Handle the error    
+//   } else {  
+//     // Access the inserted data    
+//     console.log("Log entry inserted:", data);  
+//   }  
+// } catch (error) {  
+//   console.error("Error inserting log:", error);  
+//   // Handle the error  
+// }  
     // supabase data insert complete
 
     

@@ -45,7 +45,7 @@
                         <li class="header__el"><a href="#contactus" class="header__link">Contact us</a></li>
                         <li class="header__el"><a href="https://kivtechs.cloud/terms" class="header__link">Terms </a></li>
                         <li class="header__el"><a href="https://kivtechs.cloud/policy" class="header__link">Privacy</a></li>
-                        <li class="header__el header__el--blue"><a href="https://kivtechs.cloud/signin" class="btn btn--white">Sign In →</a></li>
+                        <li class="header__el header__el--blue"><a href="https://kivtechs.cloud/authorize" class="btn btn--white">Sign In →</a></li>
                     </ul>
                 </nav>
             </div>
@@ -413,7 +413,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <form id="contact" class="form">
+                           <form id="contact" class="form" action="https://kivtechs.cloud/feedback" method="post">  
                         <div class="form-group">
                             <select class="form__field form__select">
                                 <option selected value>Choose topic*</option>
@@ -423,22 +423,24 @@
                         </div>
                         <div class="form-group">
                             <div class="form__field--half">
-                                <input type="text" placeholder="Name*" class="form__field form__text"></input>
+                                <input type="text" placeholder="Name*" class="form__field form__text" required></input>
                             </div>
                             <div class="form__field--half">
-                                <input type="text" placeholder="Surname" class="form__field form__text"></input>
+                                <input type="text" placeholder="Surname" class="form__field form__text" required></input>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form__field--half">
-                                <input type="text" placeholder="Email address*" class="form__field form__text"></input>
+                                <input type="email" placeholder="Email address*" class="form__field form__text" required></input>
                             </div>
                             <div class="form__field--half">
-                                <input type="text" placeholder="Phone number" class="form__field form__text"></input>
-                            </div>
+
+        <input type="text" placeholder="Phone number" class="form__field form__text" pattern="[6-9]{1}[0-9]{9}" title="Please enter a valid Indian phone number" required></input>
+    </div>
+
                         </div>
                         <div class="form-group">
-                            <textarea type="text" placeholder="Your messsage*" class="form__field form__textarea"></textarea>
+                            <textarea type="text" placeholder="Your messsage*" class="form__field form__textarea" required></textarea>
                             <button class="btn btn--up btn--width" type="submit">Submit</button>
                         </div>
                     </form>
@@ -454,7 +456,7 @@
                 <div class="col-md-12">
                     <h1 class="career_title">Oh! Your have visited Kivtechs.cloud to check our AI/ML products</h1>
                     <h1 class="career_sub">We will pleased to have you onboard! </h1>
-                    <a href="https://kivtechs.cloud/signin" class="btn btn--white btn--width">Onboard me</a>
+                    <a href="https://kivtechs.cloud/authorize" class="btn btn--white btn--width">Onboard me</a>
                 </div>
             </div>
         </div>
@@ -492,5 +494,18 @@
 <script src="https://siddh-kivtechs.github.io/landing_page/script.js"></script>
 <script src="https://siddh-kivtechs.github.io/menu_kivtechs_js/scripts/script_20.js"></script>
 </body>
+<script>
+    document.getElementById("contact").addEventListener("submit", function(event) {
+        var topic = document.querySelector(".form__select").value;
+        var name = document.querySelector(".form__text[name='name']").value;
+        var email = document.querySelector(".form__text[name='email']").value;
+        var message = document.querySelector(".form__textarea").value;
+
+        if (topic === "" || name === "" || email === "" || message === "") {
+            event.preventDefault(); // Prevent form submission if any field is empty
+            alert("Please fill in all the required fields.");
+        }
+    });
+</script>
 
 </html>

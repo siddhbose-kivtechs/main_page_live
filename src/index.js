@@ -244,6 +244,7 @@ app.get('/dash', (req, res) => {
           userdetails: req.oidc.user
           
     };
+    console.log(dbdata);
         // Insert the log entry into Supabase
     //   const { data: logEntry, error } = await supabase
     //     .from("oktausers")

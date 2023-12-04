@@ -1,597 +1,496 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KIvtechs.cloud|USER DASHBOARD</title>
-    <meta name="description" content="">
+    <meta charset="UTF-8">
+    <title>Kivtechs landing Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/svg" href="https://siddh-kivtechs.github.io/logo/logo.svg">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="https://siddht1.github.io/userpanelasset/assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="https://siddht1.github.io/userpanelasset/assets/css/style.css">
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-    <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-    <style>
-        #weatherWidget .currentDesc {
-        color: #ffffff!important;
-    }
-        .traffic-chart {
-            min-height: 335px;
-        }
-        #flotPie1  {
-            height: 150px;
-        }
-        #flotPie1 td {
-            padding:3px;
-        }
-        #flotPie1 table {
-            top: 20px!important;
-            right: -10px!important;
-        }
-        .chart-container {
-            display: table;
-            min-width: 270px ;
-            text-align: left;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        #flotLine5  {
-             height: 105px;
-        }
-
-        #flotBarChart {
-            height: 150px;
-        }
-        #cellPaiChart{
-            height: 160px;
-        }
-
-    </style>
+    <link rel="shortcut icon" type="image/png" href="https://siddh-kivtechs.github.io/logo/logo.svg" />
+    <meta name="theme-color" content="#3a9fff">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://siddh-kivtechs.github.io/landing_page/style.css">
 </head>
 
 <body>
-    <!-- Left Panel -->
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#"><i class="menu-icon fa fa-laptop"></i>User Panel </a>
-                    </li>
-                    <li class="menu-title">AI & ML tools</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>AI chatbot</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="https://katlon.kivtechs.cloud/"> Katlon</a></li>
-                            <li><i class="fa fa-puzzle-piece"></i><a href="https://catalona.kivtechs.cloud/"> Catlon</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-rocket"></i>AI Tools</a>
-                        <ul class="sub-menu children dropdown-menu">
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>AI AGENT</a>
-                        <ul class="sub-menu children dropdown-menu">
-                        </ul>
-                    </li>
-                    <li class="menu-title">Products & Pricing</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="https://kivtechs.cloud/powerpack" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Powerpack S4K</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="https://kivtechs.cloud/powerpack">Powerpack S4K</a>
-                             
-                            </li>
-                           
-                        </ul>
-                    </li>
-                 <li class="menu-title"> Usage</li><
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Usage</a>
-                        <ul class="sub-menu children dropdown-menu">
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Past History</a>
-                        <ul class="sub-menu children dropdown-menu">
-                        </ul>
-                    </li>
-                    <li class="menu-title"> Call To Action </li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-magic"></i>Support</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="">Tutorials</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="">FAQ</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="mailto:support@kivtechs.cloud">Customer Care</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title"> Terms & Condition </li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-question-circle"></i>Terms & condition</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-legal"></i><a href="https://kivtechs.cloud/terms">Terms and Condiftions</a></li>
-                            <li><i class="menu-icon fa fa-hand-o-right"></i><a href="https://kivtechs.cloud/policy">Privacy Policy</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title"> About Us</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="menu-icon fa fa-lemon-o"></i>KNEOGINI IGMISARCH PRIVATE LIMITED</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-random"></i><a href="https://kneoginigmisarch.co.in/">Company</a></li>
-                            <li><i class="menu-icon fa fa-hand-o-right"></i><a href="https://kneoginigmisarch.co.in/">Partnership</a></li>
-                            <li><i class="menu-icon fa fa-hand-o-right"></i><a href="https://kneoginigmisarch.co.in/">Other Solutions</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside>
-    <!-- /#left-panel -->
-    <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./">
-                        <img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="40" width="40"> </a>
-                    <a class="navbar-brand hidden" href=""><img src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png" alt="kivtechs-Logo" height="40" width="40"></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
+    <!-- Your HTML content here -->
+    <!-- partial:index.partial.html -->
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="https://siddh-kivtechs.github.io/logo/logo.svg" />
+        <meta name="theme-color" content="#1885ed">
+        <title></title>
+    </head>
+</body>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo"><img class="header__img" src="https://siddh-kivtechs.github.io/logo/logo.svg" alt="Logo" width="50" height="50">
+                <h1 class="header__title">Kivtechs<span class="header__light">.cloud</span></h1>
             </div>
-            <div class="top-right">
-                <div class="header-menu">
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="header__menu">
+                <nav id="navbar" class="header__nav collapse">
+                    <ul class="header__elenco">
+                        <li class="header__el"><a href="#home" class="header__link">Home</a></li>
+                        <li class="header__el"><a href="#pricing" class="header__link">Pricing</a></li>
+                        <li class="header__el"><a href="#sisterprojects" class="header__link"> Other Solution</a></li>
+                        <li class="header__el"><a href="#ourofferings" class="header__link">Our Offerings</a></li>
+                        <li class="header__el"><a href="#contactus" class="header__link">Contact us</a></li>
+                        <li class="header__el"><a href="https://kivtechs.cloud/terms" class="header__link">Terms </a></li>
+                        <li class="header__el"><a href="https://kivtechs.cloud/policy" class="header__link">Privacy</a></li>
+                        <li class="header__el header__el--blue"><a href="https://kivtechs.cloud/signin" class="btn btn--white">Sign In →</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="sect sect--padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="site">
+                        <h1 class="site__title">AI & ML TOOLS</h1>
+                        <h2 class="site__subtitle">
+                            <p> Manage AI/ML & analytics like a boss</p>
+                            <p> AI & ML Cloud Tools </p>
+                            <p> Beta Limited Release: Public Preview </p>
+                        </h2>
+                        <div class="site__box-link">
+                            <a class="btn btn--width" href="#pricing">Pricing</a>
+                            <a class="btn btn--revert btn--width" href="#contactus">Contact Us</a>
                         </div>
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-primary">0</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="notification">
-                            </div>
-                        </div>
-                        <div class="dropdown for-message">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-envelope"></i>
-                                <span class="count bg-primary">4</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Messages</p>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Kivtechs.cloud</span>
-                                        <span class="time float-right"></span>
-                                        <p>Welcome to KIvtechs.cloud</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">Kivtechs.cloud</span>
-                                        <span class="time float-right"></span>
-                                        <p> Welcome to the World of AI & Technology</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">kivtechs.cloud</span>
-                                        <span class="time float-right"></span>
-                                        <p> You have been provided Access to our AI chatbot Katlon & Catlona</p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="https://siddht1.github.io/dashboard_p4/dist/img/logo.png"></span>
-                                    <div class="message media-body">
-                                        <span class="name float-left">kivtechs.cloud</span>
-                                        <span class="time float-right"></span>
-                                        <p>You have 10,000 tokens</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="<%= user.picture %>" alt="User Avatar">
-                        </a>
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">0</span></a>
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-                            <a class="nav-link" href="https://kivtechs.cloud/logout"><i class="fa fa-power -off"></i>Logout</a>
-                        </div>
+                        <img class="site__img" src="https://image.ibb.co/c7grYb/image3015.png">
+                        <img class="site__img" src="https://siddh-kivtechs.github.io/branding/banner.png">
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- /#header -->
-        <!-- Breadcrumbs-->
-        <div class="breadcrumbs">
-            <div class="breadcrumbs-inner">
-                <div class="row m-0">
-                    <div class="col-sm-4">
-                        <div class="page-header float-left">
-                            <div class="page-title">
-                                <h1>Dashboard</h1>
-                            </div>
+        </div>
+    </div>
+    <div class="sect sect--padding-bottom" id="pricing">
+        <div class="container">
+            <div class="row row--center">
+                <h1 class="row__title">
+                    Pricing
+                </h1>
+                <h2 class="row__sub">What fits you the best?</h2>
+                <h2 class="row__sub">Plans: Power Pack S4K</h2>
+                <h2 class="row__sub"> Available from February 2024</h2>
+            </div>
+            <div class="row row--center row--margin">
+                <div class="col-md-4 col-sm-4 price-box price-box--purple">
+                    <div class="price-box__wrap">
+                        <div class="price-box__img"></div>
+                        <h1 class="price-box__title">
+                            Individual
+                        </h1>
+                        <p class="price-box__people">
+                            For 1 user
+                        </p>
+                        <h2 class="price-box__discount">
+                            <span class="price-box__dollar">₹</span>1888<span class="price-box__discount--light">/mo</span>
+                        </h2>
+                        <h3 class="price-box__price">
+                            ₹ 2000/mo
+                        </h3>
+                        <p class="price-box__feat">
+                            Features
+                        </p>
+                        <ul class="price-box__list">
+                            <li class="price-box__list-el">Model 1: 100,000 Tokens (GPT 3.5 Turbo Based) = Approximately 75,000 words. </li>
+                            <li class="price-box__list-el">Model 2: 12,500 Tokens (GPT 4 Based) = Approximately 9375 words. </li>
+                            <li class="price-box__list-el">Images: 100 Images (DALL-E Based) </li>
+                        </ul>
+                        <div class="price-box__btn">
+                            <a class="btn btn--purple btn--width">Try now</a>
                         </div>
                     </div>
-                    <div class="col-sm-8">
-                        <div class="page-header float-right">
-                            <div class="page-title">
-                                <ol class="breadcrumb text-right">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li class="active">
-                                        <%= user.name %> PANEL</li>
-                                </ol>
-                            </div>
+                </div>
+                <!-- second -->
+                <div class="col-md-4 col-sm-4 price-box price-box--violet">
+                    <div class="price-box__wrap">
+                        <div class="price-box__img"></div>
+                        <h1 class="price-box__title">
+                            Micro
+                        </h1>
+                        <p class="price-box__people">
+                            1 - 3 users
+                        </p>
+                        <h2 class="price-box__discount">
+                            <span class="price-box__dollar">₹</span>3540<span class="price-box__discount--light">/mo</span>
+                        </h2>
+                        <h3 class="price-box__price">
+                            ₹4000/mo
+                        </h3>
+                        <p class="price-box__feat">
+                            Features
+                        </p>
+                        <ul class="price-box__list">
+                            <li class="price-box__list-el">Model 1: 200,000 Tokens (GPT 3.5 Turbo Based) = Approximately 150,000 words.</li>
+                            <li class="price-box__list-el">Model 2: 25,000 Tokens (GPT 4 Based) = Approximately 18,750 words.</li>
+                            <li class="price-box__list-el">Images: 300 Images (DALL-E Based) </li>
+                        </ul>
+                        <div class="price-box__btn">
+                            <a class="btn btn--violet btn--width">Try now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- terzo -->
+                <div class="col-md-4 col-sm-4 price-box price-box--blue">
+                    <div class="price-box__wrap">
+                        <div class="price-box__img"></div>
+                        <h1 class="price-box__title">
+                            SME
+                        </h1>
+                        <p class="price-box__people">
+                            Upto 5 users
+                        </p>
+                        <h2 class="price-box__discount">
+                            <span class="price-box__dollar"> ₹</span>5900<span class="price-box__discount--light">/mo</span>
+                        </h2>
+                        <h3 class="price-box__price">
+                            ₹8900/mo
+                        </h3>
+                        <p class="price-box__feat">
+                            Features
+                        </p>
+                        <ul class="price-box__list">
+                            <li class="price-box__list-el">Model 1: 400,000 Tokens (GPT 3.5 Turbo Based) = Approximately 300,000 words</li>
+                            <li class="price-box__list-el">Model 2: 50,000 Tokens (GPT 4 Based) = Approximately 37,500 words</li>
+                            <li class="price-box__list-el">Images: 600 Images (DALL-E Based)</li>
+                        </ul>
+                        <div class="price-box__btn">
+                            <a class="btn btn--blue btn--width">Try now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /.breadcrumbs-->
-        <!-- Content -->
-        <div class="content">
-            <!-- Animated -->
-            <div class="animated fadeIn">
-                <!-- Widgets  -->
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-1">
-                                        <i class="pe-7s-cash"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text fa fa-rupee"><span class="count">0</span></div>
-                                            <div class="stat-heading">Spend </div>
-                                        </div>
-                                    </div>
+    </div>
+    <div class="sect sect--white" id="sisterprojects">
+        <div class="container">
+            <div class="row">
+                <h1 class="row__title">
+                    Other Solution
+                </h1>
+                <h2 class="row__sub"> Our other projects <span class="row__sub--light"> under</span> Development </h2>
+            </div>
+            <div class="row row--margin row--text-center">
+                <div class="col-md-8 col-sm-10 col-xs-12 row__carousel">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="item__content">
+                                    <img class="item__img" src="https://siddh-kivtechs.github.io/kneogin_brand_asset/deploy-s.cloud.png" alt="deploy-s"><span class="item__name">deploy-s.cloud</span>
+                                    <p class="item__description">
+                                        For students, professionals & small businesses we are creating an integrated device & portfolio management solution, which would allow them to remotely provision android enterprise powered samsung smartphones & tablets. Exclusively dedicated to work. With built-in features for online portfolio management, professional email account & social media management suite. Now being visible online to peers, potential employers & the world of opportunities out there will be a lot easier & manageable from a single Samsung powered device. Create a wonderful online portfolio, update and maintain social media accounts from a single dashboard & have a dedicated enterprise grade device to take your professional career ahead.
+                                    </p>
                                 </div>
+                                <div class="item__avatar"></div>
+                                <p class="item__people">SAMSUNG ENTERPRISE MOBILITY MANAGEMENT</p>
+                                <p class="item__occupation"> Samsung</p>
+                            </div>
+                            <div class="item">
+                                <div class="item__content">
+                                    <img class="item__img" src="https://siddh-kivtechs.github.io/kneogin_brand_asset/i-provision.cloud.png" alt="i-provision"><span class="item__name">i-provision.cloud</span>
+                                    <p class="item__description">
+                                        For enterprises & small to medium businesses we are building an enterprise mobility management solution where the IT department would have the ability to remotely deploy Intel VPro powered devices. From device security to policy management. This is specially relevant with more & more remote jobs being created across organisations. Not only that, the platform will give technical & support teams the ability to remotely troubleshoot devices. Built on the Intel Open Active Management Technology Cloud Toolkit. Bringing down support & troubleshooting costs while increasing efficiency.
+                                    </p>
+                                </div>
+                                <div class="item__avatar"></div>
+                                <p class="item__people">INTEL ENTERPRISE MOBILITY MANAGEMENT</p>
+                                <p class="item__occupation">Intel</a>
+                            </div>
+                            <div class="item">
+                                <div class="item__content">
+                                    <img class="item__img" src="https://siddh-kivtechs.github.io/kneogin_brand_asset/kaemm.cloud.png" alt="kaemm.cloud"><span class="item__name">kaemm.cloud</span>
+                                    <p class="item__description">
+                                        On the smartphone management side, we are working on top of one of the most used platforms in the world. We are building an Android enterprise EMM solution. Which gives organisations the ability to manage smartphone policies & fleet of company owned devices. With the built-in features & support for Android enterprise. Organisations are not only getting protection against data breaches & other security concerns. But, also getting easy & streamlined deployment tools & fleet management resources. Bring-your-own-device is also supported giving employees the ability to use their personal devices for work purposes. As the personal & work profiles are made separate in a secure way.
+                                    </p>
+                                </div>
+                                <div class="item__avatar"></div>
+                                <p class="item__people">ANDROID ENTERPRISE MOBILITY MANAGEMENT</p>
+                                <p class="item__occupation">Android</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-2">
-                                        <i class="fa fa-ticket"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">10000</span></div>
-                                            <div class="stat-heading">Token Allocated</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-3">
-                                        <i class="pe-7s-browser"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="text-left">GPT-3.5 Family</span></div>
-                                            <div class="stat-heading">AI MODEL Access</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-4">
-                                        <i class="pe-7s-user"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="stat-text">
-                                                    <%= user.name %></span></div>
-                                            <div class="stat-heading">Account </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <img class="carousel-control__img" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxLjQ5NCAzMS40OTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMxLjQ5NCAzMS40OTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPHBhdGggZD0iTTEwLjI3Myw1LjAwOWMwLjQ0NC0wLjQ0NCwxLjE0My0wLjQ0NCwxLjU4NywwYzAuNDI5LDAuNDI5LDAuNDI5LDEuMTQzLDAsMS41NzFsLTguMDQ3LDguMDQ3aDI2LjU1NCAgYzAuNjE5LDAsMS4xMjcsMC40OTIsMS4xMjcsMS4xMTFjMCwwLjYxOS0wLjUwOCwxLjEyNy0xLjEyNywxLjEyN0gzLjgxM2w4LjA0Nyw4LjAzMmMwLjQyOSwwLjQ0NCwwLjQyOSwxLjE1OSwwLDEuNTg3ICBjLTAuNDQ0LDAuNDQ0LTEuMTQzLDAuNDQ0LTEuNTg3LDBsLTkuOTUyLTkuOTUyYy0wLjQyOS0wLjQyOS0wLjQyOS0xLjE0MywwLTEuNTcxTDEwLjI3Myw1LjAwOXoiIGZpbGw9IiM2Zjc5ZmYiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <img class="carousel-control__img" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxLjQ5IDMxLjQ5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMS40OSAzMS40OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8cGF0aCBkPSJNMjEuMjA1LDUuMDA3Yy0wLjQyOS0wLjQ0NC0xLjE0My0wLjQ0NC0xLjU4NywwYy0wLjQyOSwwLjQyOS0wLjQyOSwxLjE0MywwLDEuNTcxbDguMDQ3LDguMDQ3SDEuMTExICBDMC40OTIsMTQuNjI2LDAsMTUuMTE4LDAsMTUuNzM3YzAsMC42MTksMC40OTIsMS4xMjcsMS4xMTEsMS4xMjdoMjYuNTU0bC04LjA0Nyw4LjAzMmMtMC40MjksMC40NDQtMC40MjksMS4xNTksMCwxLjU4NyAgYzAuNDQ0LDAuNDQ0LDEuMTU5LDAuNDQ0LDEuNTg3LDBsOS45NTItOS45NTJjMC40NDQtMC40MjksMC40NDQtMS4xNDMsMC0xLjU3MUwyMS4yMDUsNS4wMDd6IiBmaWxsPSIjNmY3OWZmIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                        </a>
                     </div>
                 </div>
-                <!--  NP modification -->
-                <!-- /Widgets -->
-                <div class="row">
-                    <!--/.col-->
-                    <!--/.col-->
-                    <!--/.col-->
-                    <!--/.col-->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-four">
-                                    <div class="stat-icon dib">
-                                        <i class="ti-server text-muted"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-heading">Kivtechs </div>
-                                            <div class="stat-text"> User Space
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://catalona.kivtechs.cloud/">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="stat-widget-four">
-                                        <div class="stat-icon dib">
-                                            <i class="ti-layers-alt text-muted"></i>
-                                        </div>
-                                        <div class="stat-content">
-                                            <div class="text-left dib">
-                                                <div class="stat-heading"></div>
-                                                <div class="stat-text">
-                                                    CATALONA
+            </div>
+        </div>
+    </div>
+    <div class="sect sect--white sect--no-padding">
+        <div class="container">
+
+            <div class="row">
+                <h1 class="row__title">
+                    Our Partners
+                </h1>
+                <h2 class="row__sub"> Partners <span class="row__sub--light"> of </span> Kivtechs.cloud </h2>
+            </div>
+            <div class="row row--margin row--text-center">
+                <div class="col-md-8 col-sm-10 col-xs-12 row__carousel">
+            <div class="row row--center">
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/aws.svg" alt="aws" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3  col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/openai.svg" alt="openai" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/google.svg" alt="google" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddht1.github.io/dashboard_p1/assets/images/products/azure.svg" alt="azure" width="50" height="50">
+                    </a>
+                </div>
+            </div>
+            <div class="row row--center">
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/microsoft.svg" alt="microsoft">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/stripe.svg" alt="stripe" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/twilio.svg" alt="twilio" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link" src="https://siddh-kivtechs.github.io/partner/vercel.svg" alt="vercel" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/supabase.svg" alt="supabase" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/partner/okta.png" alt="okta" width="50" height="50">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/physicalpartner/jssstep.png" alt="jssstep" width="100" height="100">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/physicalpartner/nasscom.png" alt="nasscom" width="100" height="100">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/physicalpartner/sidbi.png" alt="sidbi" width="100" height="100">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/physicalpartner/wadhwani.png" alt="wadhwani" width="100" height="100">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/physicalpartner/startupindia.png" alt="startupindia" width="100" height="100">
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 col-sm-6 partner">
+                    <a href="#" class="partner__link">
+                        <img class="partner_img" src="https://siddh-kivtechs.github.io/physicalpartner/startinup.png" alt="startinup" width="100" height="100">
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <div class="stat-widget-four">
-                    <div class="stat-icon dib">
-                        <i class="ti-package text-muted"></i>
-                    </div>
-                    <div class="stat-content">
-                        <div class="text-left dib">
-                            <div class="stat-heading"> GPT 3.5</div>
-                            <div class="stat-text"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <div class="stat-widget-four">
-                    <div class="stat-icon dib">
-                        <i class="ti-pulse text-muted"></i>
-                    </div>
-                    <div class="stat-content">
-                        <div class="text-left dib">
-                            <div class="stat-heading">Bandwidth</div>
-                            <div class="count">50000</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <div class="stat-widget-one">
-                    <div class="stat-icon dib"><i class="fa fa-info"></i></div>
-                    <div class="stat-content dib">
-                        <div class="stat-text">
-                            <%= user.name %>
-                        </div>
-                        <div class="stat-digit">
-                            <%= user.nickname %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <div class="stat-widget-one">
-                    <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
-                    <div class="stat-content dib">
-                        <div class="stat-text">
-                            <%= user.given_name %>
-                        </div>
-                        <div class="stat-digit">
-                            <%= user.family_name %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <div class="stat-widget-one">
-                    <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
-                    <div class="stat-content dib">
-                        <div class="stat-text">
-                            <%= user.nickname %>
-                        </div>
-                        <div class="stat-text">
-                            <% const parts = user.sub.split("|"); %>
-                            <% for (const part of parts) { %>
-                            <%= part %>
-                            <% } %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <div class="stat-widget-one">
-                    <div class="stat-icon dib"><i class="ti-link text-danger border-danger"></i></div>
-                    <div class="stat-content dib">
-                        <div class="stat-text">
-                            <%= user.email_verified %>
-                        </div>
-                        <div class="stat-text">
-                            <%= user.email %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-12 mb-4">
-        <div class="card-group">
-            <div class="card col-md-6 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-users"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">1</span>
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">Visits</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 1%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-md-6 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-user-plus"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">1</span>
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">Used</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 1%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-md-6 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-cart-plus"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">1</span>
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold"> Token Used</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-3" style="width: 11%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-md-6 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-pie-chart"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count">1</span>%
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">Utilization</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-4" style="width:     1%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-md-6 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-clock-o"></i>
-                    </div>
-                    <div class="h4 mb-0">0:2:45</div>
-                    <small class="text-muted text-uppercase font-weight-bold">Avg. Time</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-5" style="width: 1%; height: 5px;"></div>
-                </div>
-            </div>
-            <div class="card col-md-6 no-padding ">
-                <div class="card-body">
-                    <div class="h1 text-muted text-right mb-4">
-                        <i class="fa fa-comments-o"></i>
-                    </div>
-                    <div class="h4 mb-0">
-                        <span class="count"></span>
-                    </div>
-                    <small class="text-muted text-uppercase font-weight-bold">Past</small>
-                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 1%; height: 5px;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div><!-- .row -->
-    </div>
-    <!-- .animated -->
-    </div>
-    <!-- /.content -->
-    <div class="clearfix"></div>
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner bg-white">
+    <div class="sect sect--white" id="ourofferings">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    Copyright &copy; <a href="https://kneoginigmisarch.co.in/"> Kneogin Igmisarch Private Limited</a>
+                <h1 class="row__title">
+                    Our Future Offerings
+                </h1>
+                <h2 class="row__sub">Sneak peeks from our upcomming offerings</h2>
+            </div>
+            <div class="row row--margin">
+                <div class="col-md-6 article-pre__col">
+                    <a href="#" class="article-pre ">
+                        <div class="article-pre__img article-pre__img--first"></div>
+                        <h2 class="article-pre__info">
+                            <span class="article-pre__cat">Power Pack S4K </span><span class="article-pre__aut"> </span> <span class="article-pre__date"> </span>
+                        </h2>
+                        <h1 class="article-pre__title">Power Pack S4K<span class="article-pre__arrow--purple"> →</span></h1>
+                    </a>
                 </div>
-                <div class="col-sm-6 text-right">
-                    Terms & Conditions <a href="https://kneoginigmisarch.co.in/terms-of-use">KIVTECHS.cloud</a>
+                <div class="col-md-6 article-pre__col">
+                    <a href="#" class="article-pre ">
+                        <div class="article-pre__img article-pre__img--second"></div>
+                        <h2 class="article-pre__info">
+                            <span class="article-pre__cat">AI </span><span class="article-pre__aut"> Agents </span> <span class="article-pre__date"> Solution</span>
+                        </h2>
+                        <h1 class="article-pre__title"> AI AGENTS & Tools<span class="article-pre__arrow--purple">→</span></h1>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 article-pre__col">
+                    <a href="#" class="article-pre ">
+                        <div class="article-pre__img article-pre__img--fourth"></div>
+                        <h2 class="article-pre__info">
+                            <span class="article-pre__cat"> Digital </span><span class="article-pre__aut"> Media </span> <span class="article-pre__date"> Tools</span>
+                        </h2>
+                        <h1 class="article-pre__title"> Digital Media Tools<span class="article-pre__arrow--purple"> →</span></h1>
+                    </a>
+                </div>
+                <div class="col-md-6 article-pre__col">
+                    <a href="#" class="article-pre ">
+                        <div class="article-pre__img article-pre__img--third"></div>
+                        <h2 class="article-pre__info">
+                            <span class="article-pre__cat"> Cloud </span><span class="article-pre__aut"> Management </span> <span class="article-pre__date"> Tools</span>
+                        </h2>
+                        <h1 class="article-pre__title"> Cloud <span class="article-pre__arrow--purple"> Management →</span></h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sect sect--padding-bottom" id="contactus">
+        <div class="container">
+            <div class="row">
+                <h1 class="row__title">
+                    Contact Us </h1>
+                <h2 class="row__sub">Feel free to ask any questions</h2>
+            </div>
+            <div class="row row--margin">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <div class="contacts">
+                        <a href="#" class="contacts__link"><img src="https://siddh-kivtechs.github.io/logo/logo.svg" alt="Logo" width="50" height="50">
+                            <h1 class="contacts_title-ag">Kivtechs<span class="contacts--light">.cloud</span></h1>
+                        </a>
+                        <p class="contacts__address">
+                            <h1> <span> Kneogin Igmisarch Private Limited</span></h1>
+                            J–2108 Gaur Green City, <br>
+                            8 Vaibhav Khand, Indirapuram,<br>
+                            Ghaziabad, Uttar Pradesh – 201014
+                        </p>
+                        <p class="contacts__info">
+                            Contact us <a href="tel:+918588020664" class="contacts__info-link">+918588020664</a>
+                        </p>
+                        <p class="contacts__info">
+                            Mail Us <a href="mailto:support@kivtechs.cloud" class="contacts__info-link">support@kivtechs.cloud</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form id="contact" class="form">
+                        <div class="form-group">
+                            <select class="form__field form__select">
+                                <option selected value>Choose topic*</option>
+                                <option value=1>Pricing</option>
+                                <option value=2>About our Products</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="form__field--half">
+                                <input type="text" placeholder="Name*" class="form__field form__text"></input>
+                            </div>
+                            <div class="form__field--half">
+                                <input type="text" placeholder="Surname" class="form__field form__text"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form__field--half">
+                                <input type="text" placeholder="Email address*" class="form__field form__text"></input>
+                            </div>
+                            <div class="form__field--half">
+                                <input type="text" placeholder="Phone number" class="form__field form__text"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" placeholder="Your messsage*" class="form__field form__textarea"></textarea>
+                            <button class="btn btn--up btn--width" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="sect sect--violet ">
+        <img src="https://image.ibb.co/fWyVtb/path3762.png" class="career-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="career_title">Oh! Your have visited Kivtechs.cloud to check our AI/ML products</h1>
+                    <h1 class="career_sub">We will pleased to have you onboard! </h1>
+                    <a href="https://kivtechs.cloud/signin" class="btn btn--white btn--width">Onboard me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-xs-6">
+                    <img class="footer__img" src="https://siddh-kivtechs.github.io/logo/logo.svg" alt="Logo" width="50" height="50">
+                    <h1 class="footer__title">Kivtechs<span class="footer__light">.cloud</span></h1>
+                </div>
+                <div class="col-md-10 col-xs-6">
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-l">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYxMiA2MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYxMiA2MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNjEyLDExNi4yNThjLTIyLjUyNSw5Ljk4MS00Ni42OTQsMTYuNzUtNzIuMDg4LDE5Ljc3MmMyNS45MjktMTUuNTI3LDQ1Ljc3Ny00MC4xNTUsNTUuMTg0LTY5LjQxMSAgICBjLTI0LjMyMiwxNC4zNzktNTEuMTY5LDI0LjgyLTc5Ljc3NSwzMC40OGMtMjIuOTA3LTI0LjQzNy01NS40OS0zOS42NTgtOTEuNjMtMzkuNjU4Yy02OS4zMzQsMC0xMjUuNTUxLDU2LjIxNy0xMjUuNTUxLDEyNS41MTMgICAgYzAsOS44MjgsMS4xMDksMTkuNDI3LDMuMjUxLDI4LjYwNkMxOTcuMDY1LDIwNi4zMiwxMDQuNTU2LDE1Ni4zMzcsNDIuNjQxLDgwLjM4NmMtMTAuODIzLDE4LjUxLTE2Ljk4LDQwLjA3OC0xNi45OCw2My4xMDEgICAgYzAsNDMuNTU5LDIyLjE4MSw4MS45OTMsNTUuODM1LDEwNC40NzljLTIwLjU3NS0wLjY4OC0zOS45MjYtNi4zNDgtNTYuODY3LTE1Ljc1NnYxLjU2OGMwLDYwLjgwNiw0My4yOTEsMTExLjU1NCwxMDAuNjkzLDEyMy4xMDQgICAgYy0xMC41MTcsMi44My0yMS42MDcsNC4zOTgtMzMuMDgsNC4zOThjLTguMTA3LDAtMTUuOTQ3LTAuODAzLTIzLjYzNC0yLjMzM2MxNS45ODUsNDkuOTA3LDYyLjMzNiw4Ni4xOTksMTE3LjI1Myw4Ny4xOTQgICAgYy00Mi45NDcsMzMuNjU0LTk3LjA5OSw1My42NTUtMTU1LjkxNiw1My42NTVjLTEwLjEzNCwwLTIwLjExNi0wLjYxMi0yOS45NDQtMS43MjFjNTUuNTY3LDM1LjY4MSwxMjEuNTM2LDU2LjQ4NSwxOTIuNDM4LDU2LjQ4NSAgICBjMjMwLjk0OCwwLDM1Ny4xODgtMTkxLjI5MSwzNTcuMTg4LTM1Ny4xODhsLTAuNDIxLTE2LjI1M0M1NzMuODcyLDE2My41MjYsNTk1LjIxMSwxNDEuNDIyLDYxMiwxMTYuMjU4eiIgZmlsbD0iIzcyOTNiMyIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                        </a>
+                        <a href="#" class="footer__social-l">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDk2LjEyNCA5Ni4xMjMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDk2LjEyNCA5Ni4xMjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNNzIuMDg5LDAuMDJMNTkuNjI0LDBDNDUuNjIsMCwzNi41Nyw5LjI4NSwzNi41NywyMy42NTZ2MTAuOTA3SDI0LjAzN2MtMS4wODMsMC0xLjk2LDAuODc4LTEuOTYsMS45NjF2MTUuODAzICAgYzAsMS4wODMsMC44NzgsMS45NiwxLjk2LDEuOTZoMTIuNTMzdjM5Ljg3NmMwLDEuMDgzLDAuODc3LDEuOTYsMS45NiwxLjk2aDE2LjM1MmMxLjA4MywwLDEuOTYtMC44NzgsMS45Ni0xLjk2VjU0LjI4N2gxNC42NTQgICBjMS4wODMsMCwxLjk2LTAuODc3LDEuOTYtMS45NmwwLjAwNi0xNS44MDNjMC0wLjUyLTAuMjA3LTEuMDE4LTAuNTc0LTEuMzg2Yy0wLjM2Ny0wLjM2OC0wLjg2Ny0wLjU3NS0xLjM4Ny0wLjU3NUg1Ni44NDJ2LTkuMjQ2ICAgYzAtNC40NDQsMS4wNTktNi43LDYuODQ4LTYuN2w4LjM5Ny0wLjAwM2MxLjA4MiwwLDEuOTU5LTAuODc4LDEuOTU5LTEuOTZWMS45OEM3NC4wNDYsMC44OTksNzMuMTcsMC4wMjIsNzIuMDg5LDAuMDJ6IiBmaWxsPSIjNzI5M2IzIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+                        </a>
+                        <a href="#" class="footer__social-l">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQzOC41MzMgNDM4LjUzMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDM4LjUzMyA0MzguNTMzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTQwOS4xMzMsMTA5LjIwM2MtMTkuNjA4LTMzLjU5Mi00Ni4yMDUtNjAuMTg5LTc5Ljc5OC03OS43OTZDMjk1LjczNiw5LjgwMSwyNTkuMDU4LDAsMjE5LjI3MywwICAgYy0zOS43ODEsMC03Ni40Nyw5LjgwMS0xMTAuMDYzLDI5LjQwN2MtMzMuNTk1LDE5LjYwNC02MC4xOTIsNDYuMjAxLTc5LjgsNzkuNzk2QzkuODAxLDE0Mi44LDAsMTc5LjQ4OSwwLDIxOS4yNjcgICBjMCwzOS43OCw5LjgwNCw3Ni40NjMsMjkuNDA3LDExMC4wNjJjMTkuNjA3LDMzLjU5Miw0Ni4yMDQsNjAuMTg5LDc5Ljc5OSw3OS43OThjMzMuNTk3LDE5LjYwNSw3MC4yODMsMjkuNDA3LDExMC4wNjMsMjkuNDA3ICAgczc2LjQ3LTkuODAyLDExMC4wNjUtMjkuNDA3YzMzLjU5My0xOS42MDIsNjAuMTg5LTQ2LjIwNiw3OS43OTUtNzkuNzk4YzE5LjYwMy0zMy41OTYsMjkuNDAzLTcwLjI4NCwyOS40MDMtMTEwLjA2MiAgIEM0MzguNTMzLDE3OS40ODUsNDI4LjczMiwxNDIuNzk1LDQwOS4xMzMsMTA5LjIwM3ogTTIxOS4yNywzMS45NzdjNDcuMjAxLDAsODguNDEsMTUuNjA3LDEyMy42MjEsNDYuODJsLTMuNTY5LDQuOTkzICAgYy0xLjQyNywyLjAwMi00Ljk5Niw1Ljg1Mi0xMC43MDQsMTEuNTY1Yy01LjcwOSw1LjcwOC0xMS45NDMsMTEuMTM2LTE4LjY5OSwxNi4yNzRjLTYuNzYyLDUuMTQtMTUuOTQsMTAuOTkyLTI3LjU1NSwxNy41NTkgICBjLTExLjYxMSw2LjU2Ny0yMy45ODIsMTIuMzI4LTM3LjExNywxNy4yNzZjLTIxLjg4Ny00MC4zNTUtNDUuMjk2LTc2LjcwOS03MC4yMzEtMTA5LjA2NCAgIEMxOTAuMDU1LDMzLjc4NCwyMDQuODA1LDMxLjk3NywyMTkuMjcsMzEuOTc3eiBNNzIuNTI0LDEwMy4wNmMxOC4yNzEtMjMuMDI2LDQwLjUzNy00MC43Myw2Ni44MDYtNTMuMSAgIGMyMy42MDEsMzEuNDA1LDQ2LjgyLDY3LjM4MSw2OS42NjIsMTA3LjkyMWMtNTcuODYyLDE1LjIyNy0xMTUuNTMyLDIyLjg0MS0xNzMuMDE0LDIyLjgzOCAgIEM0Mi4wNzIsMTUxLjk4LDU0LjI1MywxMjYuMDkxLDcyLjUyNCwxMDMuMDZ6IE00NC41NCwyODYuNzk0Yy04LjM3Ni0yMS40MTItMTIuNTYzLTQzLjkyMy0xMi41NjMtNjcuNTI3ICAgYzAtMi42NjYsMC4wOTgtNC42NjUsMC4yODYtNS45OTZjNjguOTA1LDAsMTMyLjk1NS04Ljg0OCwxOTIuMTQ5LTI2LjU1M2M2LjA5MiwxMS44LDExLjEzNiwyMi4zNjQsMTUuMTMzLDMxLjY5MyAgIGMtMC43NzEsMC4zOC0xLjk5OSwwLjgwNi0zLjcxMywxLjI4M2MtMS43MTksMC40NzYtMi45NTMsMC44MDYtMy43MjEsMC45OTlsLTEwLjU2MSwzLjcxMSAgIGMtNy4yMzYsMi42NjYtMTYuNzA4LDcuMjM1LTI4LjQwOSwxMy43MDNjLTExLjcwNCw2LjQ3OC0yNC4xMjMsMTQuMTgyLTM3LjI1NywyMy4xM2MtMTMuMTM0LDguOTQ5LTI2LjY5NiwyMC43OTctNDAuNjg0LDM1LjU1MyAgIGMtMTMuOTksMTQuNzUtMjUuNzQzLDMwLjU5MS0zNS4yNiw0Ny41M0M2NC43MTMsMzI3LjM4MSw1Mi45MTQsMzA4LjIsNDQuNTQsMjg2Ljc5NHogTTIxOS4yNyw0MDYuNTYgICBjLTQ0LjU0LDAtODQuMzItMTQuMjc3LTExOS4zNDMtNDIuODI1bDQuMjgzLDMuMTQyYzYuNjYxLTE0LjY2LDE2LjQ2Mi0yOC43NDYsMjkuNDA4LTQyLjI1NyAgIGMxMi45NDQtMTMuNTExLDI1LjQxLTI0LjQxMywzNy40MDEtMzIuNjk1YzExLjk5MS04LjI3NCwyNS4wMjgtMTYuMDc3LDM5LjExNS0yMy40MTRjMTQuMDg0LTcuMzIzLDIzLjY5MS0xMS45OTEsMjguODM1LTEzLjk4MyAgIGM1LjE0LTEuOTk4LDkuMjMzLTMuNTcyLDEyLjI3OC00LjcxNmwwLjU2OC0wLjI4N2gwLjU3NWMxOC42NDcsNDguOTE2LDMxLjk3Nyw5Ni4zMTMsMzkuOTY4LDE0Mi4xODQgICBDMjY4Ljc1Niw0MDEuNjExLDI0NC4zOTcsNDA2LjU1NywyMTkuMjcsNDA2LjU2eiBNMzc2Ljg3NiwzMjAuNDc5Yy0xNC4wODYsMjEuNzk2LTMxLjY5NiwzOS44MzQtNTIuODE3LDU0LjEwNCAgIGMtNy44MS00My43NzYtMTkuOTg1LTg4LjQxNS0zNi41NDktMTMzLjkwMmMzNy44NzctNS45MDcsNzYuOC0zLjE0MiwxMTYuNzcxLDguMjc0ICAgQzQwMC4wOTIsMjc0Ljg0MSwzOTAuOTU1LDI5OC42ODcsMzc2Ljg3NiwzMjAuNDc5eiBNNDAzLjcwNiwyMTYuNjk4Yy0xLjkwMy0wLjM3OC00LjI4NS0wLjgxLTcuMTM5LTEuMjgzICAgYy0yLjg1NC0wLjQ3My02LjMzMS0xLjA0Ny0xMC40MjQtMS43MTNjLTQuMDg3LTAuNjY2LTguNjYyLTEuMjgzLTEzLjcwMi0xLjg1NWMtNS4wNDUtMC41NzEtMTAuNDIxLTEuMDkzLTE2LjEzNi0xLjU2OSAgIGMtNS43MDgtMC40NzgtMTEuOC0wLjg1NS0xOC4yNjgtMS4xNDNjLTYuNDc5LTAuMjg0LTEzLjA0Mi0wLjQyOC0xOS43MDUtMC40MjhjLTYuNjU2LDAtMTMuNjU3LDAuMTkzLTIwLjk4MSwwLjU3MSAgIGMtNy4zMjYsMC4zNzUtMTQuNDE0LDEuMDQ5LTIxLjI2NSwxLjk5OWMtMC41NzUtMC45NTMtMS4yODctMi41MjQtMi4xNDMtNC43MTRjLTAuODU1LTIuMTg3LTEuNDc5LTMuODU1LTEuODQ4LTQuOTk3ICAgYy0zLjYyMS03Ljk5NC03LjgxLTE3LjAzNi0xMi41NzMtMjcuMTIxYzEzLjEzNC01LjMzMywyNS42NTItMTEuNDY5LDM3LjU1NS0xOC40MThjMTEuODkyLTYuOTQ5LDIxLjQwMi0xMy4xMzEsMjguNTQ0LTE4LjU1NSAgIGM3LjEzOS01LjQzLDEzLjg5NS0xMS4xODgsMjAuMjctMTcuMjc3YzYuMzc5LTYuMDksMTAuNTEzLTEwLjMyMywxMi40MjMtMTIuNzAzYzEuOTA2LTIuMzg0LDMuNzEzLTQuNzE0LDUuNDI0LTYuOTk1bDAuMjg3LTAuMjg4ICAgYzI3Ljc4OCwzMy44OCw0MS45NzQsNzIuODk3LDQyLjUzOCwxMTcuMDU5TDQwMy43MDYsMjE2LjY5OHoiIGZpbGw9IiM3MjkzYjMiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/kneogin/" class="footer__social-l">
+                            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQzMC4xMTcgNDMwLjExNyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDMwLjExNyA0MzAuMTE3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggaWQ9IkxpbmtlZEluIiBkPSJNNDMwLjExNywyNjEuNTQzVjQyMC41NmgtOTIuMTg4VjI3Mi4xOTNjMC0zNy4yNzEtMTMuMzM0LTYyLjcwNy00Ni43MDMtNjIuNzA3ICAgYy0yNS40NzMsMC00MC42MzIsMTcuMTQyLTQ3LjMwMSwzMy43MjRjLTIuNDMyLDUuOTI4LTMuMDU4LDE0LjE3OS0zLjA1OCwyMi40NzdWNDIwLjU2aC05Mi4yMTljMCwwLDEuMjQyLTI1MS4yODUsMC0yNzcuMzJoOTIuMjEgICB2MzkuMzA5Yy0wLjE4NywwLjI5NC0wLjQzLDAuNjExLTAuNjA2LDAuODk2aDAuNjA2di0wLjg5NmMxMi4yNTEtMTguODY5LDM0LjEzLTQ1LjgyNCw4My4xMDItNDUuODI0ICAgQzM4NC42MzMsMTM2LjcyNCw0MzAuMTE3LDE3Ni4zNjEsNDMwLjExNywyNjEuNTQzeiBNNTIuMTgzLDkuNTU4QzIwLjYzNSw5LjU1OCwwLDMwLjI1MSwwLDU3LjQ2MyAgIGMwLDI2LjYxOSwyMC4wMzgsNDcuOTQsNTAuOTU5LDQ3Ljk0aDAuNjE2YzMyLjE1OSwwLDUyLjE1OS0yMS4zMTcsNTIuMTU5LTQ3Ljk0QzEwMy4xMjgsMzAuMjUxLDgzLjczNCw5LjU1OCw1Mi4xODMsOS41NTh6ICAgIE01LjQ3Nyw0MjAuNTZoOTIuMTg0di0yNzcuMzJINS40NzdWNDIwLjU2eiIgZmlsbD0iIzcyOTNiMyIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- /.site-footer -->
-    </div>
-    <!-- /#right-panel -->
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="https://siddht1.github.io/userpanelasset/assets/js/main.js"></script>
-    <!--  Chart js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
-    <!--Flot Chart-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
-    <!-- local -->
-    <script src="https://siddht1.github.io/userpanelasset/assets/js/widgets.js"></script>
-    <script src="https://siddh-kivtechs.github.io/menu_kivtechs_js/scripts/script_20.js"></script>
+</body>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src="https://siddh-kivtechs.github.io/landing_page/script.js"></script>
+<script src="https://siddh-kivtechs.github.io/menu_kivtechs_js/scripts/script_20.js"></script>
+</body>
 
 </html>

@@ -231,7 +231,6 @@ app.get('/dash', (req, res) => {
   if(req.oidc.isAuthenticated()) {
     
     res.render(userEjsPath, { user: req.oidc.user });
-    console.log( { user: req.oidc.user });
 
     //  send to supabase
 
@@ -258,7 +257,7 @@ app.get('/dash', (req, res) => {
     //     // Access the inserted data  
     //     console.log("Log entry inserted:", logEntry);
     // }
-console.log(dbdata);
+
     
   } 
   else {

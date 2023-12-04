@@ -245,19 +245,19 @@ app.get('/dash', (req, res) => {
           
     };
         // Insert the log entry into Supabase
-      const { data: logEntry, error } = await supabase
-        .from("oktausers")
-        .insert([dbdata]);
+    //   const { data: logEntry, error } = await supabase
+    //     .from("oktausers")
+    //     .insert([dbdata]);
 
-    if (error) {
-        console.error("Error inserting log:", error);
-        // Handle the error  
-    } 
-    else {
-        // Access the inserted data  
-        console.log("Log entry inserted:", logEntry);
-    }
-
+    // if (error) {
+    //     console.error("Error inserting log:", error);
+    //     // Handle the error  
+    // } 
+    // else {
+    //     // Access the inserted data  
+    //     console.log("Log entry inserted:", logEntry);
+    // }
+console.log(dbdata);
     
   } 
   else {

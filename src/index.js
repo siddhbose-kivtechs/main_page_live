@@ -156,6 +156,7 @@ app.get('/dash', (req, res) => {
 
 app.all('/feedback', (req, res) => {
 res.send(req.body);
+  console.log(req.body);
 });
 
 

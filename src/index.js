@@ -7,9 +7,8 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';  
 import morgan from 'morgan';  
 import dotenv from "dotenv/config";  
-
-import ejs from 'ejs';
-import path from 'path';
+import ejs from 'ejs';  
+import path from 'path';  
 
 require('dotenv').config();
 

@@ -1,13 +1,19 @@
-const express = require('express');
-const { auth, requiresAuth } = require('express-openid-connect');
-const { createClient } = require('@supabase/supabase-js');
-const bodyParser = require('body-parser');
-const { ulid } = require('ulid')
+import express from 'express';  
+import { auth, requiresAuth } from "express-openid-connect";  
+import cors from 'cors';  
+import { createClient } from "@supabase/supabase-js";  
+import { ulid } from 'ulid';  
+import bodyParser from 'body-parser';  
+import helmet from 'helmet';  
+import morgan from 'morgan';  
+import dotenv from "dotenv/config";  
+
+import ejs from 'ejs';
+import path from 'path';
+
 require('dotenv').config();
 
-const ejs = require('ejs');
-const path = require('path');
-const cors = require('cors');
+
 
 const PORT = process.env.PORT || 3000;
 const COMPANYNAME = 'Kivtechs';

@@ -146,23 +146,7 @@ app.use('/authorize', (req, res, next) => {
     };
     console.log(dbdata);
 
-    try {
-      // Insert the user data into Supabase
-      const { data, error } = await supabase
-        .from("oktausers")
-        .insert([dbdata]);
 
-      if (error) {
-        console.error("Error inserting log:", error);
-        // Handle the error
-      } else {
-        // Access the inserted data
-        console.log("Log entry inserted:", data);
-      }
-    } catch (error) {
-      console.error("Error inserting log:", error);
-      // Handle the error
-    }
     console.log('User information:', req.oidc.user);
     console.log('Sending to DASH');
     res.redirect('/dash');  

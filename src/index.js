@@ -173,7 +173,7 @@ app.get('/dash', async (req, res) => {
   if (req.oidc.isAuthenticated()) {
     res.render(userEjsPath, { user: req.oidc.user });
 
-    // Send to Supabase
+           // Send to Supabase
     let dbdata = {
       created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
       ulid: ulidgen,
@@ -183,24 +183,15 @@ app.get('/dash', async (req, res) => {
       userdetails: req.oidc.user
     };
     console.log(dbdata);
-
-    try {
-      // Insert the user data into Supabase
-      const { data, error } = await supabase
-        .from("oktausers")
-        .insert([dbdata]);
-
-      if (error) {
-        console.error("Error inserting log:", error);
-        // Handle the error
-      } else {
-        // Access the inserted data
-        console.log("Log entry inserted:", data);
-      }
-    } catch (error) {
-      console.error("Error inserting log:", error);
-      // Handle the error
-    }
+    supabase  
+  .from('oktausers')  
+  .insert([dbdata])  
+  .then(response => {  
+    console.log('Data sent to Supabase successfully:', response);  
+  })  
+  .catch(error => {  
+    console.error('Error sending data to Supabase:', error);  
+  }); 
 
     // Supabase data insert complete
   }

@@ -132,7 +132,7 @@ const email = user.email || dummyUser.email;
    });
 
 
-
+//  authorization route 
 app.use('/authorize', (req, res, next) => {  
   if (req.oidc.isAuthenticated()) {  
        // Send to Supabase
@@ -145,6 +145,15 @@ app.use('/authorize', (req, res, next) => {
       userdetails: req.oidc.user
     };
     console.log(dbdata);
+    supabase  
+  .from('oktausers')  
+  .insert([dbdata])  
+  .then(response => {  
+    console.log('Data sent to Supabase successfully:', response);  
+  })  
+  .catch(error => {  
+    console.error('Error sending data to Supabase:', error);  
+  });  
 
 
     console.log('User information:', req.oidc.user);

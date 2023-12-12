@@ -144,7 +144,6 @@ const email = user.email || dummyUser.email;
         date_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
         ulid: ulidgen
 };
-    console.log(dbdata);
     supabase  
   .from('visitor2')  
   .insert([visitordata])  

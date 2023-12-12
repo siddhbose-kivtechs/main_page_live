@@ -137,12 +137,8 @@ app.use('/authorize', (req, res, next) => {
   if (req.oidc.isAuthenticated()) {  
        // Send to Supabase
     let dbdata = {
-      created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
-      ulid: ulidgen,
-      status: 200,
-      url: req.originalUrl,
-      ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-      userdetails: req.oidc.user
+      ulid: ulidgen, 
+      user_details: req.oidc.user
     };
     console.log(dbdata);
     supabase  
@@ -175,12 +171,7 @@ app.get('/dash', async (req, res) => {
 
            // Send to Supabase
     let dbdata = {
-      created_at: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
-      ulid: ulidgen,
-      status: 200,
-      url: req.originalUrl,
-      ip_address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-      userdetails: req.oidc.user
+      ulid: ulidgen, user_details: req.oidc.user
     };
     console.log(dbdata);
     supabase  

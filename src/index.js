@@ -129,9 +129,7 @@ const email = user.email || dummyUser.email;
 //  landing page aka base route
  app.get('/', (req, res) => {
    // Send visitor data to Supabase
-   
- 
-    let visitordata = {
+  let visitordata = {
           status: res.statusCode,
         url: req.originalUrl,
         IP: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
@@ -143,15 +141,15 @@ const email = user.email || dummyUser.email;
         UA: req.headers['user-agent'],
         date_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
         ulid: ulidgen
-};
+        };
     supabase  
   .from('visitor2')  
   .insert([visitordata])  
-  .then(response => {  
-    console.log('Data sent to Supabase successfully:', response);  
+  .then(response1 => {  
+    console.log('Data sent to Supabase successfully:', response1);  
   })  
-  .catch(error => {  
-    console.error('Error sending data to Supabase:', error);  
+  .catch(error1 => {  
+    console.error('Error sending data to Supabase:', error1);  
   });  
    //  visitor data end 
    
@@ -161,7 +159,31 @@ const email = user.email || dummyUser.email;
 
 //  authorization route 
 app.use('/authorize', (req, res, next) => {  
-  if (req.oidc.isAuthenticated()) {  
+  if (req.oidc.isAuthenticated()) { 
+    // Send visitor data to Supabase
+  let visitordata = {
+          status: res.statusCode,
+        url: req.originalUrl,
+        IP: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+        request_body: req.body,
+        request_method: req.method,
+        lat: req.headers['x-vercel-ip-latitude'],
+        lon: req.headers['x-vercel-ip-longitude'],
+        location: {city: req.headers['x-vercel-ip-city'], region: req.headers['x-vercel-ip-country-region'], country: req.headers['x-vercel-ip-country']},
+        UA: req.headers['user-agent'],
+        date_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
+        ulid: ulidgen
+        };
+    supabase  
+  .from('visitor2')  
+  .insert([visitordata])  
+  .then(response1 => {  
+    console.log('Data sent to Supabase successfully:', response1);  
+  })  
+  .catch(error1 => {  
+    console.error('Error sending data to Supabase:', error1);  
+  });  
+   //  visitor data end 
        // Send to okta Supabase
     let dbdata = {
       ulid: ulidgen, 

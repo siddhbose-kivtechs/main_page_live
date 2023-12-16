@@ -1,13 +1,17 @@
-const express = require('express');
-const { auth, requiresAuth } = require('express-openid-connect');
-const { createClient } = require('@supabase/supabase-js');
-const bodyParser = require('body-parser');
-const { ulid } = require('ulid')
+import express from 'express';
+import { auth, requiresAuth } from 'express-openid-connect';
+import { createClient } from '@supabase/supabase-js';
+import bodyParser from 'body-parser';
+import { ulid } from 'ulid';
+import ejs from 'ejs';
+import path from 'path';
+import cors from 'cors';
 
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const ejs = require('ejs');
-const path = require('path');
-const cors = require('cors'); 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 require('dotenv').config();
 

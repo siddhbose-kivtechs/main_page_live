@@ -8,6 +8,7 @@
   },
   "keywords": [],
   "author": "",
+   "type": "module",  
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20"

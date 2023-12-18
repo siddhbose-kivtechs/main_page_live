@@ -123,23 +123,23 @@ const email = user.email || dummyUser.email;
 //  landing page aka base route
  app.get('/', (req, res) => {
    // Send visitor data to Supabase
-  // let visitordata = {
-  //         status: res.statusCode,
-  //       url: req.originalUrl,
-  //       IP: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-  //       request_body: req.body,
-  //       request_method: req.method,
-  //       lat: req.headers['x-vercel-ip-latitude'],
-  //       lon: req.headers['x-vercel-ip-longitude'],
-  //       location: {city: req.headers['x-vercel-ip-city'], region: req.headers['x-vercel-ip-country-region'], country: req.headers['x-vercel-ip-country']},
-  //       UA: req.headers['user-agent'],
-  //       date_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
-  //       ulid: ulidgen
-  //       };
-   let visitordata={
-       IP: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-       ulid: ulidgen
-   };
+  let visitordata = {
+        status: res.statusCode,
+        url: req.originalUrl,
+        IP: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+        request_body: req.body,
+        request_method: req.method,
+        lat: req.headers['x-vercel-ip-latitude'],
+        lon: req.headers['x-vercel-ip-longitude'],
+         city: req.headers['x-vercel-ip-city'],
+        region: req.headers['x-vercel-ip-country-region'],
+        country: req.headers['x-vercel-ip-country'],
+        UA: req.headers['user-agent'],
+        date_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
+        ulid: ulidgen
+        };
+
+   console.log(visitordata);
     supabase  
   .from('visitor2')  
   .insert([visitordata])  

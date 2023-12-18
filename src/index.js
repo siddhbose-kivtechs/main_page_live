@@ -141,7 +141,7 @@ const email = user.email || dummyUser.email;
 
    console.log(visitordata);
     supabase  
-  .from('visitor2')  
+  .from('main-page-visitor')  
   .insert([visitordata])  
   .then(response1 => {  
     console.log('Data sent to Supabase successfully:', response1);  

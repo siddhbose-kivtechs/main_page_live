@@ -5,10 +5,15 @@ const bodyParser = require('body-parser');
 const { ulid } = require('ulid')
 const ejs = require('ejs');
 const path = require('path');
-const cors = require('cors'); 
+const cors = require('cors');
+const RateLimit = require('express-rate-limit');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
+const limiter = RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // max 100 requests per windowMs
+});
 const COMPANYNAME = 'Kivtechs';
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
@@ -212,7 +217,7 @@ app.use('/authorize', (req, res, next) => {
   }  
 });
 
-app.get('/dash', async (req, res) => {
+app.get('/dash', limiter, async (req, res) => {
   if (req.oidc.isAuthenticated()) {
     res.render(userEjsPath, { user: req.oidc.user });
 
